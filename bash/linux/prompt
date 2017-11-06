@@ -1,0 +1,2 @@
+# LS_COLORS
+eval $(dircolors $HOME/.color/seebi/dircolors-solarized.git/dircolors.ansi-universal)

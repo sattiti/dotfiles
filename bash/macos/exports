@@ -1,0 +1,11 @@
+# export path
+export PATH=/usr/local/bin:$PATH:$HOME/.bash/bin:$HOME/.nodebrew/current/bin
+
+# Desktop directory path.
+export DT=$HOME/Desktop
+
+# Dev directory path.
+export DEV=$HOME/Documents/dev
+
+# postgresql
+export PGDATA=/usr/local/var/postgres

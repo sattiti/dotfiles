@@ -1,0 +1,12 @@
+WORKSPLACE="${HOME}"/Desktop
+if [ `pwd` != "${WORKSPLACE}" ]; then
+  cd "${WORKSPLACE}"
+fi
+unset WORKSPLACE
+
+if [[ -x $(which ruby 2>&1) ]]; then
+  RUBY_BIN=$(cygpath -u $(ruby -e 'puts RbConfig::CONFIG["bindir"]') | tr '\r' ' ')
+  for f in $(find ${RUBY_BIN} -regex ".*bat$" | xargs -n1 basename); do
+    alias ${f%.bat}=${f}
+  done
+fi

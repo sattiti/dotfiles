@@ -1,0 +1,5 @@
+# export path
+export PATH=$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH:/usr/local/bin:$HOME/.nodebrew/current/bin:$HOME/.bash/bin
+
+# Dev directory path.
+export DEV=$HOME/Documents/dev

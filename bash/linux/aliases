@@ -1,0 +1,21 @@
+# date
+alias now="date +%F\ \(%a\)\ %T"
+
+# ls with color.
+alias ls="ls --color=always"
+alias la="ls --color=always -laFht --time-style=\"+%F %a %T\""
+
+# path to dev directory.
+alias dev="cd $HOME/Documents/dev"
+
+# cal
+alias cal="cal -3"
+
+# Use the latest version of python.
+if [[ -x $(which python3 2>&1) ]]; then
+  alias python="${HOME}/.linuxbrew/bin/python3"
+fi
+
+if [[ -x $(which pip3 2>&1) ]]; then
+  alias pip="${HOME}/.linuxbrew/bin/pip3"
+fi

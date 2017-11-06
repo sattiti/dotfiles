@@ -1,0 +1,19 @@
+shopt -s expand_aliases
+
+if [[ "${OSTYPE}" =~ ^darwin ]]; then
+  exportLocalPath=$HOME/.bash/macos
+elif [[ "${OSTYPE}" =~ ^linux ]]; then
+  exportLocalPath=$HOME/.bash/linux
+elif [[ "${OSTYPE}" =~ ^cygwin ]]; then
+  exportLocalPath=$HOME/.bash/cygwin
+fi
+
+files=("${HOME}/.bash/aliases" "${exportLocalPath}/aliases")
+
+for f in "${files[@]}"
+do
+  [ -r "$f" ] && [ -f "$f" ] && source $f
+done
+
+unset files
+unset exportLocalPath

@@ -1,0 +1,70 @@
+# less with color.
+alias less="less -R"
+
+# use egrep with color.
+alias grep="grep -Ei --color=always"
+
+# cd
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+
+# df, du human-readable output.
+alias df="df -ah"
+alias du="du -h"
+
+# cp, mv, rm
+alias cp="cp -fRv"
+alias rm="rm -frv"
+alias mv="mv -v"
+
+# diff
+if [[ -x $(which colordiff 2>&1) ]]; then
+  alias diff="colordiff -u"
+else
+  alias diff="diff -u"
+fi
+
+# info
+if [[ -x $(which pinfo 2>&1) ]]; then
+  alias info="pinfo --vi-keys"
+else
+  alias info="info --vi-keys"
+fi
+
+# ps
+alias ps="ps axu"
+
+# zip
+alias zip="zip -r9"
+
+# kill all processes i can kill.
+alias k9="kill -9"
+
+# git
+alias g-s="git status"
+alias g-a="git add ."
+alias g-ac="git add . && git commit -m"
+alias g-t='git tag'
+alias g-tl="git tag --list"
+alias g-p="git pull"
+alias g-up="git push origin master"
+alias g-cl="git clone"
+
+# postgressql
+alias pg-up="pg_ctl start"
+alias pg-down="pg_ctl stop"
+alias pg-reload="pg_ctl reload"
+
+# rails
+alias r-gc="rails generate controller"
+alias r-gm="rails generate model"
+alias r-gs="rails generate scaffold"
+alias r-dc="rails destroy controller"
+alias r-dm="rails destroy model"
+alias r-m="rails migrate"
+
+# ruby bundle
+alias bun-up="bundle update"
+alias bun-in="bundle install"

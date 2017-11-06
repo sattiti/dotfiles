@@ -1,0 +1,49 @@
+set -eu
+
+# print error message and exit.
+errmsg(){
+  echo $1
+  exit 0
+}
+
+# check the number of input arguments.
+# check the directories exist or not.
+if [[ ${#@} == 2 ]]; then
+  if [[ ! -d $1 ]] || [[ ! -d $2 ]]; then
+    errmsg "No such file or directory."
+  else
+    ROOT_PATH=$(cd ${1} && pwd)
+    DISC=$(cd ${2} && pwd)
+  fi
+else
+  errmsg "wrong number of arguments (given ${#@}, expected 2 (ROOT_PATH:String, DISC:String))"
+fi
+
+# read each line
+while read LINE
+do
+  if [[ -f $LINE ]]; then
+    BASENAME=${LINE##*/}
+    EXT=${BASENAME##*.}
+
+    if [[ ${EXT} =~ jpg|jpeg|png|gif|mov|mp4|avi|aae|heic|heif|JPG|JPEG|PNG|GIF|MOV|MP4|AVI|AAE|HEIC|HEIF ]]; then
+      FILE=$(echo $LINE | sed -E "s/[[:space:]]+/\ /g")
+
+      if [[ $OSTYPE =~ 'darwin' ]]; then
+        NEWDIR=$DISC/$(stat -f %SB -t %Y%m%d "${FILE}")
+      else
+        NEWDIR=$DISC/$(stat -c %y "${FILE}" | date -f +%Y%m%d)
+      fi
+
+      if [[ ! -e $NEWDIR ]]; then
+        mkdir -p "${NEWDIR}"
+      fi
+
+      if [[ -d $NEWDIR ]]; then
+        mv -v "${FILE}" "${NEWDIR}"
+      fi
+    fi
+  fi
+done < <(find ${ROOT_PATH} -type f -print)
+
+exit 0

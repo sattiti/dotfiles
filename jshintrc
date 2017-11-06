@@ -1,0 +1,18 @@
+{
+  "maxerr": 999,
+
+  // if, for のブロックスコープを必ず{}で括るよう強制
+  "curly": false,
+
+  // 比較演算子は ==, != ではなく ===, !== を強制
+  "eqeqeq": false,
+
+  // indent
+  "indent": 2,
+
+  // accept ecmsScript5 methods
+  "es5": false,
+
+  // 定義済み変数の再定義を許可
+  "shadow": false
+}
