@@ -76,12 +76,12 @@ brew install ctags
 brew install openssl
 # brew install openssl@1.1
 
-# vim
-brew install vim --with-custom-ruby --with-gettext --with-lua --with-python3
-
 # Program languages.
 brew install python3
 brew install lua
+
+# vim
+brew install vim --with-custom-ruby --with-gettext --with-lua --with-python3
 
 # Install something depends on deference platform.
 if [[ "${OSTYPE}" =~ ^darwin ]]; then
