@@ -106,7 +106,13 @@ if dein#load_state(s:pluginRootDir)
   call dein#add(s:pluginRepos.'/'.'Shougo/dein.vim')
 
   " Omni completion
-  if has('lua')
+  if has('python3')
+    call dein#add('Shougo/deoplete.nvim')
+    if !has('nvim')
+      call dein#add('roxma/nvim-yarp')
+      call dein#add('roxma/vim-hug-neovim-rpc')
+    endif
+  elseif has('lua')
     call dein#add('Shougo/neocomplete.vim')
   else
     call dein#add('Shougo/neocomplcache.vim')
@@ -489,9 +495,17 @@ if(filereadable(glob(expand('$HOME/.bash/bashenv'))))
 endif
 "}}}
 " Plugin Setting {{{1
-" Omni completion {{{2
-" Using NeoComplete if lua exists.
-if has('lua')
+" Use deoplete if python3 exists.
+" Use NeoComplete if lua exists.
+if has('python3')
+  let g:deoplete#enable_at_startup = 1
+
+  " Use nvim-yarp library instead of neovim remote plugin feature.
+  let g:deoplete#enable_yarp = 1
+
+  " Refresh the candidates automatically.
+  " g:deoplete#enable_refresh_always = 1
+elseif has('lua')
   " NeoComplete {{{3
   " Disable AutoComplPop.
   let g:acp_enableAtStartup = 0
