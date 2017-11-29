@@ -77,7 +77,7 @@ brew install openssl
 # brew install openssl@1.1
 
 # vim
-brew install vim --with-custom-ruby --with-gettext --with-lua --with python3
+brew install vim --with-custom-ruby --with-gettext --with-lua --with-python3
 
 # Program languages.
 brew install python3
