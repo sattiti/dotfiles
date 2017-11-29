@@ -106,7 +106,7 @@ if dein#load_state(s:pluginRootDir)
   call dein#add(s:pluginRepos.'/'.'Shougo/dein.vim')
 
   " Omni completion
-  if has('python3')
+  if has('python3') || has('python')
     call dein#add('Shougo/deoplete.nvim')
     if !has('nvim')
       call dein#add('roxma/nvim-yarp')
@@ -497,7 +497,7 @@ endif
 " Plugin Setting {{{1
 " Use deoplete if python3 exists.
 " Use NeoComplete if lua exists.
-if has('python3')
+if has('python3') || has('python')
   let g:deoplete#enable_at_startup = 1
 
   " Use nvim-yarp library instead of neovim remote plugin feature.
