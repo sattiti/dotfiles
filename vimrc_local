@@ -12,6 +12,7 @@ if has('mac') || has('unix')
   set runtimepath+=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 elseif has('win32') || has('win64')
   set runtimepath+=$HOME/vimfiles,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/vimfiles/after
+  set pythonthreedll=$PYTHON_HOME/python36.dll
 endif
 "}}}
 "}}}
@@ -499,6 +500,12 @@ endif
 " Use NeoComplete if lua exists.
 if has('python3') || has('python')
   let g:deoplete#enable_at_startup = 1
+
+  if has('win32') || has('win64')
+    if isdirectory($PYTHON_HOME)
+      let g:python3_host_prog = glob(expand($PYTHON_HOME.'/python.exe'))
+    endif
+  endif
 
   " Use nvim-yarp library instead of neovim remote plugin feature.
   let g:deoplete#enable_yarp = 1
