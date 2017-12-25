@@ -243,6 +243,11 @@ if dein#load_state(s:pluginRootDir)
 
   " calendar
   " call dein#add('itchyny/calendar.vim')
+  
+  " hl pair tag
+  if has('python3') || has('python')
+    call dein#add('Valloric/MatchTagAlways')
+  endif
   " }}}
 
   call dein#end()
