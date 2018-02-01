@@ -19,14 +19,17 @@ else
   errmsg "wrong number of arguments (given ${#@}, expected 2 (ROOT_PATH:String, DISC:String))"
 fi
 
+# extension patterns
+PATS="JPG|JPEG|PNG|GIF|MOV|MP4|AVI|AAE|HEIC|HEIF|TIFF|TIF|BMP|JP2|JPC|PIC|PICT|PDF|PSD|PSB|TGA|SVG|WEBP|TPIC|EPS|EPSI|EPSF|AI"
+
 # read each line
 while read LINE
 do
   if [[ -f $LINE ]]; then
     BASENAME=${LINE##*/}
-    EXT=${BASENAME##*.}
+    EXT=$(echo ${BASENAME##*.} | tr '[:lower:]' '[:upper:]')
 
-    if [[ ${EXT} =~ jpg|jpeg|png|gif|mov|mp4|avi|aae|heic|heif|JPG|JPEG|PNG|GIF|MOV|MP4|AVI|AAE|HEIC|HEIF ]]; then
+    if [[ ${EXT} =~ $PATS ]]; then
       FILE=$(echo $LINE | sed -E "s/[[:space:]]+/\ /g")
 
       if [[ $OSTYPE =~ 'darwin' ]]; then
