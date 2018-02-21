@@ -1,0 +1,11 @@
+BoldAsFont=-1
+FontHeight=14
+Locale=ja_JP
+Charset=UTF-8
+Columns=86
+Rows=28
+Term=xterm-256color
+Font=Ricty Diminished Discord
+Transparency=high
+OpaqueWhenFocused=yes
+CursorBlinks=yes
