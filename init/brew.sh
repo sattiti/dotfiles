@@ -38,6 +38,9 @@ brew install rename
 brew install watch
 brew install xz
 brew install tidy-html5
+brew install tree
+brew install figlet
+brew install git
 
 # Install wget, curl
 brew install curl
