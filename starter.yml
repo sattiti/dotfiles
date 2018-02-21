@@ -1,0 +1,22 @@
+---
+win:
+  - 7-Zip
+  - FileZilla
+  - Google Chrome
+  - Ghostscript
+  - ImageMagick
+  - .NET
+  - Mozilla Firefox
+  - Nodejs
+  - VirtualBox
+  - Python3
+  - Ruby
+  - TortoiseSVN
+  - Vagrant
+  - cygwin
+  - lua
+  - mery
+  - nginx
+  - putty
+  - sqlite
+  - vim
