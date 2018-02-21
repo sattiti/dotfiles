@@ -1,0 +1,20 @@
+---
+- beautifulsoup4
+- cryptography
+- Flask
+- Hamlish-Jinja
+- Jinja2
+- lxml
+- neovim
+- numpy
+- olefile
+- oletools
+- pandas
+- Pillow
+- pyaml
+- PyYAML
+- qrcode
+- requests
+- selenium
+- simplejson
+- six
