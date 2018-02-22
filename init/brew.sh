@@ -39,8 +39,11 @@ brew install watch
 brew install xz
 brew install tidy-html5
 brew install tree
-brew install figlet
 brew install git
+
+# fun
+brew install figlet
+brew install cowsay
 
 # Install wget, curl
 brew install curl
