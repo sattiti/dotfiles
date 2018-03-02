@@ -12,10 +12,10 @@ alias dev="cd $HOME/Documents/dev"
 alias cal="cal -3"
 
 # Use the latest version of python.
-if [[ -x $(which python3 2>&1) ]]; then
-  alias python="${HOME}/.linuxbrew/bin/python3"
-fi
+# if [[ -x $(which python3 2>&1) ]]; then
+#   alias python="${HOME}/.linuxbrew/bin/python3"
+# fi
 
-if [[ -x $(which pip3 2>&1) ]]; then
-  alias pip="${HOME}/.linuxbrew/bin/pip3"
-fi
+# if [[ -x $(which pip3 2>&1) ]]; then
+#   alias pip="${HOME}/.linuxbrew/bin/pip3"
+# fi
