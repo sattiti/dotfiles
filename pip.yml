@@ -1,20 +1,38 @@
 ---
-- beautifulsoup4
-- cryptography
-- Flask
-- Hamlish-Jinja
-- Jinja2
-- lxml
-- neovim
-- numpy
-- olefile
-- oletools
-- pandas
-- Pillow
-- pyaml
-- PyYAML
-- qrcode
-- requests
-- selenium
-- simplejson
-- six
+main:
+	- Flask
+	- Hamlish-Jinja
+	- Jinja2
+	- Pillow
+	- PyYAML
+	- SQLAlchemy
+	- arrow
+	- beautifulsoup4
+	- cryptography
+	- jsbeautifier
+	- lxml
+	- neovim
+	- nose
+	- numpy
+	- pandas
+	- peewee
+	- pyaml
+	- qrcode	
+	- requests
+	- selenium
+	- simplejson
+	- six
+
+opt:
+	- bottle
+	- Django
+	- SciPy
+	- matplotlib
+	- Twisted
+
+win:
+	- olefile
+	- oletools
+
+game:
+	- pyglet
