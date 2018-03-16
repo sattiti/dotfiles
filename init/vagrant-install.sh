@@ -1,8 +1,11 @@
 # add vagrant box
-vagrant box add debian/jessie64 https://atlas.hashicorp.com/debian/boxes/jessie64 && vagrant plugin install vagrant-proxyconf
+# vagrant box add debian/jessie64 https://atlas.hashicorp.com/debian/boxes/jessie64 && vagrant plugin install vagrant-proxyconf
+vagrant init debian/stretch64
 
-
+# add plugin
+vagrant plugin install vagrant-proxyconf
 vagrant plugin install vagrant-rsync-back
+
 # Necessary packages for install linuxbrew.
 # sudo apt-get install build-essential curl file git python-setuptools ruby
 
