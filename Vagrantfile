@@ -24,7 +24,8 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "debian/jessie64"
+  config.vm.box = "debian/stretch64"
+  # config.vm.box = "debian/jessie64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -77,8 +78,8 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   config.vm.provider "virtualbox" do |v|
     # Display the VirtualBox GUI when booting the machine
-    v.gui = false
-
+    v.gui  = false
+    
     v.name = "debian-vm"
 
     # Customize the amount of memory on the VM:
