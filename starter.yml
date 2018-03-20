@@ -3,10 +3,38 @@ win:
   - 7-Zip
   - FileZilla
   - Google Chrome
+    - 1Click Screenshot
+    - CSP Evaluator
+    - Check My Links
+    - Clear Cache
+    - ColorZilla
+    - Dimensions
+    - EditThisCookie
+    - FireShot
+    - IP Address and Domain INformation
+    - JSONView
+    - Multi Link Opener
+    - PageSpeed insights
+    - The Great Suspender
+    - User-Agent Switcher for Chrome
+    - Vimium
+    - Web Developer
   - Ghostscript
   - ImageMagick
   - .NET
   - Mozilla Firefox
+    - Clear Cache
+    - ColorZilla
+    - EPUBReader
+    - HTML Validator
+    - JSON Beautify It
+    - React Developer Tools
+    - Screengrab!
+    - Snap Links
+    - User-Agent Switcher
+    - Valence
+    - Vim Vixen
+    - Web Developer
   - Nodejs
   - VirtualBox
   - Python3
