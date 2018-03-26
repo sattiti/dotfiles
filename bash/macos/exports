@@ -8,4 +8,4 @@ export DT=$HOME/Desktop
 export DEV=$HOME/Documents/dev
 
 # postgresql
-export PGDATA=/usr/local/var/postgres
+# export PGDATA=/usr/local/var/postgres
