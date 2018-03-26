@@ -1,0 +1,13 @@
+---
+main:
+  - https://github.com/PuerkitoBio/goquery
+  - https://github.com/gopherjs/gopherjs
+  - https://github.com/go-yaml/yaml
+  - https://github.com/antonholmquist/jason
+  - https://github.com/mmcdole/gofeed
+  - https://github.com/franela/goreq
+  - https://github.com/valyala/fasthttp
+  - https://github.com/gohugoio/hugo
+  - https://github.com/eknkc/amber
+  - https://github.com/benbjohnson/ego
+  - https://github.com/robertkrimen/otto
