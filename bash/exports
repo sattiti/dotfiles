@@ -1,9 +1,21 @@
 export LC_ALL=C
 
 # pg
-export PGDATA=~/.postgres
+pgbasepath=~/.postgres
+if [[ ! -d $pgbasepath ]]; then
+  mkdir -pv $pgbasepath
+fi
 
 # go
-export GOPATH=~/.go
+gobasepath=~/.go
+if [[ ! -d $gobasepath/src ]]; then
+  mkdir -pv $gobasepath/src
+fi
 
+if [[ ! -d $gobasepath/bin ]]; then
+  mkdir -pv $gobasepath/bin
+fi
+
+export PGDATA=$pgbasepath
+export GOPATH=$gobasepath
 export PATH=$PATH:$GOPATH/bin
