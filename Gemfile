@@ -48,6 +48,11 @@ gem 'image_optim_pack'
 gem 'image_size'
 gem 'rmagick'
 
+# qrcode
+gem 'rqrcode'
+gem 'rqrcode_png'
+gem 'zbar'
+
 # net
 gem 'anemone'
 gem 'http-client'
