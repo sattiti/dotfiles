@@ -22,6 +22,7 @@ main:
   - selenium
   - simplejson
   - six
+  - zbar
 
 opt:
   - bottle
