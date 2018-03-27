@@ -82,6 +82,9 @@ brew install ctags
 brew install openssl
 # brew install openssl@1.1
 
+# qrcode
+brew install zbar
+
 # Program languages.
 brew install python3
 brew install lua
