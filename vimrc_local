@@ -258,7 +258,7 @@ syntax enable
 set autoindent
 
 " copy paste 2 clipboard
-"set clipboard+=unnamed
+set clipboard^=unnamed,unnamedplus
 
 " smartindent
 set smartindent
