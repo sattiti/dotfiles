@@ -136,6 +136,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'vim-scripts/python.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 Plug 'vim-scripts/Align'
 Plug 'docunext/closetag.vim'
