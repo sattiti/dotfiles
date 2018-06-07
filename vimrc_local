@@ -16,7 +16,8 @@ if has('mac') || has('unix')
   set runtimepath+=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 elseif has('win32') || has('win64')
   set runtimepath+=$HOME/.vim,$HOME/vimfiles,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/vimfiles/after
-  set pythonthreedll=$PYTHON_HOME/python36.dll
+  set pythonthreehome=$PYTHONHOME
+  set pythonthreedll=$PYTHONHOME/python36.dll
 endif
 " }}}
 " Function {{{
