@@ -1,14 +1,13 @@
 ---
 main:
-  - Flask
-  - Hamlish-Jinja
-  - Jinja2
-  - Pillow
-  - PyYAML
-  - SQLAlchemy
   - arrow
   - beautifulsoup4
+  - chardet
   - cryptography
+  - Flask
+  - Hamlish-Jinja
+  - jedi
+  - Jinja2
   - jsbeautifier
   - lxml
   - neovim
@@ -16,12 +15,16 @@ main:
   - numpy
   - pandas
   - peewee
-  - pyaml
+  - Pillow
+  - PyYAML
   - qrcode
   - requests
+  - Scrapy
   - selenium
   - simplejson
   - six
+  - SQLAlchemy
+  - twisted
   - zbar
 
 opt:
