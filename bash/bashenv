@@ -1,5 +1,3 @@
-shopt -s expand_aliases
-
 if [[ "${OSTYPE}" =~ ^darwin ]]; then
   exportLocalPath=$HOME/.bash/macos
 elif [[ "${OSTYPE}" =~ ^linux ]]; then
