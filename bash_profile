@@ -6,6 +6,15 @@
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
+shopt -s autocd;
+shopt -s expand_aliases;
+
+if [[ $BASH_VERSINFO -ge 4 ]]; then
+  shopt -s dotglob;
+  shopt -s direxpand;
+  shopt -s dirspell;
+  shopt -s globstar;
+fi
 
 # Load those dotfiles.
 for file in $HOME/.bash/{exports,aliases,prompt}; do
