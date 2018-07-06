@@ -1,0 +1,54 @@
+---
+global:
+  - colors
+  - coffee-script
+  - eslint
+  - fs-extra
+  - htmlhint
+  - jshint
+  - mocha
+  - uglify-js
+  - typescript
+
+local:
+  - bcryptjs
+  - body-parser
+  - chai
+  - debug
+  - express
+  - glob
+  - gm
+  - iconv-lite
+  - http-proxy
+  - jade
+  - js-yaml
+  - jquery
+  - lodash
+  - Meteor
+  - moment
+  - moment-timezone
+  - mongoose
+  - passport
+  - q
+  - react
+  - react-dom
+  - ReactNative
+  - request
+  - underscore
+  - vue
+  - webpack
+  
+  - agenda
+  - agenda-ui  
+  - async
+  - angular.js
+  - babel-core
+  - Bower
+  - browserify
+  - conf
+  - forever
+  - Electron
+  - lazyload
+  - tz-format
+  - winston
+  - wreck
