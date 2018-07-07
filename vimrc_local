@@ -153,11 +153,12 @@ Plug 'AndrewRadev/splitjoin.vim'
 " Ruby | perl style regex
 Plug 'othree/eregex.vim'
 
-" incsearch highlight ALL pattern matches.
+ " incsearch highlight ALL pattern matches.
 Plug 'haya14busa/incsearch.vim'
 
 " Checker
 Plug 'scrooloose/syntastic'
+" Plug 'w0rp/ale'
 
 " Tree
 Plug 'vimplugin/project.vim'
@@ -225,7 +226,8 @@ endif
 " Plug 'dart-lang/dart-vim-plugin'
 
 " golang
-Plug 'jnwhiteh/vim-golang'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'jnwhiteh/vim-golang'
 
 " typescript
 " Plug 'clausreinke/typescript-tools'
@@ -249,9 +251,12 @@ Plug 'vim-airline/vim-airline-themes'
 " calendar
 " Plug 'itchyny/calendar.vim'
 
+" table helper
+Plug 'dhruvasagar/vim-table-mode'
+
 " hl pair tag
 if has('python3') || has('python')
-  Plug 'Valloric/MatchTagAlways'
+  Plug 'Valloric/MatchTagalways'
 endif
 
 " Initialize plugin system
