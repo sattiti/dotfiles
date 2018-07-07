@@ -153,7 +153,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 " Ruby | perl style regex
 Plug 'othree/eregex.vim'
 
- " incsearch highlight ALL pattern matches.
+" incsearch highlight ALL pattern matches.
 Plug 'haya14busa/incsearch.vim'
 
 " Checker
