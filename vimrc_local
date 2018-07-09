@@ -63,39 +63,6 @@ function! SetDefaultWorkSpace()
   endif
 endfunction
 " }}}
-" Mydiff {{{
-function! MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
-" }}}
-" }}}
-" winSetting {{{
-if has('win32') || has('win64')
-  source $VIMRUNTIME/vimrc_example.vim
-  " source $VIMRUNTIME/mswin.vim
-  behave mswin
-  set diffexpr=MyDiff()
-endif
 " }}}
 " vim-plug {{{
 call plug#begin('~/.vim/plugged')
@@ -375,13 +342,13 @@ if has("gui_running")
   set guioptions-=m
 
   " guifont
-  " if has("win32") || has("win64")
+  if has("win32") || has("win64")
     " set guifont=Ricty\ Diminished\ Discord:h14
     " set guifont=NotoSansCJKjp-Regular:h14
     " set guifont=Source\ Code\ Pro:h14
     " set guifont=Monaco:h14
-    " set guifont=FixedSys:h16
-  " endif
+    " set guifont=FixedSys:h14
+  endif
 endif
 
 " using grep.
@@ -675,9 +642,6 @@ if has('conceal')
   set conceallevel=0 concealcursor=niv
 endif
 " }}}
-" Private Dictionary {{{
-call MyDict(["java", "actionscript", "php", "python", "ruby"])
-"}}}
 " Project {{{
 let g:proj_flags="imstvn"
 
@@ -820,18 +784,6 @@ autocmd FileType python setlocal completeopt-=preview
 " let g:SimpylFold_fold_import = 1
 " let b:SimpylFold_fold_import = 1
 " }}}
-" Coffee, haml, json, sass, yml, swift {{{
-augroup augShared
-  autocmd!
-  au BufNewFile,BufReadPost *.haml setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
-  au BufNewFile,BufReadPost *.sass setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
-  au BufNewFile,BufReadPost *.scss setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
-  au BufNewFile,BufReadPost *.json setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
-  au BufNewFile,BufReadPost *.yml setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
-  au BufNewFile,BufReadPost *.coffee setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
-  au BufNewFile,BufReadPost *.swift setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
-augroup END
-" }}}
 " ruby {{{
 augroup augRuby
   autocmd!
@@ -849,6 +801,28 @@ augroup augPython
   au FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
   au FileType python setl expandtab shiftwidth=4 tabstop=4 softtabstop=4
 augroup END
+" }}}
+" myautocmd {{{
+augroup augShared
+  autocmd!
+  au BufNewFile,BufReadPost *.haml   setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.html   setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.htm    setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.xhtml  setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.xml    setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.sass   setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.scss   setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.css    setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.js     setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.jsx    setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.coffee setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.json   setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.yml    setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au BufNewFile,BufReadPost *.swift  setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+augroup END
+" }}}
+" Private Dictionary {{{
+" call MyDict(["java", "actionscript", "php", "python", "ruby"])
 " }}}
 " }}}
 " KeyMapping {{{
