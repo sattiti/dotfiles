@@ -337,18 +337,31 @@ set fdm=marker
 " toolbar, font
 if has("gui_running")
   " disable gui toolbar.
+  set guioptions-=t
   set guioptions-=T
+
   " disable gui menu.
   set guioptions-=m
 
+  " disable right scrollbar
+  set guioptions-=r
+  set guioptions-=R
+
+  " disable left scrollbar
+  set guioptions-=l
+  set guioptions-=L
+
+  " disable bottom scrollbar
+  set guioptions-=b
+
   " guifont
-  if has("win32") || has("win64")
-    " set guifont=Ricty\ Diminished\ Discord:h14
+  " if has("win32") || has("win64")
+    " set guifont=Ricty¥ Diminished¥ Discord:h14
     " set guifont=NotoSansCJKjp-Regular:h14
-    " set guifont=Source\ Code\ Pro:h14
+    " set guifont=Source¥ Code¥ Pro:h14
     " set guifont=Monaco:h14
     " set guifont=FixedSys:h14
-  endif
+  " endif
 endif
 
 " using grep.
