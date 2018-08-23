@@ -833,6 +833,8 @@ augroup augShared
   au BufNewFile,BufReadPost *.json   setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
   au BufNewFile,BufReadPost *.yml    setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
   au BufNewFile,BufReadPost *.swift  setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au FileType go setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  au FileType go retab
 augroup END
 " }}}
 " Private Dictionary {{{
