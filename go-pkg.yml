@@ -11,3 +11,13 @@ main:
   - https://github.com/eknkc/amber
   - https://github.com/benbjohnson/ego
   - https://github.com/robertkrimen/otto
+
+staticSiteGenerator:
+- hugo
+
+templatingEngine:
+- ace
+- amber
+- pongo2
+- hero
+- quicktemplete
