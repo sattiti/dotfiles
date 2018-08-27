@@ -45,7 +45,7 @@ pipupdate(){
 }
 
 goupdate(){
-  go get -u all
+  go get -v -u all
 }
 
 softupdate(){
