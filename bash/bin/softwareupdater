@@ -44,12 +44,17 @@ pipupdate(){
   pip3 freeze --local | cut -d = -f 1 | xargs pip3 install -U;
 }
 
+goupdate(){
+  go get -u all
+}
+
 softupdate(){
   brewupdate
   gemupdate
   nodeupdate
   rvmupdate
   pipupdate
+  goupdate
 
   if [[ "${OSTYPE}" =~ ^darwin ]]; then
     # macosupdate
