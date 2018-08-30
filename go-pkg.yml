@@ -1,23 +1,64 @@
 ---
-main:
-  - https://github.com/PuerkitoBio/goquery
-  - https://github.com/gopherjs/gopherjs
-  - https://github.com/go-yaml/yaml
-  - https://github.com/antonholmquist/jason
-  - https://github.com/mmcdole/gofeed
-  - https://github.com/franela/goreq
-  - https://github.com/valyala/fasthttp
-  - https://github.com/gohugoio/hugo
-  - https://github.com/eknkc/amber
-  - https://github.com/benbjohnson/ego
-  - https://github.com/robertkrimen/otto
-
-staticSiteGenerator:
-- hugo
-
-templatingEngine:
-- ace
-- amber
-- pongo2
-- hero
-- quicktemplete
+- name: goquery
+  url: https://github.com/PuerkitoBio/goquery
+  desc: a set of features similar to jQuery.
+- name: goreq
+  url: https://github.com/franela/goreq
+  desc: Minimal and simple request lib.
+- name: fasthttp
+  url: https://github.com/valyala/fasthttp
+  desc: Fast HTTP package.
+- name: gopherjs
+  url: https://github.com/gopherjs/gopherjs
+  desc: A compiler from Go to JavaScript.
+- name: otto
+  url: https://github.com/robertkrimen/otto
+  desc: A JavaScript interpreter in Go.
+- name: yaml
+  url: https://github.com/go-yaml/yaml
+  desc: yaml lib.
+- name: gojson
+  url: https://github.com/ChimeraCoder/gojson
+  desc: json lib.
+- name: jason
+  url: https://github.com/antonholmquist/jason
+  desc: json lib.
+- name: gofeed
+  url: https://github.com/mmcdole/gofeed
+  desc: Parse RSS and Atom feeds in Go.
+- name: hugo
+  url: https://github.com/gohugoio/hugo
+  desc: static site generator.
+- name: ace
+  url: https://github.com/yosssi/ace
+  desc: template engine.
+- name: amber
+  url: https://github.com/eknkc/amber
+  desc: template engine.
+- name: pongo2
+  url: https://github.com/flosch/pongo2
+  desc: template engine
+- name: ego
+  url: https://github.com/benbjohnson/ego
+  desc: template engine.
+- name: hero
+  url: https://github.com/shiyanhui/hero
+  desc: template engine.
+- name: quicktemplate
+  url: https://github.com/valyala/quicktemplate
+  desc: template engine.
+- name: gin
+  url: https://github.com/gin-gonic/gin
+  desc: http web framework.
+- name: testify
+  url: https://github.com/stretchr/testify
+  desc: tester
+- name: render
+  url: https://github.com/unrolled/render
+  desc: easily rendering JSON, XML, binary data, and HTML templates responses.
+- name: validator
+  url: https://github.com/go-validator/validator
+  desc: validator implements struct field validations.
+- name: goxc
+  url: https://github.com/laher/goxc
+  desc: a build tool for Go, with a focus on cross-compiling, packaging and deployment.
