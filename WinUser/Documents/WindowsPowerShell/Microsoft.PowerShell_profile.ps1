@@ -42,7 +42,9 @@ function killps(){
     foreach($item in $list){
       if($_ -match $item){
         $mid = (Get-Process -Name $_).id
-        Stop-Process -Id $mid -Force
+        if($mid -ne $null){
+          Stop-Process -Id $mid -Force
+        }
       }
     }
   }
