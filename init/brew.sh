@@ -23,6 +23,9 @@ set -eu
 # Upgrade installed formulae.
 brew upgrade
 
+# bash
+brew install bash
+
 # Install GNU core utilities
 brew install coreutils
 
@@ -40,6 +43,9 @@ brew install xz
 brew install tidy-html5
 brew install tree
 brew install git
+
+# regexp
+brew install oniguruma
 
 # fun
 brew install figlet
@@ -80,14 +86,18 @@ brew install ctags
 
 # openssl
 brew install openssl
-# brew install openssl@1.1
+brew install openssl@1.1
 
 # qrcode
 brew install zbar
 
 # Program languages.
-brew install python3
+brew install python
 brew install lua
+
+# Go dependency management tool
+brew install go
+brew install dep
 
 # vim
 brew install vim --with-custom-ruby --with-gettext --with-lua --with-python3
