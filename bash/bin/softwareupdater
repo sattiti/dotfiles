@@ -54,7 +54,7 @@ softupdate(){
   nodeupdate
   rvmupdate
   pipupdate
-  goupdate
+  # goupdate
 
   if [[ "${OSTYPE}" =~ ^darwin ]]; then
     # macosupdate
