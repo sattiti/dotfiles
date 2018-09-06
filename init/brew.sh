@@ -95,9 +95,14 @@ brew install zbar
 brew install python
 brew install lua
 
-# Go dependency management tool
+# Go lang
 brew install go
+
+# Go dependency management tool
 brew install dep
+
+# go static sites generator
+brew install hugo
 
 # vim
 brew install vim --with-custom-ruby --with-gettext --with-lua --with-python3
