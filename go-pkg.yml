@@ -1,4 +1,10 @@
 ---
+- name:
+  url: https://github.com/tsenart/vegeta
+  desc: HTTP load testing tool and library.
+- name: GoRequest
+  url: https://github.com/parnurzeal/gorequest
+  desc: GoRequest -- Simplified HTTP client ( inspired by nodejs SuperAgent )
 - name: grequests
   url: https://github.com/levigross/grequests
   desc: A Go "clone" of the great and famous Requests library.
