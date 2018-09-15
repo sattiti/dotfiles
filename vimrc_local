@@ -185,9 +185,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'toyamarinyon/vim-swift'
 
 " ps1
-if has('win32') || has('win64')
-  Plug 'PProvost/vim-ps1'
-endif
+Plug 'PProvost/vim-ps1'
 
 " dart
 " Plug 'dart-lang/dart-vim-plugin'
