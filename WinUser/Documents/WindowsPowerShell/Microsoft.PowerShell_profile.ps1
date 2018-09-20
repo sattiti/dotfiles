@@ -1,5 +1,8 @@
 # WinUser/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1
 
+# use TLS1.2
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
+
 # change executionPolicy
 if($(Get-ExecutionPolicy) -ne "RemoteSigned"){
   Set-ExecutionPolicy -Force -ExecutionPolicy RemoteSigned -Scope CurrentUser
