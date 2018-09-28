@@ -8,7 +8,7 @@ set -eu
     echo "brew not found."
     if [[ -x $(which ruby 2>&1) ]]; then
       if [[ "${OSTYPE}" =~ ^darwin ]]; then
-        xcode-select --install &&
+        xcode-select --install
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       elif [[ "${OSTYPE}" =~ ^linux ]]; then
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
@@ -25,6 +25,10 @@ brew upgrade
 
 # bash
 brew install bash
+if [[ "${OSTYPE}" =~ ^darwin ]]; then
+  sudo echo /usr/local/bin/bash >> /etc/shell
+  chsh -s /usr/local/bin/bash
+fi
 
 # Install GNU core utilities
 brew install coreutils
@@ -34,15 +38,26 @@ brew install binutils
 brew install findutils
 brew install moreutils
 
+# String packages.
+brew install gettext
+brew install nkf
+brew install libyaml
+
 # Utils
 brew install colordiff
-brew install pinfo
 brew install rename
 brew install watch
 brew install xz
 brew install tidy-html5
 brew install tree
 brew install git
+brew install autoconf
+brew install automake
+brew install libtool
+brew install ncurses
+brew install pinfo
+brew install zip
+brew install unzip
 
 # regexp
 brew install oniguruma
@@ -61,11 +76,6 @@ brew install pngcheck
 brew install jpeg
 brew install libpng
 brew install libtiff
-
-# String packages.
-brew install gettext
-brew install nkf
-brew install libyaml
 
 # nokogiri needs this.
 brew install libxml2
@@ -94,6 +104,7 @@ brew install zbar
 # Program languages.
 brew install python
 brew install lua
+brew install ruby
 
 # Go lang
 brew install go
@@ -105,7 +116,7 @@ brew install dep
 brew install hugo
 
 # vim
-brew install vim --with-custom-ruby --with-gettext --with-lua --with-python3
+brew install vim --with-gettext --with-lua --with-luajit
 
 # Install something depends on deference platform.
 if [[ "${OSTYPE}" =~ ^darwin ]]; then
@@ -114,8 +125,6 @@ if [[ "${OSTYPE}" =~ ^darwin ]]; then
   brew install ffmpeg
 elif [[ "${OSTYPE}" =~ ^linux ]]; then
   # linux only
-  brew install zip
-  brew install unzip
   brew install util-linux
 fi
 
