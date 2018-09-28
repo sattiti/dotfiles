@@ -1,7 +1,7 @@
 set -eu
 
 brewupdate(){
-  # brew doctor;
+  brew doctor;
   brew prune;
   brew update;
   brew upgrade;
@@ -52,7 +52,7 @@ softupdate(){
   brewupdate
   gemupdate
   nodeupdate
-  # rvmupdate
+  rvmupdate
   pipupdate
   # goupdate
 
