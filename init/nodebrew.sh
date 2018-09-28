@@ -24,5 +24,13 @@ npm -g upgrade
 
 # Install coffee
 npm -g install coffee-script
+npm -g install colors
+npm -g install eslint
+npm -g install fs-extra
+npm -g install htmlhint
+npm -g install jshint
+npm -g install mocha
+npm -g install uglify-js
+npm -g install typescript
 
 exit 0
