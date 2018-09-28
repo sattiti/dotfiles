@@ -105,6 +105,7 @@ brew install zbar
 brew install python
 brew install lua
 brew install ruby
+brew cask install julia
 
 # Go lang
 brew install go
