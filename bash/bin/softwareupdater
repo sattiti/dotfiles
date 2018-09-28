@@ -52,7 +52,7 @@ softupdate(){
   brewupdate
   gemupdate
   nodeupdate
-  rvmupdate
+  # rvmupdate
   pipupdate
   # goupdate
 
