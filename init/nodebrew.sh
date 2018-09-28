@@ -32,5 +32,6 @@ npm -g install jshint
 npm -g install mocha
 npm -g install uglify-js
 npm -g install typescript
+npm -g install sass
 
 exit 0
