@@ -11,6 +11,9 @@ alias cal="cal -3"
 # path to desktop.
 alias dt="cd ~/Desktop"
 
+# cp
+alias cp="cp -fRv"
+
 # app
 # alias vi=""
 # alias vim=""
