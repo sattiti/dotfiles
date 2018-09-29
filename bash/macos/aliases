@@ -24,11 +24,5 @@ alias echo="gecho"
 # gshred
 alias shred="gshred"
 
-# Use the latest version of python.
-# if [[ -x $(which python3 2>&1) ]]; then
-#   alias python="/usr/local/bin/python3"
-# fi
-
-# if [[ -x $(which pip3 2>&1) ]]; then
-#   alias pip="/usr/local/bin/pip3"
-# fi
+# cp
+alias cp="gcp -fRv"
