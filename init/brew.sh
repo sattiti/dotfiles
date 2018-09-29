@@ -30,11 +30,6 @@ if [[ "${OSTYPE}" =~ ^darwin ]]; then
   chsh -s /usr/local/bin/bash
 fi
 
-# rsync
-brew tap homebrew/dupes
-brew install libiconv
-brew install rsync
-
 # Install GNU core utilities
 brew install coreutils
 
@@ -49,6 +44,10 @@ brew install nkf
 brew install libyaml
 
 # Utils
+# iconv
+brew install libiconv
+# rsync
+brew install rsync
 brew install colordiff
 brew install rename
 brew install watch
