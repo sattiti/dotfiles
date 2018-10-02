@@ -24,6 +24,18 @@ function callapp($path, $a){
   }
 }
 
+# reboot pc
+function reboot(){
+  cleanup
+  Restart-Computer -Force
+}
+
+# shutdown
+function gohome(){
+  cleanup
+  Stop-Computer -Force
+}
+
 # shortcut
 function vim(){
   callapp $vimexe $Args
@@ -33,6 +45,35 @@ function ggc(){
   $a = $Args
   $a = $a + "—incognito"
   callapp $chromeexe $a
+}
+
+# cleanup
+function cleanup(){
+  clear
+  Clear-Host
+  Clear-History
+  Clear-RecycleBin -Force > $null
+}
+
+function prune(){
+  cleanup
+  
+  $list = @(
+  "$HOME/AppData/Local/go-build",
+  "$HOME/AppData/Local/"
+  )
+  
+  foreach($item in $list){
+    if(Test-Path -Path $item){
+      $access = $(Get-Acl -Path $item).Access.AccessControlType
+      if(Test-Path -Path $item -Type Leaf){
+        rm -Force -Recurse $item | Out-Null
+      }
+      else{
+        rm -Force -Recurse "$item/*" | Out-Null
+      }
+    }
+  }
 }
 
 # kill garbage ps
@@ -55,3 +96,4 @@ function killps(){
 
 # main
 killps
+prune
