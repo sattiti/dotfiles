@@ -85,6 +85,9 @@ brew install libtiff
 brew install libxml2
 brew install libxslt
 
+# sass
+brew install libsass
+
 # db
 brew install sqlite
 brew install postgresql
