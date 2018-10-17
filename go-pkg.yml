@@ -1,5 +1,8 @@
 ---
-- name:
+- name: minify
+  url: https://github.com/tdewolff/minify
+  desc: minify
+- name: vegeta
   url: https://github.com/tsenart/vegeta
   desc: HTTP load testing tool and library.
 - name: GoRequest
