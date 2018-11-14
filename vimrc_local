@@ -727,6 +727,12 @@ map g# <Plug>(incsearch-nohl-g#)
 "   autocmd BufReadPre *.js let b:javascript_lib_use_angularjs=1:
 " augroup END
 " }}}
+" othree/html5 {{{
+let g:html5_event_handler_attributes_complete = 1
+let g:html5_rdfa_attributes_complete = 0
+let g:html5_microdata_attributes_complete = 0
+let g:html5_aria_attributes_complete = 1
+" }}}
 " taglist {{{
 " nnoremap <silent> <F8> :TlistToggle<CR>
 
