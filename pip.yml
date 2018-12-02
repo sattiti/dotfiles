@@ -20,6 +20,7 @@ main:
   - PyYAML
   - qrcode
   - requests
+  - responder
   - Scrapy
   - selenium
   - simplejson
