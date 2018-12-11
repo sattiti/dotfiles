@@ -866,4 +866,28 @@ nnoremap <silent> t9 :<C-u>tabn9<CR>
 
 " coffeescript compile
 nnoremap <silent> <C-c>c :silent make --no-header -bc<CR>
+
+" clipboard copy paste cut
+" copy
+vmap <leader>y "*yy
+nmap <leader>y "*yy
+
+" cut
+vmap <leader>d "*dd
+nmap <leader>d "*dd
+
+" paste
+vmap <leader>p "*p
+vmap <leader>P "*P
+nmap <leader>p "*p
+nmap <leader>P "*P
+
+" copy all
+nmap <leader>ya ggVG$"*y
+
+" cut all
+nmap <leader>da ggVG"*d
+
+" replace all
+nmap <leader>pa ggVG$"*p
 "}}}
