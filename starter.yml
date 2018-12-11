@@ -39,6 +39,7 @@ win:
   - VirtualBox
   - Python3
   - Ruby
+  - go
   - TortoiseSVN
   - Vagrant
   - cygwin
@@ -48,3 +49,7 @@ win:
   - putty
   - sqlite
   - vim
+    - diff
+    - ctags
+    - iconv
+  - WinMerge
