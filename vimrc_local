@@ -274,6 +274,12 @@ set list
 " disable backup filename.
 set nobackup
 
+" no undofile.
+set noundofile
+
+" no swapfile
+set noswapfile
+
 " show line number.
 set number
 
@@ -376,7 +382,6 @@ syntax enable
 
 set laststatus=2
 set cmdheight=1
-set noundofile
 
 " ime
 " 0 ja mode (Input Method)OFF
