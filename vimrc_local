@@ -4,6 +4,10 @@ scriptencoding utf-8
 " unable vimode
 set nocompatible
 
+if has('python3')
+  silent! python3 1
+endif
+
 " plugin dir
 let s:pluginDir = glob(expand('$HOME/.vim/plugged'))
 " }}}
@@ -14,10 +18,16 @@ let s:pluginDir = glob(expand('$HOME/.vim/plugged'))
 "   set runtimepath^={dir},{dir}
 if has('mac') || has('unix')
   set runtimepath+=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-elseif has('win32') || has('win64')
+elseif has('win64') || has('win32')
   set runtimepath+=$HOME/.vim,$HOME/vimfiles,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/vimfiles/after
   set pythonthreehome=$PYTHONHOME
-  set pythonthreedll=$PYTHONHOME/python36.dll
+  set pythonthreedll=$PYTHONHOME/python37.dll
+
+  if has('python3')
+    let g:python3_host_prog = $PYTHONHOME/python.exe
+  else
+    let g:python_host_prog = $PYTHONHOME/python.exe
+  endif
 endif
 " }}}
 " Function {{{
@@ -309,7 +319,7 @@ set wildmode=longest,list,full
 " wrap.
 set wrap
 
-if has("win32") || has("win64")
+if has("win64") || has("win32")
   " columns
   set columns=110
   " rows
@@ -361,7 +371,7 @@ if has("gui_running")
   set guioptions-=b
 
   " guifont
-  " if has("win32") || has("win64")
+  " if has("win64") || has("win32")
     " set guifont=Ricty¥ Diminished¥ Discord:h14
     " set guifont=NotoSansCJKjp-Regular:h14
     " set guifont=Source¥ Code¥ Pro:h14
@@ -390,7 +400,7 @@ set cmdheight=1
 " let &iminsert=2
 
 " Fuck the fucking sucking win ime mode off.
-if has("win32") || has("win64")
+if has("win64") || has("win32")
   " reset the ja ime
   " au BufNewFile,BufRead * set iminsert=0
 
@@ -494,7 +504,7 @@ endif
 if has('python3') || has('python')
   let g:deoplete#enable_at_startup = 1
 
-  if has('win32') || has('win64')
+  if has('win64') || has('win32')
     if isdirectory($PYTHON_HOME)
       let g:python3_host_prog = glob(expand($PYTHON_HOME.'/python.exe'))
     endif
@@ -842,6 +852,12 @@ augroup END
 " }}}
 " }}}
 " KeyMapping {{{
+" Use SPACE key as <leader>
+let mapleader = "\<Space>"
+
+" Use SPACE SPACE as visual line mode.
+nmap <Leader><Leader> V
+
 " http://vim-jp.org/vimdoc-ja/map.html#map-overview
 " redraw.
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
