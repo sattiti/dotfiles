@@ -24,9 +24,9 @@ elseif has('win64') || has('win32')
   set pythonthreedll=$PYTHONHOME/python37.dll
 
   if has('python3')
-    let g:python3_host_prog = $PYTHONHOME/python.exe
+    let g:python3_host_prog = expand($PYTHONHOME)."/python.exe"
   else
-    let g:python_host_prog = $PYTHONHOME/python.exe
+    let g:python_host_prog = expand($PYTHONHOME)."/python.exe"
   endif
 endif
 " }}}
