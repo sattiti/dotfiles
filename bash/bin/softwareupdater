@@ -2,7 +2,6 @@ set -eu
 
 brewupdate(){
   brew doctor;
-  brew prune;
   brew update;
   brew upgrade;
   brew cleanup;
