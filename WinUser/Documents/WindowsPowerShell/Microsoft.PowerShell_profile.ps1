@@ -3,6 +3,12 @@
 # use TLS1.2
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 
+# set to utf-8
+$env:LANG = "ja_JP.UTF-8"
+
+# set PATH
+# Set-Item Env:Path "PATH1;PATH2"
+
 # change executionPolicy
 if($(Get-ExecutionPolicy) -ne "RemoteSigned"){
   Set-ExecutionPolicy -Force -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -36,6 +42,11 @@ function gohome(){
   Stop-Computer -Force
 }
 
+# lock
+function lock(){
+  rundll32.exe user32.dll, LockWorkStation
+}
+
 # shortcut
 function vim(){
   callapp $vimexe $Args
@@ -53,6 +64,24 @@ function cleanup(){
   Clear-Host
   Clear-History
   Clear-RecycleBin -Force > $null
+}
+
+# use python to print calendar
+function cal(){
+  python -c "import calendar;import datetime;c=calendar.TextCalendar(6);c.pryear(datetime.datetime.now().year)"
+}
+
+# nginx on off
+function ngup(){
+  $cwd = $(pwd).Path
+  $ng  = "NGINX_PATH"
+  cd $ng
+  Start-Process "./nginx.exe"
+  cd $cwd
+}
+
+function ngdown(){
+  Stop-Process -Force -ProcessName nginx
 }
 
 function prune(){
