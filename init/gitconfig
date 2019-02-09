@@ -2,8 +2,6 @@ git config --global user.name ""
 git config --global usee.email ""
 
 git config --global credential.helper cache
-
-
 # git config --global credential.helper osxkeychain
 
 # color
@@ -19,10 +17,12 @@ git config --global core.ignorecase false
 git config --global core.filemode true
 git config --global core.pager less -r
 
-git config --global alias.st status
-git config --global alias.df diff
-git config --global alias.co commit
-git config --global alias.br branch
-git config --global alias.ps push
-git config --global alias.pl pull
-git config --global alias.ck checkout
+# alias
+git config --global alias.st 'status -v'
+git config --global alias.co 'commit -v -m'
+git config --global alias.ps 'push -v --progress --prune'
+git config --global alias.pl 'pull -v --progress'
+git config --global alias.ft 'fetch -v --all -p'
+git config --global alias.ck 'checkout -v'
+git config --global alias.br 'branch -v'
+git config --global alias.df 'diff -v'
