@@ -914,4 +914,7 @@ nmap <leader>da ggVG"*d
 
 " replace all
 nmap <leader>pa ggVG$"*p
+
+" source format
+nmap <leader>= gg=G
 "}}}
