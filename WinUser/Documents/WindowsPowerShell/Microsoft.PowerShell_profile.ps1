@@ -42,6 +42,11 @@ function gohome(){
   Stop-Computer -Force
 }
 
+# show all env
+function env(){
+  (gci env:*).GetEnumerator() | Sort-Object Name | Out-String
+}
+
 # lock
 function lock(){
   rundll32.exe user32.dll, LockWorkStation
