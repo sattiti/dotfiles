@@ -89,6 +89,27 @@ function ngdown(){
   Stop-Process -Force -ProcessName nginx
 }
 
+# git pullall
+function pullall(){
+  $a = $Args[0]
+  if($a.length -le 0){
+    echo "No such directories or files."
+    exit 1
+  }
+  
+  if(Test-Path -Type Container -Path $a){
+    ls -Hidden -Depth 1 $a | % {
+      if(Test-Path -Type Container -Path $_.FullName){
+        git -C $_.Parent.FullName pull -v --progress -- no-rebase
+      }
+    }
+  }
+  else{
+    echo "No such directories or files."
+    exit 1
+  }
+}
+
 function prune(){
   cleanup
   
