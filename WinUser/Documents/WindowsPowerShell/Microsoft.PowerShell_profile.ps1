@@ -93,7 +93,7 @@ function ngdown(){
 function gitall(){
   $a   = $Args[0]
   $cmd = $Args[1]
-  $usage = "gitall WORK_TREE_PARENT_PATH CMD[pull|push|fetch]
+  $usage = "gitall WORK_TREE_PARENT_PATH CMD[pull|push|fetch|status]
   $errMsg = "No such file or directory."
   
   if($Args.length -ne 2){
@@ -112,6 +112,9 @@ function gitall(){
         }
         elseif($cmd -eq "fetch"){
           git -C $_.Parent.FullName fetch -v --progress
+        }
+        elseif($cmd -eq "status"){
+          git -C $_.Parent.FullName status -s
         }
         else{
           echo $usage
