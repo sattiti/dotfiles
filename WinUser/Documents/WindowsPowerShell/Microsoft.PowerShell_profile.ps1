@@ -89,24 +89,40 @@ function ngdown(){
   Stop-Process -Force -ProcessName nginx
 }
 
-# git pullall
-function pullall(){
-  $a = $Args[0]
-  if($a.length -le 0){
-    echo "No such directories or files."
-    exit 1
+# git cmd
+function gitall(){
+  $a   = $Args[0]
+  $cmd = $Args[1]
+  $usage = "gitall WORK_TREE_PARENT_PATH CMD[pull|push|fetch]
+  $errMsg = "No such file or directory."
+  
+  if($Args.length -ne 2){
+    echo $usage
+    return
   }
   
   if(Test-Path -Type Container -Path $a){
     ls -Hidden -Depth 1 $a | % {
       if(Test-Path -Type Container -Path $_.FullName){
-        git -C $_.Parent.FullName pull -v --progress -- no-rebase
+        if($cmd -eq "push"){
+          git -C $_.Parent.FullName pull -v --progress -- no-rebase
+        }
+        else if($cmd -eq "push"){
+          git -C $_.Parent.FullName push -v --progress
+        }
+        else if($cmd -eq "fetch"){
+          git -C $_.Parent.FullName fetch -v --progress
+        }
+        else{
+          echo $usage
+          return
+        }
       }
     }
   }
   else{
-    echo "No such directories or files."
-    exit 1
+    echo $errMsg
+    return
   }
 }
 
