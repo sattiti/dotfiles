@@ -107,10 +107,10 @@ function gitall(){
         if($cmd -eq "push"){
           git -C $_.Parent.FullName pull -v --progress -- no-rebase
         }
-        else if($cmd -eq "push"){
+        elseif($cmd -eq "push"){
           git -C $_.Parent.FullName push -v --progress
         }
-        else if($cmd -eq "fetch"){
+        elseif($cmd -eq "fetch"){
           git -C $_.Parent.FullName fetch -v --progress
         }
         else{
