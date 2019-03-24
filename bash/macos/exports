@@ -1,5 +1,5 @@
 # export path
-export PATH=$PATH:/usr/local/bin:$HOME/.bash/bin:$HOME/.nodebrew/current/bin
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin:$HOME/.bash/bin:$HOME/.nodebrew/current/bin
 
 # Desktop directory path.
 export DT=$HOME/Desktop
