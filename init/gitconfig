@@ -27,3 +27,9 @@ git config --global alias.ck 'checkout -v'
 git config --global alias.br 'branch -v'
 git config --global alias.df 'diff -v'
 git config --global alias.plog 'log --oneline --decorate=full --graph --date=default --pretty=format:\"%C(green reverse)%h%C(reset) %C(cyan)%ad%C(reset) %C(yellow bold)%an%C(reset) %09%s %(red white reverse)%d%C(reset)\"'
+
+# merge --no-ff
+git config --global --add merge.ff false
+
+# pull ff only
+git config --global --add pull.ff only
