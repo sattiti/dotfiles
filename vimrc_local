@@ -781,6 +781,11 @@ let b:match_words = &matchpairs . ",\<\(module\|class\|def\|begin\|do\|if\|unles
 " nmap gx <Plug>(openbrowser-smart-search)
 " vmap gx <Plug>(openbrowser-smart-search)
 " }}}
+" ack.vim{{{
+if executable('pt')
+  let g:ackprg = 'pt --nocolor --nogroup --numbers -e'
+endif
+"}}}
 " eregex {{{
 " disable eeregex by default
 " let g:eregex_default_enable=1
@@ -794,11 +799,6 @@ let b:match_words = &matchpairs . ",\<\(module\|class\|def\|begin\|do\|if\|unles
 " nnoremap / :M/
 " nnoremap ? :M?
 " }}}
-" ack.vim{{{
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-"}}}
 " jedi {{{
 " let g:jedi#completions_enabled = 0
 " let g:jedi#auto_initialization = 0
@@ -941,8 +941,7 @@ nmap <leader>t :Files<CR>
 nmap <leader>r :Tags<CR>
 
 " ack.vim
-" nmap :Ack! "\b\b"
-" nmap k :Ack! "\b\b"
-" nmap :Ggrep! "\b\b"
-" nmap K :Ggrep! "\b\b"
+nmap <leader>a :Ack!<space>
+nmap <leader>k :Ack!<space>"\b<cword>\b"<space><CR>
+nmap <leader>K :Ack!<space>"\b<cWORD>\b"<space><CR>
 "}}}

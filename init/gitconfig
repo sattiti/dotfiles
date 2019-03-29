@@ -19,13 +19,14 @@ git config --global core.pager less -r
 
 # alias
 git config --global alias.st 'status -v'
+git config --global alias.aa 'add .'
 git config --global alias.co 'commit -v -m'
-git config --global alias.ps 'push -v --progress --prune'
-git config --global alias.pl 'pull -v --progress'
+git config --global alias.up 'push -v --progress --prune'
+git config --global alias.get 'pull -v --progress'
 git config --global alias.ft 'fetch -v --all -p'
 git config --global alias.ck 'checkout -v'
 git config --global alias.br 'branch -v'
-git config --global alias.df 'diff -v'
+git config --global alias.df 'diff -v HEAD^'
 git config --global alias.plog 'log --oneline --stat --decorate=full --date=default --pretty=tformat:\"%C(white magenta bold)%s%C(reset)%x20%C(yellow red bold reverse)%d%C(reset)%n%C(yellow)%H%C(reset)%x20%C(cyan)%ad%C(reset)%x20%C(green italic)%an%x20<%aE>%C(reset)%n%n\"'
 
 # merge --no-ff
