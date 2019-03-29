@@ -226,6 +226,18 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" fzf
+if has('win64') || has('win32')
+  Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+  Plug 'junegunn/fzf.vim'
+else
+  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf.vim'
+endif
+
+" ack
+Plug 'mileszs/ack.vim'
+
 " browser
 if has('gui_running')
   Plug 'tyru/open-browser.vim'
@@ -782,6 +794,11 @@ let b:match_words = &matchpairs . ",\<\(module\|class\|def\|begin\|do\|if\|unles
 " nnoremap / :M/
 " nnoremap ? :M?
 " }}}
+" ack.vim{{{
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+"}}}
 " jedi {{{
 " let g:jedi#completions_enabled = 0
 " let g:jedi#auto_initialization = 0
@@ -917,4 +934,15 @@ nmap <leader>pa ggVG$"*p
 
 " source format
 nmap <leader>= gg=G
+
+" fzf.vim
+nmap <leader>; :Buffers<CR>
+nmap <leader>t :Files<CR>
+nmap <leader>r :Tags<CR>
+
+" ack.vim
+" nmap :Ack! "\b\b"
+" nmap k :Ack! "\b\b"
+" nmap :Ggrep! "\b\b"
+" nmap K :Ggrep! "\b\b"
 "}}}
