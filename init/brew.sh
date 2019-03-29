@@ -101,6 +101,12 @@ brew install jq
 # ctags
 brew install ctags
 
+# fzf
+brew install fzf
+
+# pt
+brew reinstall the_platinum_searcher
+
 # openssl
 brew install openssl
 brew install openssl@1.1
