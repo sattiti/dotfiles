@@ -936,12 +936,18 @@ nmap <leader>pa ggVG$"*p
 nmap <leader>= gg=G
 
 " fzf.vim
-nmap <leader>; :Buffers<CR>
-nmap <leader>t :Files<CR>
-nmap <leader>r :Tags<CR>
+if executable('fzf')
+  nmap <leader>; :Buffers<CR>
+  nmap <leader>t :Files<CR>
+  nmap <leader>r :Tags<CR>
+  nmap <leader>" vi""vy :Files <C-r>v<C-LEFT>/<C-LEFT><C-r>=expand('%:p:h')<CR><C-RIGHT>
+  nmap <leader>' vi'"vy :Files <C-r>v<C-LEFT>/<C-LEFT><C-r>=expand('%:p:h')<CR><C-RIGHT>
+endif
 
 " ack.vim
-nmap <leader>a :Ack!<space>
-nmap <leader>k :Ack!<space>"\b<cword>\b"<space><CR>
-nmap <leader>K :Ack!<space>"\b<cWORD>\b"<space><CR>
+if executable('pt')
+  nmap <leader>a :Ack!<space>
+  nmap <leader>k :Ack!<space>"\b<cword>\b"<space><CR>
+  nmap <leader>K :Ack!<space>"\b<cWORD>\b"<space><CR>
+endif
 "}}}
