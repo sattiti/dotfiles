@@ -946,8 +946,10 @@ endif
 
 " ack.vim
 if executable('pt')
-  nmap <leader>a :Ack!<space>
+  nmap <leader>A :Ack!<space>
   nmap <leader>k :Ack!<space>"\b<cword>\b"<space><CR>
   nmap <leader>K :Ack!<space>"\b<cWORD>\b"<space><CR>
+  nmap <leader>a" vi""vy :Ack! <C-r>v <C-r>=expand('%:p:h')<CR>
+  nmap <leader>a' vi'"vy :Ack! <C-r>v <C-r>=expand('%:p:h')<CR>
 endif
 "}}}
