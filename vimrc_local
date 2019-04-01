@@ -8,6 +8,10 @@ if has('python3')
   silent! python3 1
 endif
 
+if has('win64') || has('win32') && executable('python.exe')
+  silent! python.exe 1
+endif
+
 " plugin dir
 let s:pluginDir = glob(expand('$HOME/.vim/plugged'))
 " }}}
@@ -227,13 +231,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " fzf
-if has('win64') || has('win32')
+if has('mac') || has('unix')
+  if executable('fzf')
+    Plug '/usr/local/opt/fzf'
+  endif
+elseif has('win64') || has('win32')
   Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
-  Plug 'junegunn/fzf.vim'
-else
-  Plug '/usr/local/opt/fzf'
-  Plug 'junegunn/fzf.vim'
 endif
+Plug 'junegunn/fzf.vim'
 
 " ack
 Plug 'mileszs/ack.vim'
@@ -389,9 +394,10 @@ if has("gui_running")
   set guioptions-=b
 
   " guifont
+  set guifont=Ricty_Diminished_Discord:14
   " set guifont=Ricty¥ Diminished¥ Discord:h14
   " set guifont=NotoSansCJKjp-Regular:h14
-  set guifont=Source_Code_Pro:h12
+  " set guifont=Source_Code_Pro:h12
   " set guifont=Monaco:h14
   " set guifont=FixedSys:h14
 endif
@@ -724,8 +730,8 @@ let g:indent_guides_guide_size=1
 " }}}
 " incsearch.vim {{{
 let g:incsearch#auto_nohlsearch=1
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
+map M/  <Plug>(incsearch-forward)
+map M?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
@@ -791,13 +797,8 @@ endif
 " let g:eregex_default_enable=1
 
 " to change the search delimiter
-" let g:eregex_forward_delim='/'
-" let g:eregex_backward_delim='?'
-
-" To force case sensitive like perl re.
-" let g:eregex_force_case=1
-" nnoremap / :M/
-" nnoremap ? :M?
+" let g:eregex_forward_delim = '/'
+" let g:eregex_backward_delim = '?'
 " }}}
 " jedi {{{
 " let g:jedi#completions_enabled = 0
