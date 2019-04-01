@@ -940,18 +940,20 @@ nmap <leader>= gg=G
 " fzf.vim
 if executable('fzf') || executable('fzf.exe')
   nmap <leader>; :Buffers<CR>
-  nmap <leader>t :Files<CR>
   nmap <leader>r :Tags<CR>
-  nmap <leader>" vi""vy :Files <C-r>v<C-LEFT>/<C-LEFT><C-r>=expand('%:p:h')<CR><C-RIGHT>
-  nmap <leader>' vi'"vy :Files <C-r>v<C-LEFT>/<C-LEFT><C-r>=expand('%:p:h')<CR><C-RIGHT>
+  nmap <leader>t :Files<CR>
+  nmap <leader>t" vi""vy :Files <C-r>v<C-LEFT>/<C-LEFT><C-r>=expand('%:p:h')<CR><C-RIGHT>
+  nmap <leader>t' vi'"vy :Files <C-r>v<C-LEFT>/<C-LEFT><C-r>=expand('%:p:h')<CR><C-RIGHT>
+  nmap <leader>tk :Files<C-r>=expand(getline('.'))<CR>
 endif
 
 " ack.vim
 if executable('pt') || executable('pt.exe')
   nmap <leader>a :Ack!<space>
-  nmap <leader>k :Ack!<space>"\b<cword>\b"<space><CR>
-  nmap <leader>K :Ack!<space>"\b<cWORD>\b"<space><CR>
+  nmap <leader>k :Ack!<space>"\b<cword>\b"<space>
+  nmap <leader>K :Ack!<space>"\b<cWORD>\b"<space><C-r>=expand('%:p:h')<CR>
   nmap <leader>a" vi""vy :Ack! <C-r>v <C-r>=expand('%:p:h')<CR>
   nmap <leader>a' vi'"vy :Ack! <C-r>v <C-r>=expand('%:p:h')<CR>
+  nmap <leader>ak :Ack! <C-r>=expand(getline('.'))<CR>
 endif
 "}}}
