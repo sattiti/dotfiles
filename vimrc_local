@@ -787,8 +787,10 @@ let b:match_words = &matchpairs . ",\<\(module\|class\|def\|begin\|do\|if\|unles
 " vmap gx <Plug>(openbrowser-smart-search)
 " }}}
 " ack.vim{{{
-if executable('pt') || executable('pt.exe')
+if has('mac') || has('unix') && executable('pt')
   let g:ackprg = 'pt --nocolor --nogroup --numbers -e'
+elseif has('win64') || has('win32') && executable('pt.exe')
+  let g:ackprg = 'pt.exe /nocolor /nogroup /numbers /e'
 endif
 "}}}
 " eregex {{{
@@ -946,7 +948,7 @@ endif
 
 " ack.vim
 if executable('pt') || executable('pt.exe')
-  nmap <leader>A :Ack!<space>
+  nmap <leader>a :Ack!<space>
   nmap <leader>k :Ack!<space>"\b<cword>\b"<space><CR>
   nmap <leader>K :Ack!<space>"\b<cWORD>\b"<space><CR>
   nmap <leader>a" vi""vy :Ack! <C-r>v <C-r>=expand('%:p:h')<CR>
