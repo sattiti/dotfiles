@@ -787,7 +787,7 @@ let b:match_words = &matchpairs . ",\<\(module\|class\|def\|begin\|do\|if\|unles
 " vmap gx <Plug>(openbrowser-smart-search)
 " }}}
 " ack.vim{{{
-if executable('pt')
+if executable('pt') || executable('pt.exe')
   let g:ackprg = 'pt --nocolor --nogroup --numbers -e'
 endif
 "}}}
@@ -936,7 +936,7 @@ nmap <leader>pa ggVG$"*p
 nmap <leader>= gg=G
 
 " fzf.vim
-if executable('fzf')
+if executable('fzf') || executable('fzf.exe')
   nmap <leader>; :Buffers<CR>
   nmap <leader>t :Files<CR>
   nmap <leader>r :Tags<CR>
@@ -945,7 +945,7 @@ if executable('fzf')
 endif
 
 " ack.vim
-if executable('pt')
+if executable('pt') || executable('pt.exe')
   nmap <leader>A :Ack!<space>
   nmap <leader>k :Ack!<space>"\b<cword>\b"<space><CR>
   nmap <leader>K :Ack!<space>"\b<cWORD>\b"<space><CR>
