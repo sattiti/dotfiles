@@ -395,7 +395,6 @@ if has("gui_running")
 
   " guifont
   set guifont=Ricty_Diminished_Discord:14
-  " set guifont=Ricty¥ Diminished¥ Discord:h14
   " set guifont=NotoSansCJKjp-Regular:h14
   " set guifont=Source_Code_Pro:h12
   " set guifont=Monaco:h14
@@ -730,8 +729,8 @@ let g:indent_guides_guide_size=1
 " }}}
 " incsearch.vim {{{
 let g:incsearch#auto_nohlsearch=1
-map M/  <Plug>(incsearch-forward)
-map M?  <Plug>(incsearch-backward)
+map M/ <Plug>(incsearch-forward)
+map M? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
