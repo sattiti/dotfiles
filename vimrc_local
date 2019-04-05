@@ -788,9 +788,9 @@ let b:match_words = &matchpairs . ",\<\(module\|class\|def\|begin\|do\|if\|unles
 " }}}
 " ack.vim{{{
 if has('mac') || has('unix') && executable('pt')
-  let g:ackprg = "rg -n -U -w --vimgrep --hidden --no-heading --color never --column -e"
+  let g:ackprg = "rg -n -U --vimgrep --hidden --heading --color=never --column -e"
 elseif has('win64') || has('win32') && executable('pt.exe')
-  let g:ackprg = "rg.exe -n -U -w --vimgrep --hidden --no-heading --color never --column -e"
+  let g:ackprg = "rg.exe -n -U --vimgrep --hidden --heading --color=never --column -e"
 endif
 "}}}
 " eregex {{{
