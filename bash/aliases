@@ -3,6 +3,7 @@ alias less="less -R"
 
 # use egrep with color.
 alias grep="grep -Ei --color=always"
+alias rg=""rg -n -U -w --hidden --color=always --column -e"
 
 # cd
 alias ..="cd .."
