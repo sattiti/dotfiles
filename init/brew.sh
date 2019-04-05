@@ -104,8 +104,8 @@ brew install ctags
 # fzf
 brew install fzf
 
-# pt
-brew reinstall the_platinum_searcher
+# rg
+brew install ripgrep
 
 # openssl
 brew install openssl
