@@ -53,3 +53,9 @@ win:
     - ctags
     - iconv
   - WinMerge
+  - ChgKey
+  - gettext
+  - libiconv
+  - tidy
+  - fzf
+  - ripgrep
