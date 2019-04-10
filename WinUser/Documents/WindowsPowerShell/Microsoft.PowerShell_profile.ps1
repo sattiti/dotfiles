@@ -141,10 +141,10 @@ function prune(){
     if(Test-Path -Path $item){
       $access = $(Get-Acl -Path $item).Access.AccessControlType
       if(Test-Path -Path $item -Type Leaf){
-        rm -Force -Recurse $item | Out-Null
+        rm -Force -Recurse $item 2>&1 | Out-Null
       }
       else{
-        rm -Force -Recurse "$item/*" | Out-Null
+        rm -Force -Recurse "$item/*" 2>&1 | Out-Null
       }
     }
   }
@@ -161,7 +161,7 @@ function killps(){
       if($_ -match $item){
         $mid = (Get-Process -Name $_).id
         if($mid -ne $null){
-          Stop-Process -Id $mid -Force
+          Stop-Process -Id $mid -Force 2>&1 | Out-Null
         }
       }
     }
