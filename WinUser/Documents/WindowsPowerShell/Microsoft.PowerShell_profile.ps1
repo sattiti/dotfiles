@@ -68,7 +68,7 @@ function cleanup(){
   clear
   Clear-Host
   Clear-History
-  Clear-RecycleBin -Force > $null
+  Clear-RecycleBin -Force > $null > 2
 }
 
 # use python to print calendar
@@ -81,6 +81,7 @@ function ngup(){
   $cwd = $(pwd).Path
   $ng  = "NGINX_PATH"
   cd $ng
+  Stop-Process -Name nginx 2>&1 | Out-Null
   Start-Process "./nginx.exe"
   cd $cwd
 }
@@ -171,3 +172,4 @@ function killps(){
 # main
 killps
 prune
+cleanup
