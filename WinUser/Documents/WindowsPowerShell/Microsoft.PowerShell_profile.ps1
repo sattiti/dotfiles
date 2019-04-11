@@ -170,6 +170,8 @@ function killps(){
 }
 
 # main
+if(($date).Hour -ge 8 -and $(date).Hour -le 9 -and ($(date).minute -ge 0 -and $(date).minute -le 59)){}
+
 killps
 prune
 cleanup
