@@ -3,13 +3,18 @@ alias less="less -R"
 
 # use egrep with color.
 alias grep="grep -Ei --color=always"
-alias rg=""rg -n -U --hidden --color=always --column -e"
+alias rg="rg -n -U --hidden --color=always --column -e"
 
 # cd
 alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+alias ..6="cd ../../../../../.."
+alias ..7="cd ../../../../../../.."
+alias ..8="cd ../../../../../../../.."
+alias ..9="cd ../../../../../../../../.."
 
 # df, du human-readable output.
 alias df="df -ah"
@@ -41,16 +46,6 @@ alias zip="zip -r9"
 
 # kill all processes i can kill.
 alias k9="kill -9"
-
-# git
-alias g-s="git status"
-alias g-a="git add ."
-alias g-ac="git add . && git commit -m"
-alias g-t='git tag'
-alias g-tl="git tag --list"
-alias g-p="git pull"
-alias g-up="git push origin master"
-alias g-cl="git clone"
 
 # postgressql
 alias pg-up="pg_ctl start"

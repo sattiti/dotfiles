@@ -91,31 +91,44 @@ function ngdown(){
 }
 
 # git cmd
-function gitall(){
-  $a   = $Args[0]
-  $cmd = $Args[1]
-  $usage = "gitall WORK_TREE_PARENT_PATH CMD[pull|push|fetch|status]
+function gitr(){
+  $a      = $Args[0]
+  $cmd    = $Args[1]
+  $usage  = "gitr CMD[pu(ll), pus(h), fe(tch), st(atus), add, log, br(anch)] WORK_TREE_PATH
   $errMsg = "No such file or directory."
-  
+
   if($Args.length -ne 2){
     echo $usage
     return
   }
-  
+
   if(Test-Path -Type Container -Path $a){
     ls -Hidden -Depth 1 $a | % {
       if(Test-Path -Type Container -Path $_.FullName){
-        if($cmd -eq "push"){
-          git -C $_.Parent.FullName pull -v --progress -- no-rebase
+        $parent = $_.Parent.FullName
+        if($cmd -eq "pull" -or $cmd -eq "pu" -or $cmd -eq "pul"){
+          git -C $parent pull -v --progress --no-rebase
         }
-        elseif($cmd -eq "push"){
-          git -C $_.Parent.FullName push -v --progress
+        elseif($cmd -eq "push" -or $cmd -eq pus"){
+          git -C $parent push -u -v --progress
         }
-        elseif($cmd -eq "fetch"){
-          git -C $_.Parent.FullName fetch -v --progress
+        elseif($cmd -eq "fetch" -or $cmd -eq "fe"){
+          git -C $parent fetch -v -p --all
         }
-        elseif($cmd -eq "status"){
-          git -C $_.Parent.FullName status -s
+        elseif($cmd -eq "status" -or $cmd -eq "st"){
+          git -C $parent status
+        }
+        elseif($cmd -eq "log"){
+          git -C $parent log --online --stat --decorate=full
+        }
+        elseif($cmd -eq "checkout" -or $cmd -eq "co"){
+          git -C $parent checkout
+        }
+        elseif($cmd -eq "branch" -or $cmd -eq "br"){
+          git -C $parent branch -a
+        }
+        elseif($cmd -eq "add"){
+          git -C $parent add .
         }
         else{
           echo $usage
