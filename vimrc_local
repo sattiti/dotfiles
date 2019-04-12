@@ -152,7 +152,8 @@ Plug 'scrooloose/nerdtree'
 " Color scheme
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'nanotech/jellybeans.vim'
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
+Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
 
 " whitespace
 " Plug 'bronson/vim-trailing-whitespace'
@@ -501,6 +502,8 @@ elseif !empty(glob(s:pluginDir.'/molokai'))
   let g:molokai_original=1
   let g:rehash256=1
   colorscheme molokai
+elseif !empty(glob(s:pluginDir.'/tomorrow-theme/vim'))
+  colorscheme Tomorrow-Night-Bright
 else
   colorscheme desert
 endif
