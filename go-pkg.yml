@@ -74,3 +74,12 @@
 - name: goxc
   url: https://github.com/laher/goxc
   desc: a build tool for Go, with a focus on cross-compiling, packaging and deployment.
+- name: go-libsass
+  url: https://github.com/wellington/go-libsass
+  desc: sass
+- name: minify
+  url: https://github.com/tdewoff/minify
+  desc: Go minifiers for(){} web formats
+- name: excelize
+  url: https://github.com/360EntSecGroup-Skylar/execlize
+  desc: w/r excel
