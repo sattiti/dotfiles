@@ -46,8 +46,10 @@ brew install libyaml
 # Utils
 # iconv
 brew install libiconv
+
 # rsync
 brew install rsync
+
 brew install colordiff
 brew install rename
 brew install watch
@@ -119,12 +121,11 @@ brew install python
 brew install lua
 brew install ruby
 brew cask install julia
-
-# Go lang
+brew install rust
 brew install go
 
 # Go dependency management tool
-brew install dep
+# brew install dep
 
 # go static sites generator
 brew install hugo
