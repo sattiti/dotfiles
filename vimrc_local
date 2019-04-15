@@ -223,7 +223,10 @@ Plug 'leafgarland/typescript-vim'
 " Plug 'JuliaEditorSupport/julia-vim'
 
 " rust
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
+
+" nim
+Plug 'zah/nim.vim'
 
 " .net required python2
 " if(has('python'))
@@ -878,6 +881,7 @@ augroup augShared
   au BufNewFile,BufReadPost *.swift  setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
   au FileType go setl expandtab shiftwidth=2 tabstop=2 softtabstop=2
   au FileType go retab
+  au FileType nim setl expandtab shiftwidth=2 tabstop=2 softtabstop=2 fdm=marker
 augroup END
 " }}}
 " Private Dictionary {{{
