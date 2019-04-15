@@ -92,8 +92,8 @@ function ngdown(){
 
 # git cmd
 function gitr(){
-  $a      = $Args[0]
-  $cmd    = $Args[1]
+  $a      = $Args[1]
+  $cmd    = $Args[0]
   $usage  = "gitr CMD[pu(ll), pus(h), fe(tch), st(atus), add, log, br(anch)] WORK_TREE_PATH
   $errMsg = "No such file or directory."
 
@@ -109,7 +109,7 @@ function gitr(){
         if($cmd -eq "pull" -or $cmd -eq "pu" -or $cmd -eq "pul"){
           git -C $parent pull -v --progress --no-rebase
         }
-        elseif($cmd -eq "push" -or $cmd -eq pus"){
+        elseif($cmd -eq "push" -or $cmd -eq "pus"){
           git -C $parent push -u -v --progress
         }
         elseif($cmd -eq "fetch" -or $cmd -eq "fe"){
