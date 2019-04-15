@@ -94,7 +94,7 @@ function ngdown(){
 function gitr(){
   $a      = $Args[1]
   $cmd    = $Args[0]
-  $usage  = "gitr CMD[pu(ll), pus(h), fe(tch), st(atus), add, log, br(anch)] WORK_TREE_PATH
+  $usage  = "gitr CMD[pu(ll), pus(h), fe(tch), st(atus), add, log, br(anch)] WORK_TREE_PATH"
   $errMsg = "No such file or directory."
 
   if($Args.length -ne 2){
