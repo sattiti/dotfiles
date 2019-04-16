@@ -27,7 +27,7 @@ git config --global alias.ft 'fetch -v --all -p'
 git config --global alias.ck 'checkout -v'
 git config --global alias.br 'branch -v -l'
 git config --global alias.df 'diff -v HEAD^'
-git config --global alias.plog 'log --oneline --stat --decorate=full --date=default --pretty=tformat:\"%C(white magenta bold)%s%C(reset)%x20%C(yellow red bold reverse)%d%C(reset)%n%C(yellow)%H%C(reset)%x20%C(cyan)%ad%C(reset)%x20%C(green italic)%an%x20<%aE>%C(reset)%n%n\"'
+git config --global alias.plog 'log --stat --decorate=full --date=default --pretty=tformat:\"%C(white magenta bold)%s%C(reset)%x20%C(yellow red bold reverse)%d%C(reset)%n%C(yellow)%H%C(reset)%x20%C(cyan)%ad%C(reset)%x20%C(green italic)%an%x20<%aE>%C(reset)%n%n\"'
 
 # merge --no-ff
 git config --global --add merge.ff false

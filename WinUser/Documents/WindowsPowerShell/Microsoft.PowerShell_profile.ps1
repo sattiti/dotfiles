@@ -119,7 +119,7 @@ function gitr(){
           git -C $parent status
         }
         elseif($cmd -eq "log"){
-          git -C $parent log --online --stat --decorate=full
+          git -C $parent log --stat --decorate=full
         }
         elseif($cmd -eq "checkout" -or $cmd -eq "co"){
           git -C $parent checkout

@@ -40,7 +40,7 @@ do
       "push"|"pus"|"ps"|"ph" ) git -C $parent push -u -v --progress ;;
       "fetch"|"fe"|"fet"     ) git -C $parent fetch --all -v -p ;;
       "status"|"st"|"sta"    ) git -C $parent status ;;
-      "log"                  ) git -C $parent log --online --stat --decorate=full ;;
+      "log"                  ) git -C $parent log --stat --decorate=full ;;
       "checkout"|"co"        ) git -C $parent checkout ;;
       "branch"|"br"          ) git -C $parent branch -a ;;
       "add"                  ) git -C $parent add . ;;
