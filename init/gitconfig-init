@@ -1,8 +1,11 @@
 git config --global user.name ""
 git config --global usee.email ""
 
-git config --global credential.helper cache
-# git config --global credential.helper osxkeychain
+if [[ "${OSTYPE}" =~ ^darwin ]]; then
+  git config --global credential.helper osxkeychain
+else
+  git config --global credential.helper cache
+endif
 
 # color
 git config --global color.ui auto
@@ -18,16 +21,16 @@ git config --global core.filemode true
 git config --global core.pager less -r
 
 # alias
-git config --global alias.st 'status -v'
 git config --global alias.aa 'add .'
-git config --global alias.co 'commit'
-git config --global alias.up 'push -v --progress --prune'
-git config --global alias.get 'pull -v --progress'
-git config --global alias.ft 'fetch -v --all -p'
-git config --global alias.ck 'checkout -v'
 git config --global alias.br 'branch -v -l'
-git config --global alias.df 'diff -v HEAD^'
+git config --global alias.ch 'checkout -v'
+git config --global alias.co 'commit -m'
+git config --global alias.fe 'fetch -v --all -p'
+git config --global alias.fl 'diff --name-only'
+git config --global alias.get 'pull -v --progress'
 git config --global alias.plog 'log --oneline --stat-width=110 --decorate=full --date=default --pretty=tformat:\"%C(white magenta bold)%s%C(reset)%x20%C(yellow red bold reverse)%d%C(reset)%n%C(yellow)%H%C(reset)%x20%C(cyan)%ad%C(reset)%x20%C(green italic)%an%x20<%aE>%C(reset)%n%n\"'
+git config --global alias.st 'status -v'
+git config --global alias.up 'push -v -u --progress --prune'
 
 # merge --no-ff
 git config --global --add merge.ff false
