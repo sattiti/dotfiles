@@ -106,28 +106,28 @@ function gitr(){
     ls -Hidden -Depth 1 $a | % {
       if(Test-Path -Type Container -Path $_.FullName){
         $parent = $_.Parent.FullName
-        if($cmd -eq "pull" -or $cmd -eq "pu" -or $cmd -eq "pul"){
+        if($cmd -eq "pull" -or $cmd -eq "pu" -or $cmd -eq "pul" -or $cmd -eq "get"){
           git -C $parent pull -v --progress --no-rebase
         }
-        elseif($cmd -eq "push" -or $cmd -eq "pus"){
+        elseif($cmd -eq "push" -or $cmd -eq "pus" -or $cmd -eq "up"){
           git -C $parent push -u -v --progress
         }
         elseif($cmd -eq "fetch" -or $cmd -eq "fe"){
           git -C $parent fetch -v -p --all
         }
         elseif($cmd -eq "status" -or $cmd -eq "st"){
-          git -C $parent status
+          git -C $parent status -v
         }
         elseif($cmd -eq "log"){
           git -C $parent log --oneline --stat --decorate=full
         }
-        elseif($cmd -eq "checkout" -or $cmd -eq "co"){
+        elseif($cmd -eq "checkout" -or $cmd -eq "ch"){
           git -C $parent checkout
         }
         elseif($cmd -eq "branch" -or $cmd -eq "br"){
-          git -C $parent branch -a
+          git -C $parent branch -a -l
         }
-        elseif($cmd -eq "add"){
+        elseif($cmd -eq "add" -or $cmd -eq "aa"){
           git -C $parent add .
         }
         else{
@@ -140,6 +140,33 @@ function gitr(){
   else{
     echo $errMsg
     return
+  }
+}
+
+function gitv(){
+  $range  = $Args[0]
+  $dist   = $Args[1]
+  $usage  = "gitv RANGE WORK_TREE_PATH"
+  $errMsg = "No such file or directory."
+  $pat    = "\.html|\.httxt"
+
+  if($Args.length -ne 2){
+    echo $usage
+    return
+  }
+
+  if($range.GetType().Name -eq "String"){
+    git -C $dist diff --name-only $range | echo | sls -Pattern $pat | % {
+      htmlhint "${dist}\${_}"
+    }
+  }
+  else{
+    foreach($i in 1.."${range}"){
+      echo $i
+      git -C $dist diff --name-only HEAD~$i | echo | sls -Pattern $pat | % {
+        htmlhint "${dist}\${_}"
+      }
+    }
   }
 }
 
