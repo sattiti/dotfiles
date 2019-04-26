@@ -30,6 +30,24 @@ function callapp($path, $a){
   }
 }
 
+# print formatted query string
+function qs(){
+  $s     = $Args[0]
+  $usage = "qs QUERY_STRING"
+  
+  if($Args.length -ne 1){
+    echo $usage
+    return
+  }
+  
+  $s=$s.replace("?","`n").replace("&","`n")
+  $u=$($s.Split("`n") | Select-Object -First 1
+  $s=$s.replace($u,"")
+  echo $u
+  ConvertFrom-Csv $s -Delimiter "=" -Header Key,Value
+}
+
+
 # reboot pc
 function reboot(){
   cleanup
