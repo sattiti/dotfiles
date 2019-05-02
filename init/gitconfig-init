@@ -24,7 +24,7 @@ git config --global core.pager less -r
 git config --global alias.aa 'add .'
 git config --global alias.br 'branch -v -l'
 git config --global alias.ch 'checkout -v'
-git config --global alias.co 'commit -m'
+git config --global alias.co 'commit'
 git config --global alias.fe 'fetch -v --all -p'
 git config --global alias.fl 'diff --name-only'
 git config --global alias.get 'pull -v --progress'

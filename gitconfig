@@ -18,7 +18,7 @@
   aa = add .
   br = branch -l -v
   ch = checkout
-  co = commit -m
+  co = commit
   fe = fetch -v --all -p
   fl = diff --name-only
   get = pull -v --progress --no-rebase
