@@ -221,7 +221,7 @@ Plug 'leafgarland/typescript-vim'
 " Plug 'derekwyatt/vim-scala'
 
 " julia
-" Plug 'JuliaEditorSupport/julia-vim'
+Plug 'JuliaEditorSupport/julia-vim'
 
 " rust
 " Plug 'rust-lang/rust.vim'
