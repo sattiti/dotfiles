@@ -19,6 +19,7 @@
   br = branch -l -v
   ch = checkout
   co = commit
+  com = commit -m
   fe = fetch -v --all -p
   fl = diff --name-only
   get = pull -v --progress --no-rebase
