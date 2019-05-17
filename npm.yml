@@ -7,7 +7,7 @@ global:
   - htmlhint
   - jshint
   - mocha
-  - uglify-js
+  - terser
   - typescript
   - sass
 
