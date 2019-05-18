@@ -1,31 +1,44 @@
 ---
 global:
-  - colors
   - coffee-script
+  - colors
   - eslint
   - fs-extra
   - htmlhint
+  - js-beautify
   - jshint
   - mocha
+  - sass
   - terser
   - typescript
-  - sass
 
 local:
+  - Bower
+  - Electron
+  - Meteor
+  - ReactNative
+  - agenda
+  - agenda-ui  
+  - angular.js
+  - async
+  - babel-core
   - bcryptjs
   - body-parser
+  - browserify
   - chai
+  - conf
   - debug
   - express
+  - forever
   - glob
   - gm
-  - iconv-lite
   - http-proxy
+  - iconv-lite
   - jade
-  - js-yaml
   - jquery
+  - js-yaml
+  - lazyload
   - lodash
-  - Meteor
   - moment
   - moment-timezone
   - mongoose
@@ -33,23 +46,10 @@ local:
   - q
   - react
   - react-dom
-  - ReactNative
   - request
+  - tz-format
   - underscore
   - vue
   - webpack
-  
-  - agenda
-  - agenda-ui  
-  - async
-  - angular.js
-  - babel-core
-  - Bower
-  - browserify
-  - conf
-  - forever
-  - Electron
-  - lazyload
-  - tz-format
   - winston
   - wreck
