@@ -109,6 +109,9 @@ brew install fzf
 # rg
 brew install ripgrep
 
+# yq
+brew install yq
+
 # openssl
 brew install openssl
 brew install openssl@1.1
