@@ -6,22 +6,8 @@ if [[ ! -d $pgbasepath ]]; then
   mkdir -pv $pgbasepath
 fi
 
-# go
-gobasepath=~/.go
-if [[ ! -d $gobasepath/src ]]; then
-  mkdir -pv $gobasepath/src
-fi
-
-if [[ ! -d $gobasepath/bin ]]; then
-  mkdir -pv $gobasepath/bin
-fi
-
 # postgresql home path
 export PGDATA=$pgbasepath
-
-# golang home path
-export GOPATH=$gobasepath
-export PATH=$PATH:$GOPATH/bin
 
 # ruby Encoding.default_external
 export RUBYOPT=-EUTF-8

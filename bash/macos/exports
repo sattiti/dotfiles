@@ -9,3 +9,18 @@ export DEV=$HOME/Documents/dev
 
 # postgresql
 # export PGDATA=/usr/local/var/postgres
+
+
+# go
+gobasepath=~/Documents/dev/go
+if [[ ! -d $gobasepath/src ]]; then
+  mkdir -pv $gobasepath/src
+fi
+
+if [[ ! -d $gobasepath/bin ]]; then
+  mkdir -pv $gobasepath/bin
+fi
+
+# golang home path
+export GOPATH=$gobasepath
+export PATH=$PATH:$GOPATH/bin
