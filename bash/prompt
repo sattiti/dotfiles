@@ -10,7 +10,8 @@ HISTTIMEFORMAT="%Y/%m/%d T%T%z "
 # LS_COLORS
 # Download from github if plugin not exists.
 if [[ ! -d $HOME/.color ]]; then
-  git clone https://github.com/seebi/dircolors-solarized.git $HOME/.color/seebi/dircolors-solarized.git
+  git clone git clone https://github.com/dracula/terminal-app.git $HOME/.color/dracula/terminal-app.git
+  # git clone https://github.com/seebi/dircolors-solarized.git $HOME/.color/seebi/dircolors-solarized.git
 fi
 
 # ps1
