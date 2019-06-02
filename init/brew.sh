@@ -144,6 +144,7 @@ if [[ "${OSTYPE}" =~ ^darwin ]]; then
 elif [[ "${OSTYPE}" =~ ^linux ]]; then
   # linux only
   brew install util-linux
+  brew install screen
 fi
 
 # cleaning up
