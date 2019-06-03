@@ -9,10 +9,8 @@ fi
 # postgresql home path
 export PGDATA=$pgbasepath
 
-
 # ruby Encoding.default_external
-export RUBYOPT=-EUTF-8
-
+# export RUBYOPT=-EUTF-8
 
 # go
 gobasepath=~/.go
