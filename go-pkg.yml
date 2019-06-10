@@ -83,3 +83,6 @@
 - name: excelize
   url: https://github.com/360EntSecGroup-Skylar/execlize
   desc: w/r excel
+- name: imaging
+  url: https://github.com/disintegration/imaging
+  desc: image processing package
