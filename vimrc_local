@@ -969,4 +969,7 @@ if executable('pt') || executable('pt.exe')
   nmap <leader>a' vi'"vy :Ack! <C-r>v <C-r>=expand('%:p:h')<CR>
   nmap <leader>ak :Ack! <C-r>=expand(getline('.'))<CR>
 endif
+
+" cd to current directory
+nnoremap <silent><leader>cd :lcd %:p:h <CR>
 "}}}
