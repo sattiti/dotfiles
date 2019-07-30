@@ -197,6 +197,7 @@ Plug 'mtscout6/vim-cjsx'
 
 " javascript parameter complete
 " Plug 'othree/jspc.vim'
+Plug 'posva/vim-vue'
 
 " css
 Plug 'hail2u/vim-css3-syntax'
