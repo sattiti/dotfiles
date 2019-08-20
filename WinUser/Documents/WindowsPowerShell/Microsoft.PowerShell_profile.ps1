@@ -121,8 +121,8 @@ function gitr(){
   }
 
   if(Test-Path -Type Container -Path $a){
-    ls -Hidden -Depth 1 $a | % {
-      if(Test-Path -Type Container -Path $_.FullName){
+    ls -Hidden -Recurse $a | % {
+      if($_.Name -eq ".git" -and (Test-Path -Type Container -Path $_.FullName)){
         $parent = $_.Parent.FullName
         if($cmd -eq "pull" -or $cmd -eq "pu" -or $cmd -eq "pul" -or $cmd -eq "get"){
           git -C $parent pull -v --progress --no-rebase
