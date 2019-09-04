@@ -47,6 +47,11 @@ goupdate(){
   go get -v -u all
 }
 
+repoupdate(){
+  # repository update
+  gitr pu $DEV/github
+}
+
 softupdate(){
   brewupdate
   gemupdate
@@ -54,6 +59,7 @@ softupdate(){
   rvmupdate
   pipupdate
   # goupdate
+  repoupdate
 
   if [[ "${OSTYPE}" =~ ^darwin ]]; then
     # macosupdate

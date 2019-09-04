@@ -3,6 +3,3 @@
 
 # assessments enabled
 # sudo spctl --master-disable
-
-# repository update
-gitr pu $DEV/github
