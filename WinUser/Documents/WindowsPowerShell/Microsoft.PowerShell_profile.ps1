@@ -175,14 +175,18 @@ function gitv(){
 
   if($range.GetType().Name -eq "String"){
     git -C $dist diff --name-only $range | echo | sls -Pattern $pat | % {
-      htmlhint "${dist}\${_}"
+      $file = "${dist}\${_}"
+      echo $file
+      htmlhint $file
     }
   }
   else{
     foreach($i in 1.."${range}"){
       echo $i
       git -C $dist diff --name-only HEAD~$i | echo | sls -Pattern $pat | % {
-        htmlhint "${dist}\${_}"
+        $file = "${dist}\${_}"
+        echo $file
+        htmlhint $file
       }
     }
   }
