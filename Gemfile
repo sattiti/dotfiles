@@ -74,3 +74,7 @@ gem 'sprockets'
 gem 'thor'
 gem 'tilt'
 gem 'xpath'
+gem 'activesupport'
+
+# datetime
+gem 'chronic'
