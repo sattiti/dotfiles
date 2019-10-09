@@ -2,7 +2,6 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=999999
 SAVEHIST=999999
-HISTTIMEFORMAT="[%Y/%M/%DT%H:%M:%S%z] "
 # }}}
 # Autoload {{{
 # color
@@ -58,6 +57,9 @@ setopt CORRECT_ALL
 
 # complete word 
 setopt COMPLETE_IN_WORD
+
+# extend history
+setopr EXTEND_HISTORY
 # }}}
 # Keybinding {{{
 # use vi keybinding
