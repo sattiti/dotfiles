@@ -1,0 +1,65 @@
+# History {{{
+HISTFILE=~/.zsh_history
+HISTSIZE=999999
+SAVEHIST=999999
+HISTTIMEFORMAT="[%Y/%M/%DT%H:%M:%S%z] "
+# }}}
+# Autoload {{{
+# color
+autoload -Uz colors && colors
+
+# Run completions
+autoload -Uz compinit && compinit
+# }}}
+# Options {{{
+# http://zsh.sourceforge.net/Doc/Release/Options.html
+
+# show options
+# set -o
+
+setopt AUTO_CD
+
+# Make cd push the old directory onto the directory stack.
+setopt AUTO_PUSHD
+
+# If the argument to a cd command (or an implied cd with the AUTO_CD option set) is not a directory, and does not begin with a slash, try to expand the expression as if it were preceded by a ~
+setopt CDABLE_VARS
+
+# Do not push multiple copies of the same directory onto the directory stack.
+setopt PUSHD_IGNORE_DUPS
+
+# complete the param keys
+setopt AUTO_PARAM_KEYS
+
+setopt AUTO_LIST
+setopt AUTO_MENU
+setopt AUTO_NAME_DIRS
+
+# enable to use ~ ^ #.
+setopt EXTENDED_GLOB
+
+# no beep sound.
+unsetopt NO_BEEP
+
+# notify
+setopt NOTIFY
+
+# print out the exit value except 0 exit.
+# setopt PRINT_EXIT_VALUE
+
+# add / if dir matched.
+setopt MARK_DIRS
+
+# spell check
+setopt CORRECT
+
+# spell check all
+setopt CORRECT_ALL
+
+# complete word 
+setopt COMPLETE_IN_WORD
+# }}}
+# Keybinding {{{
+# use vi keybinding
+# bindkey -v
+# }}}

@@ -1,0 +1,24 @@
+# https://github.com/zplug/zplug
+# https://github.com/zplug/zplug/blob/master/doc/guide/ja/README.md
+
+# zplug init
+source ~/.zplug/init.zsh
+
+# Plugins {{{
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-completions'
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+zplug "zsh-users/zsh-history-substring-search"
+zplug 'dracula/zsh', as:theme
+# }}}
+
+# Install plugins if not exists {{{
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+# }}}
+
+zplug load --verbose
