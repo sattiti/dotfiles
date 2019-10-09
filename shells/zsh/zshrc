@@ -62,7 +62,8 @@ setopt COMPLETE_IN_WORD
 setopt EXTENDED_HISTORY
 
 # Array index start from 0
-setopt KSHARRAYS
+# COMMENT OUT THIS OPTION, BECAUSE THIRD PARTY SCRIPTS MOSTLY USE THE DEFAULT SETTING.
+# setopt KSHARRAYS
 # }}}
 # Keybinding {{{
 # use vi keybinding
