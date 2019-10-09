@@ -60,6 +60,9 @@ setopt COMPLETE_IN_WORD
 
 # extend history
 setopt EXTENDED_HISTORY
+
+# Array index start from 0
+setopt KSHARRAYS
 # }}}
 # Keybinding {{{
 # use vi keybinding
