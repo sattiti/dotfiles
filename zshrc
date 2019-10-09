@@ -1,8 +1,8 @@
 # load local setting
-source ~/.zsh/zshrc
+source ~/.shells/zsh/zshrc
 
 # load export setting
-source ~/.zsh/export
+source ~/.shells/zsh/export
 
 # load zplug
-source ~/.zsh/zplugrc
+source ~/.shells/zsh/zplugrc
