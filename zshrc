@@ -1,8 +1,8 @@
-# load local setting
-source ~/.shells/zsh/zshrc
-
-# load export setting
-source ~/.shells/zsh/export
+# load local zshrc
+[[ -s "$HOME/.shells/zshrc" ]] && source "$HOME/.shells/zshrc"
 
 # load zplug
-source ~/.shells/zsh/zplugrc
+[[ -s "$HOME/.shells/zplugrc" ]] && source "$HOME/.shells/zplugrc"
+
+# load common shellrc
+[[ -s "$HOME/.shells/shellrc" ]] && source "$HOME/.shells/shellrc"

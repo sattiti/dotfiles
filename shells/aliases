@@ -1,0 +1,73 @@
+# less with color.
+alias less="less -R"
+
+# use egrep with color.
+alias grep="grep -Ei --color=always"
+alias rg="rg -n -U --hidden --color=always --column -e"
+
+# cd
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+alias ..6="cd ../../../../../.."
+alias ..7="cd ../../../../../../.."
+alias ..8="cd ../../../../../../../.."
+alias ..9="cd ../../../../../../../../.."
+
+# df, du human-readable output.
+alias df="df -ah"
+alias du="du -h"
+
+# cp, mv, rm
+alias rm="rm -frv"
+alias mv="mv -v"
+
+# diff
+if [[ -x $(which colordiff 2>&1) ]]; then
+  alias diff="colordiff -u"
+else
+  alias diff="diff -u"
+fi
+
+# info
+if [[ -x $(which pinfo 2>&1) ]]; then
+  alias info="pinfo --vi-keys"
+else
+  alias info="info --vi-keys"
+fi
+
+# ps
+alias ps="ps axu"
+
+# zip
+alias zip="zip -r9"
+
+# kill all processes i can kill.
+alias k9="kill -9"
+
+# current shell name
+alias curtsh="ps -p $$ -ocomm="
+
+# postgressql
+alias pg-up="pg_ctl start"
+alias pg-down="pg_ctl stop"
+alias pg-reload="pg_ctl reload"
+
+# rails
+alias r-gc="rails generate controller"
+alias r-gm="rails generate model"
+alias r-gs="rails generate scaffold"
+alias r-dc="rails destroy controller"
+alias r-dm="rails destroy model"
+alias r-m="rails migrate"
+
+# ruby bundle
+alias bun-up="bundle update"
+alias bun-in="bundle install"
+
+# pip3 update
+if [[ -x $(which pip3 2>&1) ]]; then
+  alias pipup="pip3 freeze --local | cut -d = -f 1 | xargs pip3 install -U"
+fi

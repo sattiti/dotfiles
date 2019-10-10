@@ -1,0 +1,15 @@
+# History date format.
+HISTTIMEFORMAT="%Y/%m/%d T%T%z "
+
+# Options {{{
+shopt -s cdspell;
+shopt -s autocd;
+shopt -s expand_aliases;
+
+if [[ $BASH_VERSINFO -ge 4 ]]; then
+  shopt -s dotglob;
+  shopt -s direxpand;
+  shopt -s dirspell;
+  shopt -s globstar;
+fi
+# }}}

@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+set -eu
+
+# func
+usage(){
+  local cmdname=$(basename $0)
+  cat <<- EOL
+Usage:
+$cmdname CMD[pu(ll), pus(h), fe(tch), st(atus), add, checkout, log, br(anch)] WORK_TREE_PATH
+EOL
+  unset cmdname
+  exit 1
+}
+
+err(){
+  echo "No such directory."
+  exit 1
+}
+
+# exit if args is not 2.
+if [ $# -ne 2 ]; then
+  usage
+fi
+
+subcmd=$1
+path=$2
+
+# echo err if directory not exist.
+if [[ ! -d $path ]]; then
+  err
+fi
+
+while read dir
+do 
+  if [[ -d $dir ]]; then
+    parent=$(dirname $dir)
+
+    echo -e "\n\033[0;33m${parent}\033[0;0m"
+    case $subcmd in
+      "pull"|"pu"|"pl"|"pul" ) git -C $parent pull -v --progress --no-rebase ;;
+      "push"|"pus"|"ps"|"ph" ) git -C $parent push -u -v --progress ;;
+      "fetch"|"fe"|"fet"     ) git -C $parent fetch --all -v -p ;;
+      "status"|"st"|"sta"    ) git -C $parent status ;;
+      "log"                  ) git -C $parent log --oneline --stat --decorate=full ;;
+      "checkout"|"co"        ) git -C $parent checkout ;;
+      "branch"|"br"          ) git -C $parent branch -a ;;
+      "add"                  ) git -C $parent add . ;;
+      *                      ) usage ;;
+    esac
+    unset parent
+  else
+    err
+  fi
+done< <(find $path -name ".git" -type d -print)
+
+# unset b4 exit.
+unset subcmd
+unset path
+exit 0

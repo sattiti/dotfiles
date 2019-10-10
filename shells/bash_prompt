@@ -1,0 +1,49 @@
+# LS_COLORS
+# Download from github if plugin not exists.
+if [[ ! -d $HOME/.color ]]; then
+  # git clone https://github.com/dracula/terminal-app.git $HOME/.color/dracula/terminal-app.git
+  git clone https://github.com/seebi/dircolors-solarized.git $HOME/.color/seebi/dircolors-solarized.git
+fi
+
+if [[ "${OSTYPE}" =~ ^darwin ]]; then
+  # eval $(gdircolors $HOME/.color/seebi/dircolors-solarized.git/dircolors.ansi-universal)
+  :
+elif [[ "${OSTYPE}" =~ ^linux ]]; then
+  eval $(dircolors $HOME/.color/seebi/dircolors-solarized.git/dircolors.ansi-universal)
+elif [[ "${OSTYPE}" =~ ^cygwin ]]; then
+  eval $(dircolors -b $HOME/.color/seebi/dircolors-solarized.git/dircolors.ansi-universal)
+fi
+
+
+# ps1
+# PS1="[\u \W]\$"
+
+# Color
+# 30 black
+# 31 red
+# 32 green
+# 33 yellow
+# 34 blue
+# 35 magenta
+# 36 cyan
+# 37 white
+
+# blue, purple
+PS1="\
+\[\033[0;36m\][\
+\[\033[1;34m\]\u\
+\[\033[0;0m\]:\
+\[\033[0;35m\]\W\
+\[\033[0;36m\]]\
+\[\033[0;0m\]\
+\$ "
+
+# green, yellow
+# PS1="\
+# \[\033[0;36m\][\
+# \[\033[0;32m\]\u\
+# \[\033[0;0m\]:\
+# \[\033[0;33m\]\W\
+# \[\033[0;36m\]]\
+# \[\033[0;0m\]\
+# \$ "

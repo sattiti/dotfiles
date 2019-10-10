@@ -1,0 +1,14 @@
+# date
+alias now="date +%F\ \(%a\)\ %T"
+
+# ls with color.
+alias ls="ls --color=always"
+alias la="ls --color=always -laFht --time-style=\"+%F %a %T\""
+
+# path to dev directory.
+alias dev="cd $HOME/Documents/dev"
+
+# cal
+alias cal3="cal -3"
+
+alias cp="cp -fRv"

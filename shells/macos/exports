@@ -1,0 +1,5 @@
+# export path
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin:$HOME/.bash/bin:$HOME/.nodebrew/current/bin
+
+# postgresql
+# export PGDATA=/usr/local/var/postgres

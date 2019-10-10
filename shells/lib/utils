@@ -1,0 +1,21 @@
+# source config files
+function load_config{
+  local dist=$@
+  for file in $dist; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
+  done
+  unset dist
+  unset file
+}
+
+
+# cd Desktop
+function cd_desktop{
+  local workspace=$HOME/Desktop
+  if [[ -d $workspace && $(pwd) != $workspace ]]; then
+    cd $workspace
+  else
+    echo "No such File or Directory."
+  fi
+  unset workspace
+}
