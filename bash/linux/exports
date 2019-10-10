@@ -1,9 +1,0 @@
-# export path
-export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/opt/coreutils/libexec/gnubin:$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$HOME/.nodebrew/current/bin:$HOME/.bash/bin
-
-# Dev directory path.
-export DEV=$HOME/Documents/dev
-
-# set language
-export LC_ALL=ja_JP.UTF-8
-export LANGUAGE=ja_JP.UTF-8

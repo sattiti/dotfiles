@@ -1,5 +1,0 @@
-# Disable the sound effects on boot
-# sudo nvram SystemAudioVolume=" "
-
-# assessments enabled
-# sudo spctl --master-disable
