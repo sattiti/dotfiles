@@ -51,7 +51,7 @@ goupdate(){
 
 repoupdate(){
   # repository update
-  gitr pu $DEV/github
+  gitr pu $DEVDIR/github
 }
 
 softupdate(){

@@ -1,7 +1,7 @@
 # LANG
 export LC_ALL=C
-export LANG=ja_JP.UTF-8
-export LANGUAGE=ja_JP.UTF-8
+# export LANG=ja_JP.UTF-8
+# export LANGUAGE=ja_JP.UTF-8
 
 export EDITOR=vim
 
@@ -17,7 +17,7 @@ export DEVDIR=$HOME/Documents/dev
 # }}}
 
 # pg {{{
-local pgdir=$HOME/.postgres
+pgdir=$HOME/.postgres
 if [[ ! -d $pgdir ]]; then
   mkdir -pv $pgdir
 fi
@@ -28,7 +28,7 @@ unset pgdir
 # }}}
 
 # go {{{
-local godir=~/.go
+godir=~/.go
 if [[ ! -d $godir/src ]]; then
   mkdir -pv $godir/src
 fi

@@ -9,3 +9,6 @@
 
 # load common shellrc
 [[ -s "$HOME/.shells/shellrc" ]] && source "$HOME/.shells/shellrc"
+
+# load fzf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

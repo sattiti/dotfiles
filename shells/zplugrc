@@ -1,8 +1,15 @@
 # https://github.com/zplug/zplug
 # https://github.com/zplug/zplug/blob/master/doc/guide/ja/README.md
 
+# zplug
+if [[ "${OSTYPE}" =~ ^darwin ]]; then
+  export ZPLUG_HOME=/usr/local/opt/zplug
+elif [[ "${OSTYPE}" =~ ^linux ]]; then
+  export ZPLUG_HOME=$HOME/.zplug
+fi
+
 # zplug init
-source ~/.zplug/init.zsh
+source $ZPLUG_HOME/init.zsh
 
 # Plugins {{{
 zplug 'zsh-users/zsh-autosuggestions'

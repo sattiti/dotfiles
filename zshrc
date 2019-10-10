@@ -6,3 +6,6 @@
 
 # load common shellrc
 [[ -s "$HOME/.shells/shellrc" ]] && source "$HOME/.shells/shellrc"
+
+# load fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
