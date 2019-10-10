@@ -47,6 +47,9 @@ alias zip="zip -r9"
 # kill all processes i can kill.
 alias k9="kill -9"
 
+# current shell name
+alias curtsh="ps -p $$ -ocomm="
+
 # postgressql
 alias pg-up="pg_ctl start"
 alias pg-down="pg_ctl stop"
