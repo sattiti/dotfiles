@@ -41,16 +41,16 @@ else
 fi
 
 # ps
-alias ps="ps axu"
+alias psa="ps axu"
+
+# print shell name
+alias pshn="ps -p $$ -ocomm="
 
 # zip
 alias zip="zip -r9"
 
 # kill all processes i can kill.
 alias k9="kill -9"
-
-# current shell name
-alias curtsh="ps -p $$ -ocomm="
 
 # postgressql
 alias pg-up="pg_ctl start"
