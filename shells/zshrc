@@ -30,7 +30,7 @@ setopt PUSHD_IGNORE_DUPS
 
 # Completion {{{
 setopt ALWAYS_TO_END
-unsetopt AUTO_LIST
+# setopt AUTO_LIST
 setopt AUTO_MENU
 setopt AUTO_NAME_DIRS
 setopt AUTO_PARAM_KEYS
