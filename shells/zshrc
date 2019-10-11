@@ -1,8 +1,11 @@
-# History {{{
-HISTFILE=~/.zsh_history
-HISTSIZE=999999
-SAVEHIST=999999
-# }}}
+# vim: ft=zsh fenc=utf-8
+
+# Options
+# http://zsh.sourceforge.net/Doc/Release/Options.html
+
+# show options
+# set -o
+
 # Autoload {{{
 # color
 autoload -Uz colors && colors
@@ -10,61 +13,136 @@ autoload -Uz colors && colors
 # Run completions
 autoload -Uz compinit && compinit
 # }}}
-# Options {{{
-# http://zsh.sourceforge.net/Doc/Release/Options.html
 
-# show options
-# set -o
-
+# Changing Directories{{{
+# Easy way to cd without cd command.
 setopt AUTO_CD
 
 # Make cd push the old directory onto the directory stack.
 setopt AUTO_PUSHD
 
-# If the argument to a cd command (or an implied cd with the AUTO_CD option set) is not a directory, and does not begin with a slash, try to expand the expression as if it were preceded by a ~
+# Try to expand the expression as if it were preceded by a ~
 setopt CDABLE_VARS
 
 # Do not push multiple copies of the same directory onto the directory stack.
 setopt PUSHD_IGNORE_DUPS
+# }}}
 
-# complete the param keys
-setopt AUTO_PARAM_KEYS
-
-setopt AUTO_LIST
+# Completion {{{
+setopt ALWAYS_TO_END
+unsetopt AUTO_LIST
 setopt AUTO_MENU
 setopt AUTO_NAME_DIRS
+setopt AUTO_PARAM_KEYS
+setopt AUTO_PARAM_SLASH
+unsetopt AUTO_REMOVE_SLASH
 
-# enable to use ~ ^ #.
-setopt EXTENDED_GLOB
+# complete word 
+setopt COMPLETE_IN_WORD
+
+setopt GLOB_COMPLETE
+
+# no path hashed.
+unsetopt HASH_LIST_ALL
 
 # no beep sound.
 unsetopt NO_BEEP
 
-# notify
-setopt NOTIFY
+setopt LIST_PACKED
+setopt LIST_ROWS_FIRST
+setopt MENU_COMPLETE
+# }}}
 
-# print out the exit value except 0 exit.
-# setopt PRINT_EXIT_VALUE
+# Expansion and Globbing {{{
+# enable to use ~ ^ #.
+setopt EXTENDED_GLOB
+setopt GLOB_SUBST
+
+# setopt IGNORE_BRACES
+# setopt IGNORE_CLOSE_BRACES
 
 # add / if dir matched.
 setopt MARK_DIRS
 
+# no multi-byte
+# unsetopt MULTIBYTE
+
+setopt NUMERIC_GLOB_SORT
+
+# ksh / sh likes
+setopt SH_GLOB
+
+# Print a warning message when an existing prarmeter from an enclosing function scope, or global.
+setopt WARN_CREATE_GLOBAL
+# }}}
+
+# History {{{
+# extend history
+HISTFILE=~/.zsh_history
+HISTSIZE=999999
+SAVEHIST=999999
+
+# extend history
+setopt EXTENDED_HISTORY
+unsetopt HIST_BEEP
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_NO_FUNCTIONS
+setopt HIST_NO_STORE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt INC_APPEND_HISTORY
+setopt INC_APPEND_HISTORY_TIME
+setopt SHARE_HISTORY
+# }}}
+
+# Input/Output {{{
 # spell check
 setopt CORRECT
 
 # spell check all
 setopt CORRECT_ALL
 
-# complete word 
-setopt COMPLETE_IN_WORD
+setopt IGNORE_EOF
+setopt INTERACTIVE_COMMENTS
+setopt RM_STAR_SILENT
+setopt RM_STAR_WAIT
+# }}}
 
-# extend history
-setopt EXTENDED_HISTORY
+# Job Control {{{
+setopt MONITOR
+setopt NOTIFY
+setopt POSIX_JOBS
+# }}}
 
+# Prompting {{{
+setopt PROMPT_SUBST
+# }}}
+
+# Scripts and Functions {{{
 # array index start from 0
 # setopt KSHARRAYS
 # }}}
+
+# Zsh Line Editor {{{
+unsetopt BEEP
+# setopt COMBINING_CHARS
+setopt VI
+setopt ZLE
+# }}}
+
 # Keybinding {{{
 # use vi keybinding
 # bindkey -v
 # }}}
+
+# zstyle {{{
+
+# }}}
+
+# Remove duplicate path.
+typeset -U path cdpath fpath manpath

@@ -1,10 +1,21 @@
+# vim: ft=zsh fenc=utf-8
+
+# zplug
 # https://github.com/zplug/zplug
 # https://github.com/zplug/zplug/blob/master/doc/guide/ja/README.md
 
-# zplug
+# Install zplug if not exists.
+# export ZPLUG_HOME
 if [[ "${OSTYPE}" =~ ^darwin ]]; then
+  if [[ ! -d "/usr/local/opt/zplug" ]]; then
+    brew install zplug
+  fi
   export ZPLUG_HOME=/usr/local/opt/zplug
+
 elif [[ "${OSTYPE}" =~ ^linux ]]; then
+  if [[ ! -d "${HOME}/.zplug" ]]; then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+  fi
   export ZPLUG_HOME=$HOME/.zplug
 fi
 
