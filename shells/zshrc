@@ -40,10 +40,10 @@ unsetopt AUTO_REMOVE_SLASH
 # complete word 
 setopt COMPLETE_IN_WORD
 
-setopt GLOB_COMPLETE
+# setopt GLOB_COMPLETE
 
 # no path hashed.
-unsetopt HASH_LIST_ALL
+# unsetopt HASH_LIST_ALL
 
 # no beep sound.
 unsetopt NO_BEEP
@@ -56,7 +56,7 @@ setopt MENU_COMPLETE
 # Expansion and Globbing {{{
 # enable to use ~ ^ #.
 setopt EXTENDED_GLOB
-setopt GLOB_SUBST
+# setopt GLOB_SUBST
 
 # setopt IGNORE_BRACES
 # setopt IGNORE_CLOSE_BRACES
@@ -67,13 +67,13 @@ setopt MARK_DIRS
 # no multi-byte
 # unsetopt MULTIBYTE
 
-setopt NUMERIC_GLOB_SORT
+# setopt NUMERIC_GLOB_SORT
 
 # ksh / sh likes
-setopt SH_GLOB
+# setopt SH_GLOB
 
 # Print a warning message when an existing prarmeter from an enclosing function scope, or global.
-setopt WARN_CREATE_GLOBAL
+# setopt WARN_CREATE_GLOBAL
 # }}}
 
 # History {{{
