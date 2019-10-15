@@ -71,5 +71,5 @@ alias bun-in="bundle install"
 
 # pip3 update
 if [[ -x $(which pip3 2>&1) ]]; then
-  alias pipup="pip3 freeze --local | cut -d = -f 1 | xargs pip3 install -U"
+  alias pipup="pip3 freeze --local | cut -d = -f 1 | xargs pip3 install --user -U"
 fi
