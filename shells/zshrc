@@ -137,7 +137,7 @@ setopt ZLE
 
 # Keybinding {{{
 # use vi keybinding
-# bindkey -v
+bindkey -v
 # }}}
 
 # zstyle {{{
