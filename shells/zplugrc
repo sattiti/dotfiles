@@ -23,8 +23,10 @@ fi
 source $ZPLUG_HOME/init.zsh
 
 # Plugins {{{
+zplug 'zplug/zplug', hook-build: 'zplug --self-manage'
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'
+zplug 'chrissicool/zah-256color'
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 zplug "zsh-users/zsh-history-substring-search"
 zplug 'dracula/zsh', as:theme
