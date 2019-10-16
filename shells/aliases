@@ -23,7 +23,8 @@ alias df="df -ah"
 alias du="du -h"
 
 # cp, mv, rm
-alias rm="rm -frv"
+alias rm="rm -fr"
+alias rmv="rm -frv"
 alias mv="mv -v"
 
 # diff
