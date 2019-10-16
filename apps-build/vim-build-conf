@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# vim: ft=bash:fenc=utf-8
+
+# --enable-pythoninterp=dynamic \
+# --with-lua-prefix= \
+# --with-ruby-command= \
+# --with-x
+
+./configure \
+--with-features=huge \
+--enable-gui=auto \
+--enable-luainterp=dynamic \
+--enable-perlinterp=dynamic \
+--enable-python3interp=dynamic \
+--enable-rubyinterp=dynamic \
+--enable-tclinterp=dynamic \
+--enable-multibyte \
+--enable-autoservername \
+--enable-cscope \
+--enable-fail-if-missing \
+--enable-fontset \
+--enable-terminal \
+--enable-xim \
+--with-luajit
