@@ -107,7 +107,7 @@ setopt CORRECT
 # spell check all
 setopt CORRECT_ALL
 
-setopt IGNORE_EOF
+unsetopt IGNORE_EOF
 setopt INTERACTIVE_COMMENTS
 setopt RM_STAR_SILENT
 setopt RM_STAR_WAIT
