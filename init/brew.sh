@@ -82,6 +82,7 @@ brew install pngcheck
 brew install jpeg
 brew install libpng
 brew install libtiff
+brew install exiftool
 
 # nokogiri needs this.
 brew install libxml2
