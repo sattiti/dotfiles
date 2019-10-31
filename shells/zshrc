@@ -12,6 +12,9 @@ autoload -Uz colors && colors
 
 # Run completions
 autoload -Uz compinit && compinit
+
+# prompt
+autoload -Uz promptinit && promptinit
 # }}}
 
 # Changing Directories{{{
