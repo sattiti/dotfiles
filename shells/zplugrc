@@ -44,11 +44,13 @@ fi
 # load plugins
 zplug load --verbose
 
+# Plugin setting {{{
 # prompt
+PURE_PROMPT_STMBOL=">"
+PURE_PROMPT_VICMD_SYMBOL="<"
 fpath+=("${ZPLUG_HOME}/repos/sindresorhus/pure")
 autoload -Uz promptinit && promptinit && prompt pure
 
-# Plugin setting {{{
 # zsh-syntax-highlight
 # ZSH_HIGHLIGHT_STYLES[alias]=fg=green
 # ZSH_HIGHLIGHT_STYLES[assign]=none
