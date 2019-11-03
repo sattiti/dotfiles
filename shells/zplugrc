@@ -23,13 +23,19 @@ fi
 source $ZPLUG_HOME/init.zsh
 
 # Plugins {{{
-zplug 'zplug/zplug', hook-build: 'zplug --self-manage'
-zplug 'zsh-users/zsh-autosuggestions'
-zplug 'zsh-users/zsh-completions'
-zplug 'chrissicool/zsh-256color'
-zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+zplug "zplug/zplug", hook-build: "zplug --self-manage"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "chrissicool/zsh-256color"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search"
-zplug 'dracula/zsh', as:theme
+
+if [[ "${OSTYPE}" =~ ^darwin ]]; then
+  zplug 'dracula/zsh', as:theme
+elif [[ "${OSTYPE}" =~ ^linux ]]; then
+  zplug "mafredri/zsh-async", from:github
+  zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+fi
 # }}}
 
 # Install plugins if not exists {{{
@@ -46,10 +52,12 @@ zplug load --verbose
 
 # Plugin setting {{{
 # prompt
-PURE_PROMPT_STMBOL=">"
-PURE_PROMPT_VICMD_SYMBOL="<"
-fpath+=("${ZPLUG_HOME}/repos/sindresorhus/pure")
-autoload -Uz promptinit && promptinit && prompt pure
+if [[ "${OSTYPE}" =~ ^linux ]]; then
+  PURE_PROMPT_STMBOL=">"
+  PURE_PROMPT_VICMD_SYMBOL="<"
+  fpath+=("${ZPLUG_HOME}/repos/sindresorhus/pure")
+  autoload -Uz promptinit && promptinit && prompt pure
+fi
 
 # zsh-syntax-highlight
 # ZSH_HIGHLIGHT_STYLES[alias]=fg=green
