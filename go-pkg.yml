@@ -86,3 +86,6 @@
 - name: imaging
   url: https://github.com/disintegration/imaging
   desc: image processing package
+- name: sprig
+  url: https://github.com/Masterminds/sprig
+  desc: Template functions for Go templates
