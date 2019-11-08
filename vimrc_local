@@ -213,6 +213,7 @@ Plug 'PProvost/vim-ps1'
 
 " golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'yosssi/vim-ace'
 
 " typescript
 " Plug 'clausreinke/typescript-tools'
