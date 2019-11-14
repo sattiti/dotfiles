@@ -12,3 +12,5 @@ alias dev="cd $HOME/Documents/dev"
 alias cal3="cal -3"
 
 alias cp="cp -fRv"
+
+alias sysup="sudo -E aptitude upgrade && sudo -E aptitude update && sudo -E aptitude full-upgrade && sudo -E aptitude autoclean"
