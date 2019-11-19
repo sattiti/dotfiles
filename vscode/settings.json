@@ -1,0 +1,40 @@
+{
+    // Windows: %APPDATA%\Code\User\settings.json
+    // macOS:   $HOME/Library/Application Support/Code/User/settings.json
+    // Linux:   $HOME/.config/Code/User/settings.json
+    // https://code.visualstudio.com/docs/getstarted/settings
+
+    "breadcrumbs.enabled": false,
+
+    "files.autoSave": "off",
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.autoClosingOvertype": "auto",
+    "editor.autoClosingQuotes": "beforeWhitespace",
+    "editor.autoSurround": "brackets",
+    "editor.autoIndent": true,
+    "editor.colorDecorators": true,
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontSize": 18,
+    "editor.folding": true,
+    "editor.insertSpaces": true,
+    "editor.lineNumbers": "on",
+    "editor.minimap.enabled": false,
+    "editor.renderIndentGuides": true,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+    "editor.useTabStops": true,
+    "editor.wordWrap": "on",
+
+    "extensions.ignoreRecommendations": true,
+
+    "workbench.colorTheme": "Dracula",
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": true,
+
+    "[python]": {
+        "editor.tabSize": 4
+    }
+}
