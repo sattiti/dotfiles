@@ -50,13 +50,13 @@ function qs(){
 
 # reboot pc
 function reboot(){
-  cleanup
+  cleanall
   Restart-Computer -Force
 }
 
 # shutdown
 function gohome(){
-  cleanup
+  cleanall
   Stop-Computer -Force
 }
 
@@ -81,8 +81,8 @@ function ggc(){
   callapp $chromeexe $a
 }
 
-# cleanup
-function cleanup(){
+# clean
+function clean(){
   clear
   Clear-Host
   Clear-History
@@ -192,8 +192,8 @@ function gitv(){
   }
 }
 
-function prune(){
-  cleanup
+function cleanall(){
+  clean
   
   $list = @(
   "$HOME/AppData/Local/go-build",
@@ -249,5 +249,4 @@ foreach($p in $runningProcresses){
 }
 
 killps
-prune
-cleanup
+cleanall
