@@ -154,7 +154,8 @@ Plug 'scrooloose/nerdtree'
 " Plug 'nanotech/jellybeans.vim'
 " Plug 'tomasr/molokai'
 " Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim'}
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'joshdick/onedark.vim'
 
 " whitespace
 " Plug 'bronson/vim-trailing-whitespace'
@@ -518,6 +519,8 @@ elseif !empty(glob(s:pluginDir.'/tomorrow-theme/vim'))
   colorscheme Tomorrow-Night-Bright
 elseif !empty(glob(s:pluginDir.'/dracula'))
   colorscheme dracula
+elseif !empty(glob(s:pluginDir.'/onedark.vim'))
+  colorscheme onedark
 else
   colorscheme desert
 endif
