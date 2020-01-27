@@ -67,7 +67,13 @@ brew install libtool
 brew install ncurses
 brew install pinfo
 brew install zip
+brew install gnutls
+brew install gmp  
 brew install unzip
+brew install htop
+
+# Free lossless audio codec
+brew install flac
 
 # regexp
 brew install oniguruma
