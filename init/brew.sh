@@ -25,10 +25,14 @@ brew upgrade
 
 # bash
 brew install bash
+
+# zsh
+brew install zsh
+brew install zplug
 if [[ "${OSTYPE}" =~ ^darwin ]]; then
-  sudo echo /usr/local/bin/bash >> /etc/shell
-  chsh -s /usr/local/bin/bash
-fi
+  sudo echo /usr/local/bin/zsh >> /etc/shell
+  chsh -s /usr/local/bin/zsh
+fi &&
 
 # Install GNU core utilities
 brew install coreutils
@@ -69,8 +73,8 @@ brew install unzip
 brew install oniguruma
 
 # fun
-brew install figlet
-brew install cowsay
+# brew install figlet
+# brew install cowsay
 
 # Install wget, curl
 brew install curl
@@ -89,7 +93,7 @@ brew install libxml2
 brew install libxslt
 
 # sass
-brew install libsass
+# brew install libsass
 
 # db
 brew install sqlite
@@ -123,9 +127,11 @@ brew install zbar
 # Program languages.
 brew install python
 brew install lua
+brew install luarocks
 brew install ruby
-brew cask install julia
-brew install rust
+brew install perl
+# brew cask install julia
+# brew install rust
 brew install go
 
 # Go dependency management tool
@@ -135,7 +141,7 @@ brew install go
 brew install hugo
 
 # vim
-brew install vim --with-gettext --with-lua --with-luajit
+brew install vim --HEAD
 
 # Install something depends on deference platform.
 if [[ "${OSTYPE}" =~ ^darwin ]]; then
