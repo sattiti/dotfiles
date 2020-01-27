@@ -124,6 +124,9 @@ brew install openssl@1.1
 # qrcode
 brew install zbar
 
+# nodebrew
+brew install nodebrew
+
 # Program languages.
 brew install python
 brew install lua
