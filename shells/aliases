@@ -27,6 +27,10 @@ alias rm="rm -fr"
 alias rmv="rm -frv"
 alias mv="mv -v"
 
+# rsync
+alias rsyncdo="rsync -avh --delete --stats"
+alias rsyncdr="rsync -avh --delete --stats -n"
+
 # diff
 if [[ -x $(which colordiff 2>&1) ]]; then
   alias diff="colordiff -u"
