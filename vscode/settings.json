@@ -29,10 +29,13 @@
     "editor.foldingStrategy": "indentation",
     "editor.fontFamily": "Consolas, 'Courier New', monospace",
     "editor.fontSize": 18,
+    "editor.highlightActiveIndentGuide": false,
     "editor.insertSpaces": true,
     "editor.lineNumbers": "on",
     "editor.links": true,
     "editor.minimap.enabled": false,
+    "editor.occurrencesHighlight": false,
+    "editor.suggest.insertHighlight": false,
     "editor.quickSuggestions": {
         "other": true,
         "comments": false,
