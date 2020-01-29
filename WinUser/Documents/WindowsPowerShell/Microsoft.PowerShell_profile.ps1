@@ -75,7 +75,7 @@ function vim(){
   callapp $vimexe $Args
 }
 
-function ggc(){
+function gg(){
   $a = $Args
   $a = $a + "—incognito"
   callapp $chromeexe $a
