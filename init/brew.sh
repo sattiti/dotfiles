@@ -72,6 +72,9 @@ brew install gmp
 brew install unzip
 brew install htop
 
+# identify or delete duplicate files
+brew install fdupes
+
 # Free lossless audio codec
 brew install flac
 
