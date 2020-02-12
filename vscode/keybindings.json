@@ -1,0 +1,7 @@
+[
+  {
+    "key": "alt+space",
+    "command": "editor.action.triggerSuggest",
+    "when": "isMac && editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+  }
+]
