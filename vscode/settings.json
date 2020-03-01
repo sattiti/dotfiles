@@ -22,7 +22,7 @@
     "editor.colorDecorators": true,
     "editor.cursorBlinking": "solid",
     "editor.cursorSmoothCaretAnimation": false,
-    "editor.cursorStyle": "underline",
+    "editor.cursorStyle": "block",
     "editor.cursorSurroundingLines": 0,
     "editor.cursorSurroundingLinesStyle": "default",
     "editor.folding": true,
