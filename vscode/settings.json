@@ -27,7 +27,7 @@
     "editor.cursorSurroundingLinesStyle": "default",
     "editor.folding": true,
     "editor.foldingStrategy": "indentation",
-    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
     "editor.fontSize": 18,
     "editor.highlightActiveIndentGuide": false,
     "editor.insertSpaces": true,
@@ -61,7 +61,6 @@
     "explorer.confirmDelete": false,
 
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Dracula",
     "workbench.editor.closeEmptyGroups": true,
     "workbench.editor.closeOnFileDelete": true,
     "workbench.editor.enablePreview": false,
@@ -70,9 +69,10 @@
     "workbench.editor.showTabs": false,
     "workbench.quickOpen.preserveInput": false,
     "workbench.settings.openDefaultSettings": false,
-    "workbench.startupEditor": "none",
+    "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.visible": true,
 
+    "window.autoDetectColorScheme": true,
     "window.closeWhenEmpty": true,
     "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "default",
