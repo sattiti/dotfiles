@@ -8,7 +8,7 @@
     "breadcrumbs.filePath": "off",
     "breadcrumbs.icons": false,
 
-    "files.autoGuessEncoding": true,
+    "files.autoGuessEncoding": false,
     "files.autoSave": "off",
     "files.encoding": "utf8",
     "files.eol": "\n",
