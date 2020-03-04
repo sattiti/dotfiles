@@ -10,6 +10,7 @@ main:
   - Jinja2
   - jsbeautifier
   - lxml
+  - msgpack
   - neovim
   - nose
   - numpy
