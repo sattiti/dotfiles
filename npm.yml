@@ -1,55 +1,208 @@
 ---
-global:
-  - coffee-script
-  - colors
-  - eslint
-  - fs-extra
-  - htmlhint
-  - js-beautify
-  - jshint
-  - mocha
-  - sass
-  - terser
-  - typescript
+common:
+  - name: colors
+    url: https://github.com/Marak/colors.js
+    desc: get color and style in your node.js console
+    category: 
+  - name: eslint
+    url: https://github.com/eslint/eslint
+    desc: Find and fix problems in your JavaScript code.
+    category: 
+  - name: fs-extra
+    url: 
+    desc: 
+    category: 
+  - name: htmlhint
+    url: 
+    desc: 
+    category: 
+  - name: js-beautify
+    url: 
+    desc: 
+    category: 
+  - name: jshint
+    url: 
+    desc: 
+    category: 
+  - name: mocha
+    url: 
+    desc: 
+    category: 
+  - name: sass
+    url: 
+    desc: 
+    category: 
+  - name: terser
+    url: 
+    desc: 
+    category: 
+  - name: typescript
+    url: 
+    desc: 
+    category: 
+  - name: Bower
+    url: 
+    desc: 
+    category: 
+  - name: Electron
+    url: 
+    desc: 
+    category: 
+  - name: Meteor
+    url: 
+    desc: 
+    category: 
+  - name: ReactNative
+    url: 
+    desc: 
+    category: 
+  - name: agenda
+    url: 
+    desc: 
+    category: 
+  - name: agenda-ui  
+    url: 
+    desc: 
+    category: 
+  - name: angular.js
+    url: 
+    desc: 
+    category: 
+  - name: async
+    url: 
+    desc: 
+    category: 
+  - name: babel-core
+    url: 
+    desc: 
+    category: 
+  - name: bcryptjs
+    url: 
+    desc: 
+    category: 
+  - name: body-parser
+    url: 
+    desc: 
+    category: 
+  - name: browserify
+    url: 
+    desc: 
+    category: 
+  - name: chai
+    url: 
+    desc: 
+    category: 
+  - name: conf
+    url: 
+    desc: 
+    category: 
+  - name: debug
+    url: 
+    desc: 
+    category: 
+  - name: express
+    url: 
+    desc: 
+    category: 
+  - name: forever
+    url: 
+    desc: 
+    category: 
+  - name: glob
+    url: 
+    desc: 
+    category: 
+  - name: gm
+    url: 
+    desc: 
+    category: 
+  - name: http-proxy
+    url: 
+    desc: 
+    category: 
+  - name: iconv-lite
+    url: 
+    desc: 
+    category: 
+  - name: jade
+    url: 
+    desc: 
+    category: 
+  - name: jquery
+    url: 
+    desc: 
+    category: 
+  - name: js-yaml
+    url: 
+    desc: 
+    category: 
+  - name: lazyload
+    url: 
+    desc: 
+    category: 
+  - name: lodash
+    url: 
+    desc: 
+    category: 
+  - name: moment
+    url: 
+    desc: 
+    category: 
+  - name: moment-timezone
+    url: 
+    desc: 
+    category: 
+  - name: mongoose
+    url: 
+    desc: 
+    category: 
+  - name: passport
+    url: 
+    desc: 
+    category: 
+  - name: q
+    url: 
+    desc: 
+    category: 
+  - name: react
+    url: 
+    desc: 
+    category: 
+  - name: react-dom
+    url: 
+    desc: 
+    category: 
+  - name: request
+    url: 
+    desc: 
+    category: 
+  - name: tz-format
+    url: 
+    desc: 
+    category: 
+  - name: underscore
+    url: 
+    desc: 
+    category: 
+  - name: vue
+    url: 
+    desc: 
+    category: 
+  - name: webpack
+    url: 
+    desc: 
+    category: 
+  - name: winston
+    url: 
+    desc: 
+    category: 
+  - name: wreck
+    url: 
+    desc: 
+    category: 
 
-local:
-  - Bower
-  - Electron
-  - Meteor
-  - ReactNative
-  - agenda
-  - agenda-ui  
-  - angular.js
-  - async
-  - babel-core
-  - bcryptjs
-  - body-parser
-  - browserify
-  - chai
-  - conf
-  - debug
-  - express
-  - forever
-  - glob
-  - gm
-  - http-proxy
-  - iconv-lite
-  - jade
-  - jquery
-  - js-yaml
-  - lazyload
-  - lodash
-  - moment
-  - moment-timezone
-  - mongoose
-  - passport
-  - q
-  - react
-  - react-dom
-  - request
-  - tz-format
-  - underscore
-  - vue
-  - webpack
-  - winston
-  - wreck
+useful:
+  - name: coffee-script
+    url: https://github.com/jashkenas/coffeescript/
+    desc: CoffeeScript is a little language that compiles into JavaScript.
+    category: 
