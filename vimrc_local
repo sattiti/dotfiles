@@ -674,6 +674,9 @@ elseif has('lua')
   "   endfunction
 endif
 " }}}
+" NERDTree {{{
+let g:NERDTreeWinSize=26
+" }}}
 " Airline {{{
 let g:airline_theme='badwolf'
 " let g:airline_powerline_fonts=1
