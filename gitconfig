@@ -24,7 +24,7 @@
   fl = diff --name-only
   get = pull -v --progress --no-rebase
   plog = log --oneline --stat-width=110 --decorate=full --date=default --pretty=tformat:\"%C(white magenta bold)%s%C(reset)%x20%C(yellow red bold reverse)%d%C(reset)%n%C(yellow)%H%C(reset)%x20%C(cyan)%ad%C(reset)%x20%C(green italic)%an%x20<%aE>%C(reset)%n%n\" 
-  st = status -v
+  st = status
   up = push -v --progress -u --prune
 
 [pull]
