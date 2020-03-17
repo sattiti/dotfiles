@@ -59,6 +59,12 @@
 
     "explorer.autoReveal": false,
     "explorer.confirmDelete": false,
+    
+    "search.collapseResults": "auto",
+    "search.quickOpen.includeHistory": true,
+    "search.quickOpen.includeSymbols": true,
+    "search.showLineNumbers": true,
+    "search.useReplacePreview": true,
 
     "workbench.activityBar.visible": false,
     "workbench.editor.closeEmptyGroups": true,
