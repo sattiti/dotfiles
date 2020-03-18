@@ -200,6 +200,14 @@ common:
     url: 
     desc: 
     category: 
+  - name: buefy
+    url: https://github.com/buefy/buefy
+    desc: Lightweight UI components for Vue.js based on Bulma
+    category: vue ui-components
+  - name: jest
+    url: https://github.com/facebook/jest
+    desc: Delightful JavaScript Testing.
+    category: testing
 
 useful:
   - name: coffee-script
