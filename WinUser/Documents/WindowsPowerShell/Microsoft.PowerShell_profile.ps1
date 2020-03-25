@@ -232,7 +232,23 @@ function killps(){
 }
 
 # main
+$mutex = New-Object System.Threading.Mutex -ArgumentList $false, "Global¥$(Split-Path -Path $PSCommandPath -Leaf)"
+
+try{
+  if(-not $mutex.WaitOne(0, $false)){
+    $mutex.ReleaseMutex()
+    $mutex.Close()
+    exit
+  }
+}
+catch [System.Threading.AbandonedMutexException]{}
+
+# processing
 # if(($date).Hour -ge 8 -and $(date).Hour -le 9 -and ($(date).minute -ge 0 -and $(date).minute -le 59)){}
+
+if($(Get-Process).Name -match 'nginx'){
+  ngdown
+}
 
 $runningProcresses = @(
   "^iexplore",
@@ -250,3 +266,6 @@ foreach($p in $runningProcresses){
 
 killps
 cleanall
+
+$mutex.ReleaseMutex()
+$mutex.Close()
