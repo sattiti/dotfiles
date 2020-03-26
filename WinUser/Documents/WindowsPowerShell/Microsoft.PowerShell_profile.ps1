@@ -236,7 +236,6 @@ $mutex = New-Object System.Threading.Mutex -ArgumentList $false, "Global¥$(Spli
 
 try{
   if(-not $mutex.WaitOne(0, $false)){
-    $mutex.ReleaseMutex()
     $mutex.Close()
     exit
   }
