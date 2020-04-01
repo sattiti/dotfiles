@@ -12,6 +12,7 @@
     "files.autoSave": "off",
     "files.encoding": "utf8",
     "files.eol": "\n",
+    "files.hotExit": "off",
 
     "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.autoClosingOvertype": "auto",
@@ -82,6 +83,7 @@
     "window.closeWhenEmpty": true,
     "window.menuBarVisibility": "toggle",
     "window.newWindowDimensions": "default",
+    "window.openFilesInNewWindow": "on",
     "window.openFoldersInNewWindow": "off",
     "window.restoreFullscreen": false,
     "window.restoreWindows": "none",
