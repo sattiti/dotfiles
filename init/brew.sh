@@ -72,6 +72,9 @@ brew install gmp
 brew install unzip
 brew install htop
 
+# qrcode
+brew install qrencode
+
 # identify or delete duplicate files
 brew install fdupes
 
