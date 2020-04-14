@@ -86,7 +86,7 @@ function clean(){
   clear
   Clear-Host
   Clear-History
-  Clear-RecycleBin -Force > $null > 2
+  Clear-RecycleBin -Force 2>&1 | Out-Null
 }
 
 # use python to print calendar
