@@ -555,7 +555,7 @@ if has('python3') || has('python')
   endif
 
   " Use nvim-yarp library instead of neovim remote plugin feature.
-  let g:deoplete#enable_yarp = 1
+  " let g:deoplete#enable_yarp = 1
 
   " Refresh the candidates automatically.
   " g:deoplete#enable_refresh_always = 1

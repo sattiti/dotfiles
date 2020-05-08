@@ -1,5 +1,5 @@
 # export path
-export PATH=$PATH:~/Library/Python/3.7/bin:/usr/local/bin:/usr/local/sbin:$HOME/.shells/bin:$HOME/.nodebrew/current/bin
+export PATH=$PATH:~/Library/Python/3.8/bin:/usr/local/bin:/usr/local/sbin:$HOME/.shells/bin:$HOME/.nodebrew/current/bin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
