@@ -947,12 +947,12 @@ vmap <leader>d "*dd
 nmap <leader>d "*dd
 
 " paste
-vmap <leader>pp "*p
-vmap <leader>PP "*P
-nmap <leader>pp "*p
-nmap <leader>PP "*P
-vmap <leader>p s<C-r>*<BS><ESC>
-nmap <leader>p i<C-r>*<BS><ESC>
+vmap <leader>p "*p
+vmap <leader>P "*P
+nmap <leader>p "*p
+nmap <leader>P "*P
+vmap <leader>pp s<C-r>*<BS><ESC>
+nmap <leader>pp i<C-r>*<BS><ESC>
 
 " copy all
 nmap <leader>ya ggVG$"*y
