@@ -951,8 +951,8 @@ vmap <leader>p "*p
 vmap <leader>P "*P
 nmap <leader>p "*p
 nmap <leader>P "*P
-vmap <leader>pp s<C-r>*<BS><ESC>
-nmap <leader>pp i<C-r>*<BS><ESC>
+vmap <leader>pp s<C-r>*<ESC>
+nmap <leader>pp A<C-r>*<ESC>
 
 " copy all
 nmap <leader>ya ggVG$"*y
