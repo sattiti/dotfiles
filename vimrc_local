@@ -676,6 +676,9 @@ endif
 " }}}
 " NERDTree {{{
 let g:NERDTreeWinSize=24
+
+" show dotfiles
+ley g:NERDTreeShowHidden=1
 " }}}
 " Airline {{{
 let g:airline_theme='badwolf'
