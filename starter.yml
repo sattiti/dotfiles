@@ -23,17 +23,23 @@ win:
   - ImageMagick
   - .NET
   - Mozilla Firefox
+    - axe
     - Clear Cache
     - ColorZilla
+    - cookie AutoDelete
     - EPUBReader
+    - FireShot
     - HTML Validator
     - JSON Beautify It
+    - JSONView
+    - Markdown Viewer
     - React Developer Tools
+    - Selenium IDE
     - Screengrab!
     - Snap Links
     - User-Agent Switcher
-    - Valence
-    - Vim Vixen
+    - Vimium
+    - Vue.js devtools
     - Web Developer
   - Nodejs
   - VirtualBox
