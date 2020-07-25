@@ -71,6 +71,10 @@ brew install gnutls
 brew install gmp  
 brew install unzip
 brew install htop
+brew install pkg-config
+brew install zlib
+brew install libksba
+brew install libgpg-error
 
 # qrcode
 brew install qrencode
@@ -130,7 +134,7 @@ brew install ripgrep
 brew install yq
 
 # openssl
-brew install openssl
+brew install openssh
 brew install openssl@1.1
 
 # qrcode
@@ -162,7 +166,7 @@ brew install vim --HEAD
 if [[ "${OSTYPE}" =~ ^darwin ]]; then
   # macos only.
   # Movie packages.
-  brew install ffmpeg
+  # brew install ffmpeg
 elif [[ "${OSTYPE}" =~ ^linux ]]; then
   # linux only
   brew install util-linux
