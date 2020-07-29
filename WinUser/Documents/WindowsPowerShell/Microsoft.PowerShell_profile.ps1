@@ -268,3 +268,9 @@ cleanall
 
 $mutex.ReleaseMutex()
 $mutex.Close()
+
+# Install-Module -Name posh-git -AllowPrerelease -Force
+# Install-Module -Name PowerShellGet -Force
+# Install-Module -Name posh-git -Scope CurrentUser
+# Install-Module -Name oh-my-posh -Scope CurrentUser
+Set-Theme Paradox

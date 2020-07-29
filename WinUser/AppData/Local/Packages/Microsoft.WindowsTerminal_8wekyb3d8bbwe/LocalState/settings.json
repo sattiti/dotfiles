@@ -41,11 +41,13 @@
   "profiles": {
     "defaults": {
       // Put settings here that you want to apply to all profiles.
+      // To download the fontface cascadia, visit https://www.github.com/microsoft/cascadia-code/release
       "acrylicOpacity": 0.8,
       "backgroundImageOpacity": 0.8,
       "closeOnExit": "always",
       "colorScheme": "Dracula",
       "cursorShape": "filledBox",
+      "fontFace": "Cascadia Code PL",
       "fontSize": 14,
       "fontWeight": "normal",
       "historySize": 9999,
