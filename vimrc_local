@@ -945,6 +945,18 @@ nnoremap <silent> <C-c>c :silent make --no-header -bc<CR>
 vmap <leader>y "*yy
 nmap <leader>y "*yy
 
+" copy innerText
+vmap <leader>"y vi""*yy
+nmap <leader>"y vi""*yy
+vmap <leader>'y vi'"*yy
+nmap <leader>'y vi'"*yy
+vmap <leader>[y vi["*yy
+nmap <leader>[y vi["*yy
+vmap <leader>{y vi{"*yy
+nmap <leader>{y vi{"*yy
+vmap <leader><y vit"*yy
+nmap <leader><y vit"*yy
+
 " cut
 vmap <leader>d "*dd
 nmap <leader>d "*dd
