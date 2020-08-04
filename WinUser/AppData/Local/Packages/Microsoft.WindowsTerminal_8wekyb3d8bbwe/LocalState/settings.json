@@ -8,7 +8,8 @@
 {
   "$schema": "https://aka.ms/terminal-profiles-schema",
 
-  "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+  // "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+  "defaultProfile": "{1163d7f7-7fbf-4d12-83dc-4dbaeeff6e53}",
 
   // add {{{
   // theme
@@ -57,11 +58,18 @@
     },
     "list": [
       {
+        // pwsh
+        "guid": "{1163d7f7-7fbf-4d12-83dc-4dbaeeff6e53}",
+        "name": "pwsh",
+        "commandline": "pwsh.exe",
+        "hidden": false
+      },
+      {
         // Make changes here to the powershell.exe profile.
         "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
         "name": "Windows PowerShell",
         "commandline": "powershell.exe",
-        "hidden": false
+        "hidden": true
       },
       {
         "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
