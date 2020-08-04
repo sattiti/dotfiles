@@ -946,16 +946,16 @@ vmap <leader>y "*yy
 nmap <leader>y "*yy
 
 " copy innerText
-vmap <leader>"y vi""*yy
-nmap <leader>"y vi""*yy
-vmap <leader>'y vi'"*yy
-nmap <leader>'y vi'"*yy
-vmap <leader>[y vi["*yy
-nmap <leader>[y vi["*yy
-vmap <leader>{y vi{"*yy
-nmap <leader>{y vi{"*yy
-vmap <leader><y vit"*yy
-nmap <leader><y vit"*yy
+vmap <leader>"y vi""*yy<ESC>
+nmap <leader>"y vi""*yy<ESC>
+vmap <leader>'y vi'"*yy<ESC>
+nmap <leader>'y vi'"*yy<ESC>
+vmap <leader>[y vi["*yy<ESC>
+nmap <leader>[y vi["*yy<ESC>
+vmap <leader>{y vi{"*yy<ESC>
+nmap <leader>{y vi{"*yy<ESC>
+vmap <leader><y vit"*yy<ESC>
+nmap <leader><y vit"*yy<ESC>
 
 " cut
 vmap <leader>d "*dd
