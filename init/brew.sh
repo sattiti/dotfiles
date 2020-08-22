@@ -130,6 +130,9 @@ brew install fzf
 # rg
 brew install ripgrep
 
+# alternative to find
+brew install fd
+
 # yq
 brew install yq
 
