@@ -57,6 +57,10 @@ alias zip="zip -r9"
 # kill all processes i can kill.
 alias k9="kill -9"
 
+# cal
+alias cal3="cal -3"
+alias caly="cal -y $(date \"+%Y\")"
+
 # postgressql
 alias pg-up="pg_ctl start"
 alias pg-down="pg_ctl stop"
