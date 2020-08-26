@@ -1,11 +1,15 @@
+# set execute policy
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+
 # install scoop
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh') &&
 
-# update
-scoop update &&
-
 # add bucket
-scoop bucket add extras &&
+scoop bucket add extras
+scoop bucket add versions
+
+scoop update
+scoop update *
 
 # install software {{{
 
@@ -27,14 +31,24 @@ scoop install winmerge
 
 # dev
 scoop install cmake
+scoop install make
 scoop install gettext
+scoop install curl
+scoop install ghostscript
 scoop install imagemagick
 
+# utils
 scoop install fzf
 scoop install ripgrep
+scoop install fd
 
+# lang
 scoop install rust
 scoop install go
+
+# editor
+scoop install vscode
+scoop install vim
 # }}}
 
 scoop cleanup *
