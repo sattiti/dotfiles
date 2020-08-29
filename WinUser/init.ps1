@@ -1,6 +1,9 @@
 # set execute policy
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 
+# Enable virtualMachine feature
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+
 # install scoop
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh') &&
 
@@ -12,7 +15,6 @@ scoop update
 scoop update *
 
 # install software {{{
-
 # common
 scoop install zip
 scoop install wintoolset
@@ -49,6 +51,9 @@ scoop install go
 # editor
 scoop install vscode
 scoop install vim
+scoop install ruby
+scoop install python
+scoop install nodejs
 # }}}
 
 scoop cleanup *
