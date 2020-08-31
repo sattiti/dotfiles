@@ -44,16 +44,23 @@ scoop install fzf
 scoop install ripgrep
 scoop install fd
 
+# terminal
+scoop install windows-terminal
+
 # lang
 scoop install rust
 scoop install go
+scoop install ruby
+scoop install python
+scoop install nodejs
 
 # editor
 scoop install vscode
 scoop install vim
-scoop install ruby
-scoop install python
-scoop install nodejs
+
+# viewer
+scoop install irfanview
+
 # }}}
 
 scoop cleanup *
