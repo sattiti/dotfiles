@@ -59,7 +59,7 @@ alias k9="kill -9"
 
 # cal
 alias cal3="cal -3"
-alias caly="cal -y $(date \"+%Y\")"
+alias caly="cal -y $(date +%Y)"
 
 # postgressql
 alias pg-up="pg_ctl start"
