@@ -357,6 +357,9 @@ set wildmode=longest,list,full
 " wrap.
 set wrap
 
+" colorcolumn
+set cc=90
+
 if has("win64") || has("win32")
   " columns
   set columns=110
