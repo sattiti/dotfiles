@@ -20,6 +20,7 @@ scoop install zip
 scoop install wintoolset
 scoop install dark
 scoop install innounp
+scoop install msys2
 
 # broswer
 scoop install firefox
@@ -43,6 +44,7 @@ scoop install imagemagick
 scoop install fzf
 scoop install ripgrep
 scoop install fd
+scoop install yarn
 
 # terminal
 scoop install windows-terminal
@@ -54,12 +56,21 @@ scoop install ruby
 scoop install python
 scoop install nodejs
 
+# server
+scoop install ngunx
+
+# db
+scoop install sqlite
+
 # editor
 scoop install vscode
-scoop install vim
+# scoop install vim
 
 # viewer
 scoop install irfanview
+
+# ftp
+scoop install winscp
 
 # }}}
 
