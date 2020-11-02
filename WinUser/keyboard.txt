@@ -1,0 +1,21 @@
+# us 配列変換
+
+HKLM:SYSTEM/CurrentControlSet/Services/i8042prt/Parameters
+
+LayerDriver JPN
+REG_SZ
+kbd106.dll # ja
+kbd101.dll # us
+
+OverrideKeyboardIdentifier
+REG_SZ
+PCAT_106KEY # ja
+PCAT_101KEY # us
+
+OverrideKeyboardSubtype
+REG_DWORD
+0
+
+OverrideKeyboardType
+REG_DWORD
+7
