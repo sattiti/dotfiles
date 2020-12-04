@@ -129,6 +129,14 @@ brew install fzf
 
 # rg
 brew install ripgrep
+brew install rga
+
+# dependencies
+brew install pandoc
+brew install poppler 
+brew install tesseract
+# Movie package.
+brew install ffmpeg
 
 # alternative to find
 brew install fd
@@ -168,8 +176,6 @@ brew install vim --HEAD
 # Install something depends on deference platform.
 if [[ "${OSTYPE}" =~ ^darwin ]]; then
   # macos only.
-  # Movie packages.
-  # brew install ffmpeg
 elif [[ "${OSTYPE}" =~ ^linux ]]; then
   # linux only
   brew install util-linux
