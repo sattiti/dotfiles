@@ -1,10 +1,10 @@
 # date
-alias date="gdate"
-alias now="gdate +%F\ \(%a\)\ %T"
+# alias date="gdate"
+alias now="date +%F\ \(%a\)\ %T"
 
 # ls with color.
-alias ls="gls --color=always"
-alias la="gls --color=always -laFht --time-style=\"+%F %a %T\""
+alias ls="ls --color=always"
+alias la="ls --color=always -laFht --time-style=\"+%F %a %T\""
 
 # path to dev directory.
 alias dev="cd $HOME/Documents/dev"
@@ -16,13 +16,13 @@ alias dt="cd $HOME/Desktop"
 alias sa="open /Applications/Safari.app"
 alias ff="open /Applications/Firefox.app"
 alias gc="open /Applications/Google\ Chrome.app"
-alias it="open /Applications/iTunes.app"
+alias music="open /Applications/Music.app"
 
 # use gecho
-alias echo="gecho"
+# alias echo="gecho"
 
 # gshred
-alias shred="gshred"
+# alias shred="gshred"
 
 # cp
-alias cp="gcp -fRv"
+alias cp="cp -fRv"
