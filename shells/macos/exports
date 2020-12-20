@@ -1,5 +1,9 @@
 # export path
-export PATH=$PATH:~/Library/Python/3.9/bin:/usr/local/bin:/usr/local/sbin:$HOME/.shells/bin:$HOME/.nodebrew/current/bin
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/binutils/bin:/usr/local/opt/findutils/libexec/gnubin:$PATH:~/Library/Python/3.9/bin:/usr/local/bin:/usr/local/sbin:$HOME/.shells/bin:$HOME/.nodebrew/current/bin
+
+# for compilers to find binutils
+export LDFLAGS="-L/usr/local/opt/binutils/lib"
+export CPPFLAGS="-I/usr/local/opt/binutils/include"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
