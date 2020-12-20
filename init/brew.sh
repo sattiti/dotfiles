@@ -176,6 +176,7 @@ brew install vim --HEAD
 # Install something depends on deference platform.
 if [[ "${OSTYPE}" =~ ^darwin ]]; then
   # macos only.
+  :;
 elif [[ "${OSTYPE}" =~ ^linux ]]; then
   # linux only
   brew install util-linux
