@@ -40,12 +40,12 @@ brew install zplug
 # fi &&
 
 # Install GNU core utilities
-# brew install coreutils
+brew install coreutils
 
 # get more
-# brew install binutils
-# brew install findutils
-# brew install moreutils
+brew install binutils
+brew install findutils
+brew install moreutils
 
 # String packages.
 brew install gettext
@@ -161,8 +161,8 @@ brew install nodebrew
 
 # Program languages.
 brew install python
-brew install lua
-brew install luarocks
+# brew install lua
+# brew install luarocks
 brew install ruby
 brew install perl
 # brew cask install julia

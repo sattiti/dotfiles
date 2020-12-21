@@ -248,9 +248,11 @@ Plug 'vim-airline/vim-airline-themes'
 " fzf
 if has('mac') || has('unix')
   if executable('fzf')
+    set rtp+=/usr/local/opt/fzf
     Plug '/usr/local/opt/fzf'
   endif
 elseif has('win64') || has('win32')
+  " set rtp+=/usr/local/opt/fzf
   Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 endif
 Plug 'junegunn/fzf.vim'

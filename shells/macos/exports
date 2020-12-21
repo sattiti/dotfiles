@@ -2,9 +2,29 @@
 
 # PATH {{{
 MY_PATH=(
+# extra path
 # /usr/local/opt/coreutils/libexec/gnubin
 # /usr/local/opt/binutils/bin
 # /usr/local/opt/findutils/libexec/gnubin
+# /usr/local/opt/ncurses/bin
+# /usr/local/opt/libiconv/bin
+# /usr/local/opt/openssl@1.1/bin
+# /usr/local/opt/zip/bin
+# /usr/local/opt/openldap/bin
+# /usr/local/opt/openldap/sbin
+# /usr/local/opt/curl/bin
+# /usr/local/opt/openldap/bin
+# /usr/local/opt/openldap/sbin
+# /usr/local/opt/sqlite/bin
+# /usr/local/opt/gnu-getopt/bin
+# /usr/local/opt/libxml2/bin
+# /usr/local/opt/libxslt/bin
+# /usr/local/opt/icu4c/bin
+# /usr/local/opt/icu4c/sbin
+# /usr/local/opt/krb5/bin
+# /usr/local/opt/krb5/sbin
+# /usr/local/opt/qt/bin
+# /usr/local/opt/ruby/bin
 $HOME/Library/Python/3.9/bin
 /usr/local/bin
 /usr/local/sbin
@@ -16,9 +36,92 @@ $PATH
 
 # uniq PATH value.
 export PATH=$(echo "${MY_PATH[@]}" | tr " " "\n" | tr ":" "\n" | awk '!_[$0]++' | tr "\n" ":")
+
+unset MY_PATH
 # }}}
 
-# for compilers to find binutils(homebrew ver.) {{{
-# export LDFLAGS="-L/usr/local/opt/binutils/lib"
-# export CPPFLAGS="-I/usr/local/opt/binutils/include
+# nodebrew {{{
+export NODEBREW_ROOT=/usr/local/var/nodebrew
+# }}}
+
+# LDFLAGS {{{
+# LDFLAGS_LIST=(
+# -L/usr/local/opt/binutils/lib
+# -L/usr/local/opt/ncurses/lib
+# -L/usr/local/opt/libiconv/lib
+# -L/usr/local/opt/openssl@1.1/lib
+# -L/usr/local/opt/libffi/lib
+# -L/usr/local/opt/readline/lib
+# -L/usr/local/opt/libffi/lib
+# -L/usr/local/opt/zlib/lib
+# -L/usr/local/opt/openldap/lib
+# -L/usr/local/opt/curl/lib
+# -L/usr/local/opt/openldap/lib
+# -L/usr/local/opt/sqlite/lib
+# -L/usr/local/opt/libxml2/lib
+# -L/usr/local/opt/libxslt/lib
+# -L/usr/local/opt/icu4c/lib
+# -L/usr/local/opt/krb5/lib
+# -L/usr/local/opt/qt/lib
+# -L/usr/local/opt/ruby/lib
+# )
+
+# export LDFLAGS=${LDFLAGS_LIST[@]}
+# unset LDFLAGS_LIST
+# }}}
+
+# CPPFLAGS {{{
+# CPPFLAGS_LIST=(
+# -I/usr/local/opt/binutils/include
+# -I/usr/local/opt/ncurses/include
+# -I/usr/local/opt/libiconv/include
+# -I/usr/local/opt/openssl@1.1/include
+# -I/usr/local/opt/libffi/include
+# -I/usr/local/opt/readline/include
+# -I/usr/local/opt/libffi/include
+# -I/usr/local/opt/zlib/include
+# -I/usr/local/opt/openldap/include
+# -I/usr/local/opt/curl/include
+# -I/usr/local/opt/openldap/include
+# -I/usr/local/opt/sqlite/include
+# -I/usr/local/opt/libxml2/include
+# -I/usr/local/opt/libxslt/include
+# -I/usr/local/opt/icu4c/include
+# -I/usr/local/opt/krb5/include
+# -I/usr/local/opt/qt/include
+# -I/usr/local/opt/ruby/include
+# )
+
+# export CPPFLAGS=${CPPFLAGS_LIST[@]}
+# unset CPPFLAGS_LIST
+# }}}
+
+# pkgconfig {{{
+# PKG_CONFIG_LIST=(
+# /usr/local/opt/readline/lib/pkgconfig
+# /usr/local/opt/libffi/lib/pkgconfig
+# /usr/local/opt/zlib/lib/pkgconfig
+# /usr/local/opt/curl/lib/pkgconfig
+# /usr/local/opt/sqlite/lib/pkgconfig
+# /usr/local/opt/libxml2/lib/pkgconfig
+# /usr/local/opt/libxslt/lib/pkgconfig
+# /usr/local/opt/icu4c/lib/pkgconfig
+# /usr/local/opt/krb5/lib/pkgconfig
+# /usr/local/opt/qt/lib/pkgconfig
+# /usr/local/opt/ruby/lib/pkgconfig
+# )
+
+# export PKG_CONFIG_PATH=$(echo ${PKG_CONFIG_LIST[@]} | tr " " ":")
+# unset PKG_CONFIG_LIST
+# }}}
+
+# guile {{{
+# export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
+# export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
+# export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
+# export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
+# }}}
+
+# xml{{{
+# export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
 # }}}
