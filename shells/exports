@@ -1,21 +1,26 @@
 # vim: ft=sh fenc=utf-8
 
-# LANG
+# LANG {{{
 # export LC_ALL=C
 # export LANG=ja_JP.UTF-8
 # export LANGUAGE=ja_JP.UTF-8
+# }}}
 
-# CLI Color
+# CLI Color {{{
 export CLICOLOR=1
+# }}}
 
-# editor
+# editor {{{
 export EDITOR=vim
+# }}}
 
+# directories {{{
 # Desktop directory path.
 export DTDIR=$HOME/Desktop
 
 # Dev directory path.
 export DEVDIR=$HOME/Documents/dev
+# }}}
 
 # ruby {{{
 # ruby Encoding.default_external
@@ -34,7 +39,7 @@ unset pgdir
 # }}}
 
 # go {{{
-godir=~/.go
+godir=$HOME/go
 if [[ ! -d $godir/src ]]; then
   mkdir -pv $godir/src
 fi
@@ -45,6 +50,6 @@ fi
 
 # golang home path
 export GOPATH=$godir
-export PATH=$PATH:$GOPATH/bin
+export PATH=$GOPATH/bin:$PATH
 unset godir
 # }}}

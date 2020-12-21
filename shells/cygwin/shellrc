@@ -1,8 +1,10 @@
+# vim: ft=sh fenc=utf-8
+
 # call utils functions
-. ../lib/utils
+# . ../lib/utils
 
 # Go to Desktop.
-cd_desktop
+# cd_desktop
 
 # fixed ruby command.
 # if [[ -x $(which ruby 2>&1) ]]; then

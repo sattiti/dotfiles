@@ -1,12 +1,24 @@
-# export path
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/binutils/bin:/usr/local/opt/findutils/libexec/gnubin:~/Library/Python/3.9/bin:/usr/local/bin:/usr/local/sbin:$HOME/.shells/bin:$HOME/.nodebrew/current/bin:$PATH
+# vim: ft=sh fenc=utf-8
 
-# for compilers to find binutils
-export LDFLAGS="-L/usr/local/opt/binutils/lib"
-export CPPFLAGS="-I/usr/local/opt/binutils/include"
+# PATH {{{
+MY_PATH=(
+# /usr/local/opt/coreutils/libexec/gnubin
+# /usr/local/opt/binutils/bin
+# /usr/local/opt/findutils/libexec/gnubin
+$HOME/Library/Python/3.9/bin
+/usr/local/bin
+/usr/local/sbin
+$HOME/.nodebrew/current/bin
+$HOME/.rvm/bin
+$HOME/.shells/bin
+$PATH
+)
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# uniq PATH value.
+export PATH=$(echo "${MY_PATH[@]}" | tr " " "\n" | tr ":" "\n" | awk '!_[$0]++' | tr "\n" ":")
+# }}}
 
-# postgresql
-# export PGDATA=/usr/local/var/postgres
+# for compilers to find binutils(homebrew ver.) {{{
+# export LDFLAGS="-L/usr/local/opt/binutils/lib"
+# export CPPFLAGS="-I/usr/local/opt/binutils/include
+# }}}

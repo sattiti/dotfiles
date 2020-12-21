@@ -1,7 +1,8 @@
 # vim: ft=sh fenc=utf-8
 
+# cmd {{{
 # less with color.
-alias less="less -R"
+alias less="less -N"
 
 # use egrep with color.
 alias grep="grep -Ei --color=always"
@@ -22,14 +23,20 @@ alias ..9="cd ../../../../../../../../.."
 alias df="df -ah"
 alias du="du -h"
 
-# cp, mv, rm
+# rm
 alias rm="rm -fr"
 alias rmv="rm -frv"
-alias mv="mv -v"
+
+# mv
+alias mv="mv -fv"
+
+# cp
+alias cp="cp -fR"
+alias cpv="cp -fRv"
 
 # rsync
-alias rsyncdo="rsync -avh --delete --stats"
-alias rsyncdr="rsync -avh --delete --stats -n"
+alias rsyncdo="rsync -avh --delete --stats --checksum"
+alias rsyncdr="rsync -avh --delete --stats --checksum -n"
 
 # diff
 if [[ -x $(which colordiff 2>&1) ]]; then
@@ -52,7 +59,7 @@ alias psa="ps axu"
 alias pshn="ps -p $$ -ocomm="
 
 # zip
-alias zip="zip -r9"
+alias zip9="zip -r9"
 
 # kill all processes i can kill.
 alias k9="kill -9"
@@ -61,6 +68,16 @@ alias k9="kill -9"
 alias cal3="cal -3"
 alias caly="cal -y $(date +%Y)"
 
+# date
+alias now="date +%F\ \(%a\)\ %T"
+
+# pip3 update
+if [[ -x $(which pip3 2>&1) ]]; then
+  alias pipup="pip3 freeze --local | cut -d = -f 1 | xargs pip3 install --user -U"
+fi
+# }}}
+
+# software {{{
 # postgressql
 alias pg-up="pg_ctl start"
 alias pg-down="pg_ctl stop"
@@ -77,8 +94,4 @@ alias r-m="rails migrate"
 # ruby bundle
 alias bun-up="bundle update"
 alias bun-in="bundle install"
-
-# pip3 update
-if [[ -x $(which pip3 2>&1) ]]; then
-  alias pipup="pip3 freeze --local | cut -d = -f 1 | xargs pip3 install --user -U"
-fi
+# }}}

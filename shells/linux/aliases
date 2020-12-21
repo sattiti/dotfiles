@@ -1,16 +1,15 @@
-# date
-alias now="date +%F\ \(%a\)\ %T"
+# vim: ft=sh fenc=utf-8
 
+# cmd {{{
 # ls with color.
 alias ls="ls --color=always"
 alias la="ls --color=always -laFht --time-style=\"+%F %a %T\""
 
+# sys update
+alias sysup="sudo -E aptitude upgrade && sudo -E aptitude update && sudo -E aptitude full-upgrade && sudo -E aptitude autoclean"
+# }}}
+
+# path to {{{
 # path to dev directory.
 alias dev="cd $HOME/Documents/dev"
-
-# cal
-alias cal3="cal -3"
-
-alias cp="cp -fRv"
-
-alias sysup="sudo -E aptitude upgrade && sudo -E aptitude update && sudo -E aptitude full-upgrade && sudo -E aptitude autoclean"
+# }}}

@@ -1,8 +1,31 @@
-# LANG
+# vim: ft=sh fenc=utf-8
+
+# LANG {{{
 export LC_ALL=C
 export LANG=ja_JP.UTF-8
 export LANGUAGE=ja_JP.UTF-8
+# }}}
 
+# PATH {{{
+PCUSER_NAME=""
 
-# export path
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$HOME/.shells/bin:
+MY_PATH=(
+/usr/local/bin
+/usr/local/sbin
+/usr/bin
+/usr/sbin
+$HOME/.shells/bin
+$HOME/.nodebrew/current/bin
+# /c/mnt/Users/${PCUSER_NAME}/usr/local/powershell/7
+$PATH
+)
+
+# uniq PATH value.
+export PATH=$(echo "${MY_PATH[@]}" | tr " " "\n" | tr ":" "\n" | awk '!_[$0]++' | tr "\n" ":")
+
+unset PCUSER_NAME
+# }}}
+
+# nodebrew {{{
+# export NODEBREW_ROOT=$HOME/.nodebrew
+# }}}

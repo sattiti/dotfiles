@@ -1,3 +1,5 @@
+# vim: ft=sh fenc=utf-8
+
 # Disable the sound effects on boot
 # sudo nvram SystemAudioVolume=" "
 

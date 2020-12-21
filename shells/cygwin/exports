@@ -1,2 +1,10 @@
-# export path
-# export PATH=$PATH:/home/
+# vim: ft=sh fenc=utf-8
+
+# PATH {{{
+# MY_PATH=(
+# $PATH
+# )
+
+# uniq PATH value.
+# export PATH=$(echo "${MY_PATH[@]}" | tr " " "\n" | tr ":" "\n" | awk '!_[$0]++' | tr "\n" ":")
+# }}}

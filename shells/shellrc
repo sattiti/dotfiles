@@ -1,13 +1,14 @@
 # vim: ft=sh fenc=utf-8
 
-# call utils functions
+# call utils functions {{{
 # . ./lib/utils
+# }}}
 
-# Load the rvm script.
+# Load the rvm script {{{
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# }}}
 
-
-# Load platform config.
+# Load platform config {{{
 if [[ "${OSTYPE}" =~ ^darwin ]]; then
   platform=$HOME/.shells/macos
 elif [[ "${OSTYPE}" =~ ^linux ]]; then
@@ -21,22 +22,25 @@ for file in $(echo $platform/{exports,aliases,shellrc}); do
 done
 unset file
 unset platform
+# }}}
 
-
-# Load those dotfiles.
+# Load each dotfiles {{{
 for file in $HOME/.shells/{exports,aliases}; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
+# }}}
 
-
-# run software updater script.
+# run software updater script {{{
 if [[ "${OSTYPE}" =~ "^(darwin|linux)" ]] && [[ -x $(which brew 2>&1) ]]; then
   $HOME/.shells/bin/softwareupdater
 fi
+# }}}
 
-
-# Remove duplicate path.
+# Remove duplicate path {{{
 if [[ -x $(which ruby 2>&1) ]]; then
   export PATH=$(echo ${PATH} | tr ':' '\n' | xargs ruby -e "puts ARGV.uniq.join(':')")
+else
+  export PATH=$(echo "${PATH}" | tr ":" "\n" | awk '!_[$0]++' | tr "\n" ":")
 fi
+# }}}

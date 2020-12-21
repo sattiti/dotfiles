@@ -1,28 +1,22 @@
-# date
-# alias date="gdate"
-alias now="date +%F\ \(%a\)\ %T"
+# vim: ft=sh fenc=utf-8
 
-# ls with color.
-alias ls="ls --color=always"
-alias la="ls --color=always -laFht --time-style=\"+%F %a %T\""
+# cmd {{{
+# ls
+alias ls="ls -G"
+alias la="ls -GlaFht"
+# }}}
 
+# path to {{{
 # path to dev directory.
 alias dev="cd $HOME/Documents/dev"
 
 # path to desktop.
 alias dt="cd $HOME/Desktop"
+# }}}
 
-# Application shortcut.
+# Application shortcut {{{
 alias sa="open /Applications/Safari.app"
 alias ff="open /Applications/Firefox.app"
 alias gc="open /Applications/Google\ Chrome.app"
 alias music="open /Applications/Music.app"
-
-# use gecho
-# alias echo="gecho"
-
-# gshred
-# alias shred="gshred"
-
-# cp
-alias cp="cp -fRv"
+# }}}

@@ -6,17 +6,21 @@ set -eu
     echo "brew is available."
   else
     echo "brew not found."
-    if [[ -x $(which ruby 2>&1) ]]; then
-      if [[ "${OSTYPE}" =~ ^darwin ]]; then
-        xcode-select --install
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-      elif [[ "${OSTYPE}" =~ ^linux ]]; then
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-      fi
-    else
-      echo ruby not found.
-      exit 1
-    fi
+    echo "Install brew..."
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    # if [[ -x $(which ruby 2>&1) ]]; then
+    #   if [[ "${OSTYPE}" =~ ^darwin ]]; then
+    #     xcode-select --install
+    #     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    #   elif [[ "${OSTYPE}" =~ ^linux ]]; then
+    #     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+    #   fi
+    # else
+    #   echo ruby not found.
+    #   exit 1
+    # fi
   fi
 } &&
 
@@ -29,18 +33,19 @@ brew install bash
 # zsh
 brew install zsh
 brew install zplug
-if [[ "${OSTYPE}" =~ ^darwin ]]; then
-  sudo echo /usr/local/bin/zsh >> /etc/shell
-  chsh -s /usr/local/bin/zsh
-fi &&
+
+# if [[ "${OSTYPE}" =~ ^darwin ]]; then
+#   sudo echo /usr/local/bin/zsh >> /etc/shell
+#   chsh -s /usr/local/bin/zsh
+# fi &&
 
 # Install GNU core utilities
-brew install coreutils
+# brew install coreutils
 
 # get more
-brew install binutils
-brew install findutils
-brew install moreutils
+# brew install binutils
+# brew install findutils
+# brew install moreutils
 
 # String packages.
 brew install gettext
@@ -64,7 +69,7 @@ brew install git
 brew install autoconf
 brew install automake
 brew install libtool
-brew install ncurses
+# brew install ncurses
 brew install pinfo
 brew install zip
 brew install gnutls
@@ -109,7 +114,7 @@ brew install libxml2
 brew install libxslt
 
 # sass
-# brew install libsass
+brew install libsass
 
 # db
 brew install sqlite
@@ -130,16 +135,16 @@ brew install fzf
 # rg
 brew install ripgrep
 brew install rga
-
-# dependencies
+# rga dependencies
 brew install pandoc
 brew install poppler 
 brew install tesseract
-# Movie package.
-brew install ffmpeg
 
 # alternative to find
 brew install fd
+
+# Movie package.
+brew install ffmpeg
 
 # yq
 brew install yq

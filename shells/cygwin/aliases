@@ -1,21 +1,19 @@
-# date
-alias now="date +%F\ \(%a\)\ %T"
+# vim: ft=sh fenc=utf-8
 
+# cmd {{{
 # ls with color.
 alias ls="ls --color=always"
 alias la="ls --color=always -laFht --time-style=\"+%F %a %T\""
+# }}}
 
-# cal
-alias cal3="cal -3"
-
+# path to {{{
 # path to desktop.
 alias dt="cd $HOME/Desktop"
+# }}}
 
-# cp
-alias cp="cp -fRv"
-
-# app
+# app {{{
 # alias vi=""
 # alias vim=""
 # alias gc=""
 # alias ff=""
+# }}}
