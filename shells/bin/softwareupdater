@@ -82,7 +82,11 @@ run(){
   softupdate
 
   echo $NEXT_UPDATE_VAL > $UPDATED_AT_FILE
-  echo -e "\e[32mNext update time:\e[m\e[33m" $(date -d "@${NEXT_UPDATE_VAL}" "+%F (%a) %T") "\e[m"
+  if [[ "${OSTYPE}" =~ ^darwin ]]; then
+    echo -e "\e[32mNext update time:\e[m\e[33m" $(date -r "${NEXT_UPDATE_VAL}" "+%F (%a) %T") "\e[m"
+  elif [[ "${OSTYPE}" =~ ^linux ]]; then
+    echo -e "\e[32mNext update time:\e[m\e[33m" $(date -d "@${NEXT_UPDATE_VAL}" "+%F (%a) %T") "\e[m"
+  fi
 }
 
 # A file which is record the update time.
@@ -95,7 +99,11 @@ if [[ -e $UPDATED_AT_FILE ]]; then
   if [[ $NEXT_UPDATE -lt $NOW ]]; then
     run
   else
-    echo -e "\e[32mNext update time:\e[m\e[33m" $(date -d "@${NEXT_UPDATE}" "+%F (%a) %T") "\e[m"
+    if [[ "${OSTYPE}" =~ ^darwin ]]; then
+      echo -e "\e[32mNext update time:\e[m\e[33m" $(date -r "${NEXT_UPDATE}" "+%F (%a) %T") "\e[m"
+    elif [[ "${OSTYPE}" =~ ^linux ]]; then
+      echo -e "\e[32mNext update time:\e[m\e[33m" $(date -d "@${NEXT_UPDATE}" "+%F (%a) %T") "\e[m"
+    fi
   fi
 else
   run
