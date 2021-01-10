@@ -53,11 +53,11 @@ scoop install windows-terminal
 scoop install rust
 scoop install go
 scoop install ruby
-scoop install python
+scoop install python39
 scoop install nodejs
 
 # server
-scoop install ngunx
+scoop install nginx
 
 # db
 scoop install sqlite
