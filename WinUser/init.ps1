@@ -7,6 +7,9 @@ Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRes
 # install scoop
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh') &&
 
+# git
+scoop install git
+
 # add bucket
 scoop bucket add extras
 scoop bucket add versions
@@ -26,8 +29,6 @@ scoop install msys2
 scoop install firefox
 scoop install googlechrome
 
-# git
-scoop install git
 
 # diff tool
 scoop install winmerge
