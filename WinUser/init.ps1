@@ -40,6 +40,9 @@ scoop install gettext
 scoop install curl
 scoop install ghostscript
 scoop install imagemagick
+scoop install pkg-config
+scoop install openssl
+scoop install llvm
 
 # utils
 scoop install fzf
