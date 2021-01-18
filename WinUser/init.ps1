@@ -19,7 +19,7 @@ scoop update *
 
 # install software {{{
 # common
-scoop install zip
+scoop install 7zip
 scoop install wixtoolset
 scoop install dark
 scoop install innounp
