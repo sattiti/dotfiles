@@ -70,7 +70,7 @@ scoop install sqlite
 
 # editor
 scoop install vscode
-# scoop install vim
+scoop install vim
 
 # viewer
 scoop install irfanview
