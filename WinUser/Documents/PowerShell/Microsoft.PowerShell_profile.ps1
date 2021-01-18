@@ -41,7 +41,7 @@ function qs(){
   }
   
   $s=$s.replace("?","`n").replace("&","`n")
-  $u=$($s.Split("`n") | Select-Object -First 1
+  $u=$($s.Split("`n") | Select-Object -First 1)
   $s=$s.replace($u,"")
   echo $u
   ConvertFrom-Csv $s -Delimiter "=" -Header Key,Value
