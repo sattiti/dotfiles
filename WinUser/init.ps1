@@ -13,6 +13,7 @@ scoop install git
 # add bucket
 scoop bucket add extras
 scoop bucket add versions
+scoop bucket add nerd-fonts
 
 scoop update
 scoop update *
@@ -28,7 +29,6 @@ scoop install msys2
 # broswer
 scoop install firefox
 scoop install googlechrome
-
 
 # diff tool
 scoop install winmerge
@@ -49,6 +49,8 @@ scoop install fzf
 scoop install ripgrep
 scoop install fd
 scoop install yarn
+scoop install yq
+scoop install jq
 
 # terminal
 scoop install windows-terminal
