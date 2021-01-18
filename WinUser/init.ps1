@@ -20,7 +20,7 @@ scoop update *
 # install software {{{
 # common
 scoop install zip
-scoop install wintoolset
+scoop install wixtoolset
 scoop install dark
 scoop install innounp
 scoop install msys2
