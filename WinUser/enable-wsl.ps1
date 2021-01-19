@@ -15,7 +15,7 @@ wsl.exe --set-default-version 2
 
 # install some linux distribution from the appstore
 # Download some pkg
-Invoke-WebRequest -Url https://aka.ms/wsl-debian-gnulinux -OutFile $env:USERPROFILE\Downloads\Debian.appx -UseBasicParsing
+Invoke-WebRequest -Uri https://aka.ms/wsl-debian-gnulinux -OutFile $env:USERPROFILE\Downloads\Debian.appx -UseBasicParsing
 
 # Add-Package
 Add-AppxPackage $env:USERPROFILE\Downloads\Debian.appx
