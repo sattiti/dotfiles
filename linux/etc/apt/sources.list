@@ -1,0 +1,7 @@
+# buster
+deb http://ftp.jp.debian.org/debian/ buster main contrib non-free
+deb http://ftp.jp.debian.org/debian buster-updates main contrib
+deb http://security.debian.org/ buster/updates main contrib non-free
+
+# wslu
+deb https://access.patrickwu.space/wslu/debian buster main
