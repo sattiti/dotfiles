@@ -1,1 +1,4 @@
 # vim: ft=sh fenc=utf-8
+
+# set env var
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

@@ -47,6 +47,9 @@ brew install binutils
 brew install findutils
 brew install moreutils
 
+# gcc
+brew install gcc
+
 # String packages.
 brew install gettext
 brew install nkf
