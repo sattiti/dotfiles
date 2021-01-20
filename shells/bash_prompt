@@ -1,5 +1,10 @@
 # vim: ft=bash fenc=utf-8
 
+# color prompt
+case "$TERM" in
+  xterm-color|*-256color) color_prompt=yes;;
+esac
+
 # LS_COLORS
 # Download from github if plugin not exists.
 if [[ ! -d $HOME/.color ]]; then

@@ -1,9 +1,22 @@
 # vim: ft=bash fenc=utf-8
 
+# History {{{
+# dont put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
+
+# append to the history.
+shopt -s histappend
+
+# Histoy length.
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 # History date format.
 HISTTIMEFORMAT="%Y/%m/%d T%T%z "
+# }}}
 
 # Options {{{
+shopt -s checkwinsize;
 shopt -s cdspell;
 shopt -s autocd;
 shopt -s expand_aliases;
@@ -13,5 +26,15 @@ if [[ $BASH_VERSINFO -ge 4 ]]; then
   shopt -s direxpand;
   shopt -s dirspell;
   shopt -s globstar;
+fi
+# }}}
+
+# Enable programmable completion features {{{
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
 # }}}
