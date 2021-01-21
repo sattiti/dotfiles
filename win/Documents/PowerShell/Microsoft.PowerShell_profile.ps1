@@ -83,7 +83,7 @@ function cal(){
 
 # nginx on/off {{{
 function ngup(){
-  Start-Process "nginx -p $env:NGINX_HOME"
+  Start-Process nginx.exe -WindowStyle Hidden -ArgumentList "-p $($env:USERPROFILE)\usr\local\etc\nginx" 
 }
 
 function ngdown(){
