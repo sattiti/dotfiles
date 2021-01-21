@@ -1,0 +1,92 @@
+---
+win:
+  # - .NET
+  - 7-Zip
+  - ChgKey
+  - cmake
+  - curl
+  - dark
+  - fd
+  - FileZilla
+  - fzf
+  - gcc
+  - gettext
+  - ghostscript
+  - git
+  - gitextensions
+  - go
+  - GoogleChrome
+    - 1Click Screenshot
+    - Check My Links
+    - Clear Cache
+    - ColorZilla
+    - CSP Evaluator
+    - Dimensions
+    - EditThisCookie
+    - FireShot
+    - IP Address and Domain INformation
+    - JSONView
+    - Multi Link Opener
+    - PageSpeed insights
+    - The Great Suspender
+    - User-Agent Switcher for Chrome
+    - Vimium
+    - Web Developer
+  - HHKBKeymapTool
+  - HHKBCNG
+  - ImageMagick
+  - innounp
+  - irfanview
+  - jq
+  - libiconv
+  - llvm
+  - lua
+  - make
+  - mery
+  - microsoft mouse and keyboard center
+  - Mozilla Firefox
+    - axe
+    - Clear Cache
+    - ColorZilla
+    - cookie AutoDelete
+    - EPUBReader
+    - FireShot
+    - HTML Validator
+    - JSON Beautify It
+    - JSONView
+    - Markdown Viewer
+    - React Developer Tools
+    - Screengrab!
+    - Selenium IDE
+    - Snap Links
+    - User-Agent Switcher
+    - Vimium
+    - Vue.js devtools
+    - Web Developer
+  - msys2
+  - nginx
+  - Nodejs
+  - openssl
+  - pkg-config
+  - putty
+  - Python3
+  - ripgrep
+  - ruby
+  - rust
+  - scoop
+  - sqlite
+  - tidy
+  # - TortoiseSVN
+  - Vagrant
+  - vim
+    - ctags
+    - diff
+    - iconv
+  - vscode
+  - VirtualBox
+  - windows-terminal
+  - WinMerge
+  - winscp
+  - wixtoolset
+  - yq
+  - zip
