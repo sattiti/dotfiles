@@ -414,7 +414,9 @@ if has("gui_running")
   set guioptions-=b
 
   " guifont
-  set guifont=Ricty_Diminished_Discord:h14
+  set guifont=MyricaM\ M:h14
+  " set guidont=Cica:h14
+  " set guifont=Ricty_Diminished_Discord:h14
   " set guifont=NotoSansCJKjp-Regular:h14
   " set guifont=Source_Code_Pro:h12
   " set guifont=Monaco:h14
