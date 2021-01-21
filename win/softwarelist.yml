@@ -16,19 +16,20 @@ win:
   - gitextensions
   - go
   - GoogleChrome
-    - 1Click Screenshot
+    # - 1Click Screenshot
     - Check My Links
     - Clear Cache
     - ColorZilla
-    - CSP Evaluator
+    # - CSP Evaluator
     - Dimensions
     - EditThisCookie
     - FireShot
-    - IP Address and Domain INformation
+    # - IP Address and Domain INformation
     - JSONView
-    - Multi Link Opener
-    - PageSpeed insights
-    - The Great Suspender
+    # - Multi Link Opener
+    - linkclump
+    # - PageSpeed insights
+    # - The Great Suspender
     - User-Agent Switcher for Chrome
     - Vimium
     - Web Developer
