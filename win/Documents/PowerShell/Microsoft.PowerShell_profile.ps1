@@ -1,26 +1,30 @@
-# WinUser/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1
+# $env:HOMEPATH/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1
 
-# use TLS1.2
+# use TLS1.2 {{{
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
+# }}}
 
-# set to utf-8
+# LANG {{{
 $env:LANG = "ja_JP.UTF-8"
+# }}}
 
-# set PATH
-# Set-Item Env:Path "PATH1;PATH2"
-
-# change executionPolicy
+# change executionPolicy {{{
 if($(Get-ExecutionPolicy) -ne "RemoteSigned"){
   Set-ExecutionPolicy -Force -ExecutionPolicy RemoteSigned -Scope CurrentUser
 }
+# }}}
 
-# path
-$vimexe      = ""
-$chromexe    = ""
-$firefoxexe  = ""
-$explorerexe = "C:¥Windows¥explorer.exe"
+# set PATH {{{
+# Set-Item Env:Path "PATH1;PATH2"
+# }}}
 
-# callapp func
+# Variables {{{
+# app path
+$appExplorer = "C:¥Windows¥explorer.exe"
+$appIE       = "C:\Program Files\internet explorer\iexplore.exe"
+# }}}
+# Function {{{
+# callapp func {{{
 function callapp($path, $a){
   if($a.Length -gt 0){
     Start-Process -FilePath $path -ArgumentList $a
@@ -29,8 +33,32 @@ function callapp($path, $a){
     Start-Process -FilePath $path
   }
 }
+# }}}
 
-# print formatted query string
+# lock {{{
+function lock(){
+  rundll32.exe user32.dll, LockWorkStation
+}
+# }}}
+# reboot {{{
+function reboot(){
+  cleanall
+  Restart-Computer -Force
+}
+# }}}
+# shutdown {{{
+function gohome(){
+  cleanall
+  Stop-Computer -Force
+}
+# }}}
+
+# show all env {{{
+function env(){
+  (gci env:*).GetEnumerator() | Sort-Object Name | Out-String
+}
+# }}}
+# print formatted query string {{{
 function qs(){
   $s     = $Args[0]
   $usage = "qs QUERY_STRING"
@@ -46,69 +74,24 @@ function qs(){
   echo $u
   ConvertFrom-Csv $s -Delimiter "=" -Header Key,Value
 }
-
-
-# reboot pc
-function reboot(){
-  cleanall
-  Restart-Computer -Force
-}
-
-# shutdown
-function gohome(){
-  cleanall
-  Stop-Computer -Force
-}
-
-# show all env
-function env(){
-  (gci env:*).GetEnumerator() | Sort-Object Name | Out-String
-}
-
-# lock
-function lock(){
-  rundll32.exe user32.dll, LockWorkStation
-}
-
-# shortcut
-function vim(){
-  callapp $vimexe $Args
-}
-
-function gg(){
-  $a = $Args
-  $a = $a + "—incognito"
-  callapp $chromeexe $a
-}
-
-# clean
-function clean(){
-  clear
-  Clear-Host
-  Clear-History
-  Clear-RecycleBin -Force 2>&1 | Out-Null
-}
-
-# use python to print calendar
+# }}}
+# Print calendar on Python {{{
 function cal(){
   python -c "import calendar;import datetime;c=calendar.TextCalendar(6);c.pryear(datetime.datetime.now().year)"
 }
+# }}}
 
-# nginx on off
+# nginx on/off {{{
 function ngup(){
-  $cwd = $(pwd).Path
-  $ng  = "NGINX_PATH"
-  cd $ng
-  Stop-Process -Name nginx 2>&1 | Out-Null
-  Start-Process "./nginx.exe"
-  cd $cwd
+  Start-Process "nginx -p $env:NGINX_HOME"
 }
 
 function ngdown(){
   Stop-Process -Force -ProcessName nginx
 }
+# }}}
 
-# git cmd
+# git cmd {{{
 function gitr(){
   $a      = $Args[1]
   $cmd    = $Args[0]
@@ -191,86 +174,107 @@ function gitv(){
     }
   }
 }
+# }}}
 
-function cleanall(){
-  clean
-  
-  $list = @(
-  "$HOME/AppData/Local/go-build",
-  "$HOME/AppData/Local/"
-  )
-  
-  foreach($item in $list){
-    if(Test-Path -Path $item){
-      $access = $(Get-Acl -Path $item).Access.AccessControlType
-      if(Test-Path -Path $item -Type Leaf){
-        rm -Force -Recurse $item 2>&1 | Out-Null
-      }
-      else{
-        rm -Force -Recurse "$item/*" 2>&1 | Out-Null
-      }
-    }
-  }
+# cleanup {{{
+function cleanup(){
+  clear
+  Clear-Host
+  Clear-History
+  Clear-RecycleBin -Force 2>&1 | Out-Null
 }
+# }}}
+# cleanupall {{{
+function cleanall(){
+  cleanup
 
-# kill garbage ps
-function killps(){
   $list = @(
-    ""
+  # "$HOME/AppData/Local/go-build",
+  # "$HOME/AppData/Local/"
   )
 
-  (Get-Process).ProcessName | foreach($_){
+  if($list.Length -gt 0){
     foreach($item in $list){
-      if($_ -match $item){
-        $mid = (Get-Process -Name $_).id
-        if($mid -ne $null){
-          Stop-Process -Id $mid -Force 2>&1 | Out-Null
+      if(Test-Path -Path $item){
+        $access = $(Get-Acl -Path $item).Access.AccessControlType
+        if(Test-Path -Path $item -Type Leaf){
+          rm -Force -Recurse $item 2>&1 | Out-Null
+        }
+        else{
+          rm -Force -Recurse "$item/*" 2>&1 | Out-Null
         }
       }
     }
   }
 }
-
-# main
-$mutex = New-Object System.Threading.Mutex -ArgumentList $false, "Global¥$(Split-Path -Path $PSCommandPath -Leaf)"
-
-try{
-  if(-not $mutex.WaitOne(0, $false)){
-    $mutex.Close()
-    exit
+# }}}
+# kill garbage ps {{{
+function killps(){
+  $list = @(
+  )
+  if($list.Length -gt 0){
+    (Get-Process).ProcessName | foreach($_){
+      foreach($item in $list){
+        if($_ -match $item){
+          $mid = (Get-Process -Name $_).id
+          if($mid -ne $null){
+            Stop-Process -Id $mid -Force 2>&1 | Out-Null
+          }
+        }
+      }
+    }
   }
 }
-catch [System.Threading.AbandonedMutexException]{}
+# }}}
+# }}}
 
-# processing
-# if(($date).Hour -ge 8 -and $(date).Hour -le 9 -and ($(date).minute -ge 0 -and $(date).minute -le 59)){}
+# main {{{
+function init_profile(){
+  $mutex = New-Object System.Threading.Mutex -ArgumentList $false, "Global¥$(Split-Path -Path $PSCommandPath -Leaf)"
 
-if($(Get-Process).Name -match 'nginx'){
-  ngdown
-}
-
-$runningProcresses = @(
-  "^iexplore",
-  "OUTLOOK",
-  "nginx"
-)
-
-foreach($p in $runningProcresses){
-  if(-not($(Get-Process).Name -match $p)){
-    ie
-    ol
-    ngup
+  try{
+    if(-not $mutex.WaitOne(0, $false)){
+      $mutex.Close()
+      exit
+    }
   }
+  catch [System.Threading.AbandonedMutexException]{}
+
+  # Do something around 0800-0900
+  # if(($date).Hour -ge 8 -and $(date).Hour -le 9 -and ($(date).minute -ge 0 -and $(date).minute -le 59)){}
+  
+  if($(Get-Process).Name -match 'nginx'){
+    ngdown
+  }
+
+  $runningProcresses = @(
+  #   "^iexplore",
+  #   "OUTLOOK",
+  #   "nginx"
+  )
+
+  if($runningProcresses.Length -gt 0){
+    foreach($p in $runningProcresses){
+      if(-not($(Get-Process).Name -match $p)){
+        ngup
+      }
+    }
+  }
+
+  killps
+  cleanall
+
+  $mutex.ReleaseMutex()
+  $mutex.Close()
+
+  # Install those module by hand typing if necessary.
+  # Install-Module -Name posh-git -AllowPrerelease -Force -Scope CurrentUser
+  # Install-Module -Name PowerShellGet -Force
+  # Install-Module -Name oh-my-posh -Scope CurrentUser
+
+  # set theme
+  Set-Theme Paradox
 }
 
-killps
-cleanall
-
-$mutex.ReleaseMutex()
-$mutex.Close()
-
-# Install-Module -Name posh-git -AllowPrerelease -Force
-# Install-Module -Name PowerShellGet -Force
-# Install-Module -Name posh-git -Scope CurrentUser
-# Install-Module -Name oh-my-posh -Scope CurrentUser
-Set-Theme Paradox
+init_profile
+# }}}
