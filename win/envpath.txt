@@ -1,0 +1,25 @@
+GEM_HOME=%USERPROFILE%\scoop\apps\ruby\current\gems
+GEM_PATH=%USERPROFILE%\scoop\apps\ruby\current\gems
+GIT_INSTALL_ROOT=%USERPROFILE%\scoop\apps\git\current
+NGINX_HOME=%USERPROFILE%\scoop\apps\nginx\current
+OPENSSL_CONF=%USERPROFILE%\scoop\apps\openssl\current\bin\cnf\openssl.cnf
+GO_ROOT=%USERPROFILE%\scoop\apps\go\current
+PSHOME=%USERPROFILE%\usr\local\powershell\7
+PYTHONHOME=%USERPROFILE%\scoop\apps\python39\current
+PYTHONPATH=%APPDATA%\Python\Python38\site-packages;$PYTHONPATH
+
+PATH=
+%USERPROFILE%\scoop\apps\python38\current\scripts;
+%USERPROFILE%\go\bin;
+%USERPROFILE%\usr\local\powershell;
+%USERPROFILE%\scoop\apps\ruby\current\bin;
+%USERPROFILE%\scoop\apps\ruby\current\gems\bin;
+%USERPROFILE%\scoop\apps\python38\current;
+%LOCALAPPDATA%\Programs\Python\Launcher\;
+%USERPROFILE%\scoop\apps\nodejs\current\bin;
+%USERPROFILE%\scoop\apps\nodejs\current;
+%USERPROFILE%\scoop\apps\openssl\current\bin;
+%USERPROFILE%\scoop\apps\ghostscript\current\lib;
+%USERPROFILE%\scoop\shims;
+%LOCALAPPDATA%\Microsoft\WindowsApps;
+%PROGRAMFILES%\internet explorer;
