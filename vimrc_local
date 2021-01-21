@@ -25,7 +25,7 @@ if has('mac') || has('unix')
 elseif has('win64') || has('win32')
   set runtimepath+=$HOME/.vim,$HOME/vimfiles,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/vimfiles/after
   set pythonthreehome=$PYTHONHOME
-  set pythonthreedll=$PYTHONHOME/python37.dll
+  set pythonthreedll=$PYTHONHOME/python39.dll
 
   if has('python3')
     let g:python3_host_prog = expand($PYTHONHOME)."/python.exe"
