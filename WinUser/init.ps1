@@ -14,6 +14,7 @@ scoop install git
 scoop bucket add extras
 scoop bucket add versions
 scoop bucket add nerd-fonts
+scoop bucket add jp https://github.com/dooteeen/scoop-for-jp
 
 scoop update
 scoop update *
