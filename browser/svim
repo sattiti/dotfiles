@@ -1,5 +1,0 @@
-set nosmoothscroll
-let scrollstep = 200
-
-map "ctrl+f" scrollFullPageDown
-map "ctrl+b" scrollFullPageUp
