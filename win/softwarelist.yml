@@ -36,6 +36,7 @@ win:
   - HHKBKeymapTool
   - HHKBCNG
   - ImageMagick
+  - imageglass
   - innounp
   - irfanview
   - jq
