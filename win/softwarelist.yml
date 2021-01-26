@@ -84,6 +84,7 @@ win:
     - ctags
     - diff
     - iconv
+    - msys-iconv-2.dll
   - vscode
   - VirtualBox
   - windows-terminal
