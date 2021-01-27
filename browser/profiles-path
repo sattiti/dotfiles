@@ -1,0 +1,4 @@
+firefox:
+  win:
+    - %AppData%\Mozilla\Firefox\profiles.ini
+    - %AppData%\Mozilla\Firefox\Profiles
