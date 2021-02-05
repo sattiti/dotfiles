@@ -53,3 +53,9 @@ export GOPATH=$godir
 export PATH=$GOPATH/bin:$PATH
 unset godir
 # }}}
+
+# winhome {{{
+if [[ -x $(which wslpath 2>&1) ]]; then
+  export WINHOME="$(wslpath $(wslvar USERPROFILE))"
+fi
+# }}}
