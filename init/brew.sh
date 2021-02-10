@@ -46,6 +46,7 @@ brew install coreutils
 brew install binutils
 brew install findutils
 brew install moreutils
+brew install inetutils
 
 # gcc
 brew install gcc
