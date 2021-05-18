@@ -91,6 +91,16 @@ function ngdown(){
 }
 # }}}
 
+# phpcgi {{{
+function phpcgiup(){
+  Start-Process php-cgi.exe -WindowStyle Hidden -ArgumentList "-b 127.0.0.1:9001 -c $($env:USERPROFILE)\usr\local\etc\php.ini"
+}
+
+function phpcgidown(){
+  Stop-Process -Force -ProcessName php-cgi
+}
+# }}}
+
 # git cmd {{{
 function gitr(){
   $a      = $Args[1]
