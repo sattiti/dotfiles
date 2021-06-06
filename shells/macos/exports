@@ -28,7 +28,9 @@ MY_PATH=(
 $HOME/Library/Python/3.9/bin
 /usr/local/bin
 /usr/local/sbin
-$HOME/.nodebrew/current/bin
+/usr/local/var/nodebrew
+/usr/local/var/nodebrew/current/bin
+# $HOME/.nodebrew/current/bin
 $HOME/.rvm/bin
 $HOME/.shells/bin
 $PATH
