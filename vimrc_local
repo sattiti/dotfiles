@@ -217,6 +217,9 @@ Plug 'PProvost/vim-ps1'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'yosssi/vim-ace'
 
+" php
+Plug 'phpactor/phpactor'
+
 " typescript
 " Plug 'clausreinke/typescript-tools'
 Plug 'leafgarland/typescript-vim'
