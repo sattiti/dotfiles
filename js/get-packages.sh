@@ -89,6 +89,7 @@ terser-webpack-plugin
 ts-jest
 ts-loader
 ts-node
+tslint
 typescript
 url-loader
 velocity-animate
