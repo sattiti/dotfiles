@@ -185,7 +185,11 @@ function gitv(){
   }
 }
 # }}}
-
+# scoop update {{{
+function scoopup(){
+  scoop update * && scoop cleanup *
+}
+# }}}
 # cleanup {{{
 function cleanup(){
   clear
