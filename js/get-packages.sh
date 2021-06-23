@@ -39,6 +39,8 @@ alasql
 axios
 babel-jest
 babel-loader
+babel-plugin-transform-react-jsx
+babel-plugin-transform-react-pug
 babel-preset-jest
 core-js
 css-loader
