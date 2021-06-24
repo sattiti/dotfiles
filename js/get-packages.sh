@@ -57,6 +57,7 @@ eslint-plugin-node
 eslint-plugin-prettier
 eslint-plugin-promise
 eslint-plugin-react
+eslint-plugin-react-pug
 eslint-plugin-standard
 eslint-plugin-vue
 fiber
