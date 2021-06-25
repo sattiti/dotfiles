@@ -32,6 +32,8 @@ packages=(
 @types/pug
 @types/react
 @types/react-dom
+@typescript-ealint/eslint-plugin
+@typescript-ealint/parser
 @webpack-cli/init
 @whitespace/storybook-addon-html
 acorn
@@ -57,6 +59,7 @@ eslint-plugin-node
 eslint-plugin-prettier
 eslint-plugin-promise
 eslint-plugin-react
+eslint-plugin-react-hooks
 eslint-plugin-react-pug
 eslint-plugin-standard
 eslint-plugin-vue
