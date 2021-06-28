@@ -25,6 +25,7 @@ packages=(
 @storybook/cli
 @storybook/html
 @storybook/theming
+@types/babel-plugin-react-pug
 @types/eslint
 @types/jest
 @types/lodash
