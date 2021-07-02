@@ -10,6 +10,11 @@ module.exports = {
   cache: false,
   stats: 'errors-warnings',
 
+  // production, development, none
+  mode: mode,
+
+  // target: 'node',
+
   watchOptions: {
     aggregateTimeout: 300,
     poll: 500,
@@ -20,11 +25,6 @@ module.exports = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000
   },
-
-  // production, development, none
-  mode: mode,
-
-  // target: 'node',
 
   entry: [
     'core-js/stable',
@@ -38,6 +38,21 @@ module.exports = {
     path: path.resolve(__dirname, '../static/js')
   },
 
+  resolve: {
+    extensions: [
+      '*',
+      '.js',
+      '.json',
+      '.vue',
+      '.jsx',
+      '.ts',
+      '.tsx'
+    ],
+    alias: {
+      vue$: 'vue/dist/vue.esm.js',
+    }
+  },
+
   plugins: [
     new webpack.ProgressPlugin(),
     new VueLoaderPlugin(),
@@ -48,33 +63,44 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
+        exclude: [/node_modules/],
         loader: 'vue-loader',
         options: {
           optimizeSSR: false,
           cssSourceMap: false,
         }
       },
+      
       {
         test: /\.pug$/,
+        exclude: [/node_modules/],
         oneOf:[
           {
             resourceQuery: /^\?vue/,
             use: ['pug-plain-loader']
           },
           {
-            use: ['raw-loader', 'pug-plain-loader', 'vue-template-loader']
+            use: [
+              'raw-loader',
+              'pug-plain-loader',
+              'vue-template-loader'
+            ]
           }
         ]
       },
+      
       {
         test: /\.css$/,
+        exclude: [/node_modules/],
         use: [
           'style-loader',
           'css-loader',
         ]
       },
+      
       {
         test: /\.(sass|scss)$/,
+        exclude: [/node_modules/],
         use: [
           'vue-style-loader',
           'css-loader',
@@ -92,55 +118,55 @@ module.exports = {
           }
         ]
       },
+      
       {
         test: /\.(jpg|jpeg|gif|png|json|svg)$/,
+        exclude: [/node_modules/],
         loader: 'url-loader'
       },
+      
       {
-        test: /\.m?(js|jsx)$/,
+        test: /\.m?(j|t)sx)$/,
         exclude: /node_modules/,
         enforce: 'pre',
-        loader: 'eslint-loader',
-        options: {
-          cache: false,
-          fix: false
-        }
-      },
-      {
-        test: /\.m?(js|jsx)$/,
-        exclude: /node_modules/,
         // include: [],
-        loader: 'babel-loader',
-        options: {
-          plugins: [
-            '@babel/plugin-syntax-dynamic-import',
-            '@babel/plugin-transform-runtime',
-          ],
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                useBuiltIns: 'entry',
-                corejs: 3,
-              },
-            ]
-          ]
-        }
+        
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: [
+                '@babel/plugin-transform-typescript',
+                '@babel/plugin-syntax-dynamic-import',
+                '@babel/plugin-transform-runtime',
+                // 'transform-react-pug',
+                // 'transform-react-jsx'
+              ],
+              presets: [
+                ['@babel/preset-typescript'],
+                ['@babel/preset-react'],
+                ['@babel/preset-env',
+                  {
+                    useBuiltIns: 'entry',
+                    corejs: 3,
+                  },
+                ]
+              ]
+            },
+            // {
+            //   loader: 'ts-loader'
+            // },
+            {
+              loader: 'eslint-loader',
+              options: {
+                cache: false,
+                fix: false
+              }
+            }
+          },
+        ],
       }
     ]
-  },
-
-  resolve: {
-    extensions: [
-      '*',
-      '.js',
-      '.json',
-      '.vue',
-      '.jsx'
-    ],
-    alias: {
-      vue$: 'vue/dist/vue.esm.js',
-    }
   },
 
   optimization: {

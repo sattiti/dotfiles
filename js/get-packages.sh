@@ -87,6 +87,7 @@ pug-plain-loader
 raw-loader
 react
 react-dom
+recoil
 regenerator-runtime
 resolve-url-loader
 sass

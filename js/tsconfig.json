@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "esnext",
+      "dom",
+      "es6"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": false,
+    "strict": true,
+    "target": "esnext"
+  }
+}
