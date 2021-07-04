@@ -1,4 +1,4 @@
-set -eu
+ set -eu
 
 # Install brew from net if not exists.
 {
@@ -117,8 +117,9 @@ brew install exiftool
 brew install libxml2
 brew install libxslt
 
-# sass
-brew install libsass
+# dart-sass
+brew install dart
+brew install sass/sass/sass
 
 # db
 brew install sqlite
