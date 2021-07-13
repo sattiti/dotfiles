@@ -33,6 +33,7 @@ packages=(
 @types/pug
 @types/react
 @types/react-dom
+@types/recoil
 @typescript-ealint/eslint-plugin
 @typescript-ealint/parser
 @webpack-cli/init
